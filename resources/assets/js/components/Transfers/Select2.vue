@@ -1,0 +1,88 @@
+<template>
+<select  class="input-sm" :name="name">
+        <slot></slot>
+    </select>
+</template>
+<style src="select2/dist/css/select2.min.css"></style>
+<style src="select2-bootstrap-theme/dist/select2-bootstrap.min.css"></style>
+<script>
+    import Select2 from 'select2';
+    export default{
+    props: ['options', 'value', 'name'],
+    data(){
+        return{
+            msg:''
+        }
+    },
+    mounted(){
+    var vm = this
+
+    $(this.$el)
+         // init select2
+            .select2({theme: "bootstrap", data: this.options,
+            placeholder: 'Select one',
+            allowClear: true,
+            tags:true,
+            createTag: function (params) {
+            var term = $.trim(params.term) + (vm.options.some(function(r) {
+                          return r.text == params.term
+                        }) ? "" : " (new)");
+
+            if (term === '') {
+              return null;
+            }
+            return {
+                    id: term,
+                    text: term,
+                    isNewFlag: true
+                }
+              }
+            })
+            .val(this.value)
+            .trigger('change')
+            .on( 'select2:select', function( e ) {
+
+                    if( e.params.data.isNewFlag ) {
+                    if (/ \(new\)$/.test(e.params.data.text)) {
+                        console.log(/ \(new\)$/.exec(e.params.data.text))
+                        console.log($.trim(e.params.data.text.replace(/ \(new\)$/, '')));
+                        var post = $.trim(e.params.data.text.replace(/ \(new\)$/, ''));
+                        axios.post('../api/brands', {name : post}).then(response => {
+                             $(this).find('[value="'+e.params.data.id+'"]').replaceWith('<option selected value="'+response.data.data.id+'">'+response.data.data.name+'</option>');
+                        })
+                    }
+                }else{
+                    console.log(e.params.data)
+                    vm.$emit('selectValue',e.params.data.id )
+                    vm.$emit('selectQuantityValue',e.params.data.quantity )
+                    vm.$emit('selectStatusValue',e.params.data.status )
+                    vm.$emit('selectManufactureValue',e.params.data.manufacture )
+                    vm.$emit('selectDescriptionValue',e.params.data.description )
+                    vm.$emit('selectLocationValue',e.params.data.location )
+                    vm.$emit('selectCategoryValue',e.params.data.category )
+                    vm.$emit('selectModelValue',e.params.data.model )
+
+                }
+                })
+            // emit event on change.
+            .on('change', function (e) {
+            console.log(e)
+            vm.$emit('input', this.value)
+
+        })
+    },
+    watch: {
+        value: function (value) {
+        // update value
+            $(this.$el).val(value).trigger('change');
+        },
+        options: function (options) {
+        // update options
+            $(this.$el).select2({ data: options })
+        }
+    },
+        destroyed: function () {
+            $(this.$el).off().select2('destroy')
+        }
+    }
+</script>
