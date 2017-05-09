@@ -1,6 +1,6 @@
 webpackJsonp([12],{
 
-/***/ 103:
+/***/ 108:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -16,7 +16,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "panel panel-default"
   }, [_c('div', {
     staticClass: "panel-heading"
-  }, [_vm._v("Create Model")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("Create Description")]), _vm._v(" "), _c('div', {
     staticClass: "panel-body"
   })])])])])
 }]}
@@ -24,26 +24,26 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-68cb2fc4", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-1b7e3a0e", module.exports)
   }
 }
 
 /***/ }),
 
-/***/ 53:
+/***/ 56:
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(11)(
   /* script */
-  __webpack_require__(70),
+  __webpack_require__(77),
   /* template */
-  __webpack_require__(103),
+  __webpack_require__(108),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\inventory_vue__\\resources\\assets\\js\\components\\Brands\\create.vue"
+Component.options.__file = "C:\\xampp\\htdocs\\inventory_vue__\\resources\\assets\\js\\components\\Descriptions\\create.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] create.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -54,9 +54,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-68cb2fc4", Component.options)
+    hotAPI.createRecord("data-v-1b7e3a0e", Component.options)
   } else {
-    hotAPI.reload("data-v-68cb2fc4", Component.options)
+    hotAPI.reload("data-v-1b7e3a0e", Component.options)
   }
 })()}
 
@@ -65,7 +65,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 70:
+/***/ 77:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

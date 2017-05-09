@@ -2,7 +2,6 @@
     <div class="container-fluid">
         <div class="row">
             <div :class="{'col-md-8 col-md-offset-2' : !showAddSerial, 'col-lg-12': showAddSerial}">
-
                 <div class="panel panel-default">
                     <div class="panel-heading"></div>
 
@@ -48,9 +47,10 @@
                                                     <td :class="{'has-error' : addTd.hasError}">
                                                         <div v-if="showAddSerial" class="input-group input-group-sm">
                                                             <input class="form-control input-sm"
+                                                                   required
                                                                    name="serial[]"
                                                                    type="text"
-                                                                   v-model="addTd.createModel"
+                                                                   v-model="addTd.createSerial"
                                                                     @change = 'getQuantity(addTd.product, index)'
                                                                    />
                                                             <span class="input-group-btn">
@@ -68,9 +68,12 @@
                                                                     <i class="glyphicon glyphicon-plus"></i>
                                                                     </button>
                                                                 </span>
-                                                            <select2 :options="products"  name="serial[]"
+                                                            <select2 :options="products"
+                                                                     name="serial[]"
+                                                                     required
                                                                      v-model.number="addTd.product"
-                                                                    @selectValue = "validateDuplicate($event, index)"
+
+                                                                     @selectValue = "validateDuplicate($event, index)"
                                                                      @selectQuantityValue = "addTd.maxQuantity = $event"
                                                                      @selectStatusValue = "addTd.status = $event; addTd.status == 0 ? addTd.action = 3 : addTd.action = 2"
                                                                      @selectManufactureValue ="addTd.manufacture = $event"
@@ -89,6 +92,7 @@
                                                     <td>
                                                         <select class="form-control input-sm"
                                                                 v-model="addTd.status"
+                                                                required
                                                                 name="action[]"
                                                         >
                                                             <option value="1">
@@ -102,6 +106,7 @@
                                                     <td>
                                                         <select class="form-control input-sm"
                                                                 v-model="addTd.action"
+                                                                required
                                                                 name="status[]"
                                                         >
                                                             <option value="1">
@@ -119,28 +124,19 @@
                                                     <td>
                                                         <input name="quantity[]" class="form-control input-sm" min='1'
                                                                v-model.number="addTd.quantity ? 1 : addTd.quantity"
-                                                               v-bind:max="addTd.maxQuantity ? addTd.maxQuantity : addTd.maxQuantity == 0 ? 1 : 0  "
+                                                               :max="addTd.maxQuantity ? addTd.maxQuantity : addTd.maxQuantity == 0 ? 1 : 0  "
                                                                type="number"
                                                                required>
                                                     </td>
                                                     <td v-if="showAddSerial">
-                                                        <div v-if="addTd.showModel" class="input-group input-group-sm">
-                                                            <input class="form-control  input-sm"
-                                                                   name="createModel[]"
-                                                                   type="text"
-                                                                   v-model="addTd.createModel"
+                                                        <div v-if="addTd.showModel" >
+                                                            <add
+                                                                @close = "addTd.showModel = false"
+                                                                urlName="../api/brands"
+                                                                @fetch="fetchModel"
+                                                            >
+                                                            </add>
 
-                                                            />
-                                                            <span class="input-group-btn">
-                                                                <button class="btn btn-sm btn-primary"
-                                                                        @click.prevent="createModelMethod(index)">
-                                                                    <i class="glyphicon glyphicon-plus"></i>
-                                                                </button>
-                                                                <button class="btn btn-sm btn-danger"
-                                                                        @click.prevent="addTd.showModel = false">
-                                                                    <i class="glyphicon glyphicon-remove"></i>
-                                                                </button>
-                                                                </span>
                                                         </div>
                                                         <div v-else class="input-group input-group-sm p">
 
@@ -156,31 +152,24 @@
                                                                         <i class="glyphicon glyphicon-plus"></i>
                                                                 </button>
                                                             </span>
-                                                            <select2  :options="brands" name="model[]"
-                                                                      v-model.number="addTd.model">
+                                                            <select2  :options="brands"
+                                                                      urlName="../api/brands"
+                                                                      name="model[]"
+                                                                      v-model.number="addTd.model"
+                                                                      required
+                                                            >
                                                                 <option disabled value="0">Select one</option>
                                                             </select2>
                                                         </div>
                                                     </td>
                                                     <td v-if="showAddSerial">
-                                                        <div v-if="addTd.showCategory"
-                                                             class="input-group input-group-sm">
-                                                            <input class="form-control input-sm"
-                                                                   name="createCategory[]"
-                                                                   type="text"
-                                                                   v-model="addTd.createCategory"
-
-                                                            />
-                                                            <span class="input-group-btn">
-                                                                <button class="btn btn-sm btn-primary"
-                                                                        @click.prevent="createCategoryMethod(index)">
-                                                                    <i class="glyphicon glyphicon-plus"></i>
-                                                                </button>
-                                                                <button class="btn btn-sm btn-danger"
-                                                                        @click.prevent="addTd.showCategory = false">
-                                                                    <i class="glyphicon glyphicon-remove"></i>
-                                                                </button>
-                                                            </span>
+                                                        <div v-if="addTd.showCategory">
+                                                            <add
+                                                                    @close = "addTd.showCategory = false"
+                                                                    urlName="../api/categories"
+                                                                    @fetch="fetchCategory"
+                                                            >
+                                                            </add>
                                                         </div>
                                                         <div v-else class="input-group input-group-sm">
 
@@ -197,31 +186,24 @@
                                                                     <i class="glyphicon glyphicon-plus"></i>
                                                                 </button>
                                                             </span>
-                                                            <select2 :options="categories" name="category[]"
-                                                                     v-model.number="addTd.category">
+                                                            <select2 :options="categories"
+                                                                     name="category[]"
+                                                                     v-model.number="addTd.category"
+                                                                     urlName="../api/categories"
+                                                                     required
+                                                            >
                                                                 <option disabled value="0">Select one</option>
                                                             </select2>
                                                         </div>
                                                     </td>
                                                     <td v-if="showAddSerial">
-                                                        <div v-if=addTd.showDescription
-                                                             class="input-group input-group-sm">
-                                                            <input class="form-control input-sm"
-                                                                   name="createDescription[]"
-                                                                   type="text"
-                                                                   v-model="addTd.createDescription"
-
-                                                            />
-                                                            <span class="input-group-btn">
-                                                                    <button class="btn btn-sm btn-primary"
-                                                                            @click.prevent="createDescriptionMethod(index)">
-                                                                        <i class="glyphicon glyphicon-plus"></i>
-                                                                    </button>
-                                                                    <button class="btn btn-sm btn-danger"
-                                                                            @click.prevent="addTd.showDescription = false">
-                                                                        <i class="glyphicon glyphicon-remove"></i>
-                                                                    </button>
-                                                            </span>
+                                                        <div v-if=addTd.showDescription>
+                                                            <add
+                                                                    @close = "addTd.showDescription = false"
+                                                                    urlName="../api/descriptions"
+                                                                    @fetch="fetchDescriptions"
+                                                            >
+                                                            </add>
                                                         </div>
                                                         <div v-else class="input-group input-group-sm">
 
@@ -238,32 +220,24 @@
                                                                     <i class="glyphicon glyphicon-plus"></i>
                                                                 </button>
                                                             </span>
-                                                            <select2 :options="descriptions" name="description[]"
-                                                                     v-model.number="addTd.description">
+                                                            <select2 :options="descriptions"
+                                                                     name="description[]"
+                                                                     urlName="../api/descriptions"
+                                                                     v-model.number="addTd.description"
+                                                            >
                                                                 <option disabled value="0">Select one</option>
                                                             </select2>
                                                         </div>
 
                                                     </td>
                                                     <td v-if="showAddSerial">
-                                                        <div v-if="addTd.showManufacture"
-                                                             class="input-group input-group-sm">
-                                                            <input class="form-control input-sm"
-                                                                   name="createManufacture[]"
-                                                                   type="text"
-                                                                   v-model="addTd.createManufacture"
-
-                                                            />
-                                                            <span class="input-group-btn">
-                                                                    <button class="btn btn-sm btn-primary"
-                                                                            @click.prevent="createManufactureMethod(index)">
-                                                                        <i class="glyphicon glyphicon-plus"></i>
-                                                                    </button>
-                                                                    <button class="btn btn-sm btn-danger"
-                                                                            @click.prevent="addTd.showManufacture = false">
-                                                                        <i class="glyphicon glyphicon-remove"></i>
-                                                                    </button>
-                                                            </span>
+                                                        <div v-if="addTd.showManufacture">
+                                                            <add
+                                                                    @close = "addTd.showManufacture = false"
+                                                                    urlName="../api/manufactures"
+                                                                    @fetch="fetchManufacture"
+                                                            >
+                                                            </add>
                                                         </div>
                                                         <div v-else class="input-group input-group-sm">
 
@@ -281,6 +255,8 @@
                                                                 </button>
                                                             </span>
                                                             <select2 :options="manufactures" name="manufactures[]"
+                                                                     urlName="../api/manufactures"
+                                                                     required
                                                                      v-model.number="addTd.manufacture">
                                                                 <option disabled value="0">Select one</option>
                                                             </select2>
@@ -288,12 +264,13 @@
                                                     </td>
                                                     <td>
                                                         <select2 :options="locations" name="location[]"
+                                                                 required
                                                                  v-model.number="addTd.location">
                                                             <option disabled value="0">Select one</option>
                                                         </select2>
                                                     </td>
                                                     <td>
-                                                        <button @click.prevent="addRows.splice(index, 1)"
+                                                        <button @click.prevent="removeTD(index)"
                                                                 class="btn btn-sm btn-danger">
                                                             <i class="glyphicon glyphicon-remove"></i>
                                                         </button>
@@ -301,7 +278,7 @@
                                                 </tr>
                                                 </tbody>
                                             </table>
-                                            <button class="btn btn-primary pull-right" @click="addSerial">Add Serial
+                                            <button class="btn btn-primary pull-right" :disabled = "disableAddSerial" @click="addSerial">Add Serial
                                             </button>
                                         </div>
                                     </div>
@@ -318,6 +295,7 @@
 
 <script>
     import Select2 from './Select2.vue';
+    import Add from './Add.vue';
     export default {
 
         data() {
@@ -331,7 +309,8 @@
                 manufactures:[],
                 locations:[],
                 showAddSerial: false,
-                selected:[]
+                selected:[],
+                disabledButton: false
             }
         },
         mounted() {
@@ -348,6 +327,10 @@
                     enter : this.addRow,
                     esc: this.deleteRow
                 }
+            },
+            disableAddSerial(){
+                var vm = this
+                return _.isEmpty(vm.addRows)
             }
         },
         methods:{
@@ -356,6 +339,7 @@
             var product = _.map(vm.addRows, 'product')
             var pluckProduct = _.map(vm.products, 'id')
             var intersect = _.intersection(product, vm.selected)
+            this.selected = intersect
             if (_.includes(vm.selected, vm.addRows[index].product)) {
                 console.log('Duplicated Entry')
                 this.addRows[index].hasError = true
@@ -372,16 +356,11 @@
                 this.addRows.pop()
             },
             addSerial: function () {
-                var addRows = _.map(this.addRows, function(num){ return _.pick(num, 'quantity','serial','manufacture','description','location','category','model', 'status') });
 
-                $.post("../api/transfers", {products :addRows, _token: window.Laravel.csrfToken}, function(result){
-
-                   console.log(result);
-
-                });
             },
             addRow() {
                 this.addRows.push({
+                    product:'',
                     serial: null,
                     quantity: 1,
                     status:null,
@@ -396,6 +375,7 @@
                     createCategory: '',
                     createDescription: '',
                     createManufacture: '',
+                    createSerial:'',
 
                     showAddSerial:false,
                     showModel: false,
@@ -407,11 +387,12 @@
                     maxQuantity: 0,
                 });
             },
-            createModelMethod(index){
-
-            },
-            getQuantity(quantity, index){
-                console.log(index)
+            removeTD(index){
+                this.addRows.splice(index, 1)
+                var vm = this
+                var product = _.map(vm.addRows, 'product')
+                var intersect = _.intersection(product, vm.selected)
+                this.selected = intersect
             },
             fetchModel: function () {
                 var that = this;
@@ -476,7 +457,8 @@
 
         },
         components:{
-            'select2': Select2
+            'select2': Select2,
+            'add':Add
         },
     }
 

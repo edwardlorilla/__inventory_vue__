@@ -40,7 +40,6 @@ class TransfersControllers extends Controller
      */
     public function store(Request $request)
     {
-
         $productid = [];
         $data = [];
         if (count($request->all()) == 10) {
@@ -59,7 +58,7 @@ class TransfersControllers extends Controller
                     ]
                 )->id;
             }
-        }else{
+        }else {
             $productid = $request->serial;
         }
 
@@ -81,22 +80,19 @@ class TransfersControllers extends Controller
             $location = \App\Location::where('id', $request->location[$key])->first();
             $location->select('lastLocation')->update(['lastLocation' => $lastK6]);
 
-            \App\Tranfer::create(['product_id' =>$productid[$key], 'location_id' => $request->location[$key], 'status' => $request->status[$key]])->toArray();
+            \App\Tranfer::create(['product_id' => $productid[$key], 'location_id' => $request->location[$key], 'status' => $request->status[$key]])->toArray();
 
-//            dd($product);
 
             $status = '';
             $serial = '';
             $quantity = 1;
-                if ((int)$request->status[$key] === 1) {
-                    $status = 'TRANSFERS';
-                }
-                elseif ((int)$request->status[$key] === 2) {
-                    $status = 'DEPLOY';
-                }
-                elseif ((int)$request->status[$key] === 3) {
-                    $status = 'REPLACED';
-                }
+            if ((int)$request->status[$key] === 1) {
+                $status = 'TRANSFERS';
+            } elseif ((int)$request->status[$key] === 2) {
+                $status = 'DEPLOY';
+            } elseif ((int)$request->status[$key] === 3) {
+                $status = 'REPLACED';
+            }
 
 
             if ($product->serial) {
@@ -104,7 +100,7 @@ class TransfersControllers extends Controller
             } else {
                 $serial = '';
             }
-//
+            //
 
             if ($product->serial && $product->quantity == 1) {
                 $quantity = 1;
@@ -115,7 +111,7 @@ class TransfersControllers extends Controller
             $data[] = [
                 'Record #' => $key + 1,
                 'Asset ID' => '',
-                'Asset Category' => $product->category ? $product->category->name : '' ,
+                'Asset Category' => $product->category ? $product->category->name : '',
                 'Description' => $product->description ? $product->description->name : '',
                 'Tag Number' => '',
                 'Serial Number' => $serial,
@@ -128,19 +124,19 @@ class TransfersControllers extends Controller
                 'Status' => $status,
                 'OU #' => '',
                 'Dept.' => '',
-                'Location' => $location? $location->name : '' ,
+                'Location' => $location ? $location->name : '',
                 'Comments' => $status,
             ];
 
-            \App\Product::where('id',$productid[$key])->update(['location_id' => $request->location[$key]]);
+            \App\Product::where('id', $productid[$key])->update(['location_id' => $request->location[$key]]);
         }
 
-//        dd($data);
+
         /*
-        * I4 - BU Transferring From: PHAM14 to PHAM14
-        * I6 - Operating Unit Transferring From: P91 TO P91
-        * K6 - From: GTI Front Storage to Fil2 4th Flr Wireline
-        */
+         * * I4 - BU Transferring From: PHAM14 to PHAM14
+         * * I6 - Operating Unit Transferring From: P91 TO P91
+         * * K6 - From: GTI Front Storage to Fil2 4th Flr Wireline
+         * */
         Excel::load(storage_path('excel/exports/CFAT_APPROVAL.xlsx'), function ($reader) use ($data, $lastI4, $lastI6, $lastK6, $location) {
             $reader->sheet('CFAT 1ST FLOOR LUISA', function ($sheet) use ($data, $lastI4, $lastI6, $lastK6, $location) {
                 $currentI4 = $location->BU;
@@ -159,25 +155,27 @@ class TransfersControllers extends Controller
 
 
         return redirect('http://' . $request->server('HTTP_HOST') .'/transfers/create');
-//        Excel::create('Report2016', function($excel) {
-//
-//            // Set the title
-//            $excel->setTitle('My awesome report 2016');
-//
-//            // Chain the setters
-//            $excel->setCreator('Me')->setCompany('Our Code World');
-//
-//            $excel->setDescription('A demonstration to change the file properties');
-//
-//            $data = [12, "Hey", 123, 4234, 5632435, "Nope", 345, 345, 345, 345];
-//
-//            $excel->sheet('Sheet 1', function ($sheet) use ($data) {
-//                $sheet->setOrientation('landscape');
-//                $sheet->fromArray($data, NULL, 'A3');
-//            });
-//
-//        })->download('xlsx');
-//        return redirect('http://' . $request->server('HTTP_HOST') .'/transfers/create');
+
+
+/*        Excel::create('Report2016', function($excel) {
+
+            // Set the title
+            $excel->setTitle('My awesome report 2016');
+
+            // Chain the setters
+            $excel->setCreator('Me')->setCompany('Our Code World');
+
+            $excel->setDescription('A demonstration to change the file properties');
+
+            $data = [12, "Hey", 123, 4234, 5632435, "Nope", 345, 345, 345, 345];
+
+            $excel->sheet('Sheet 1', function ($sheet) use ($data) {
+                $sheet->setOrientation('landscape');
+                $sheet->fromArray($data, NULL, 'A3');
+            });
+
+        })->download('xlsx');
+        return redirect('http://' . $request->server('HTTP_HOST') .'/transfers/create');*/
     }
 
     /**

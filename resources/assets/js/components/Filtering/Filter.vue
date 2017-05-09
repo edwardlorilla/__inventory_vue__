@@ -4,13 +4,14 @@
 
         <div style="margin-top: 8px;" class="panel panel-default">
             <div class="panel-heading">Brands</div>
-            <div class="panel-body">
-
+            <div class="panel-body ">
+                <div class="table-responsive">
                 <table id="example" class="table table-striped table-bordered">
                     <thead>
                     <tr>
                         <th v-for="key in columns"
                             @click="sortBy(key)"
+                            v-show="key === 'id' ? false : true"
                             :class="{ active: sortKey == key }">
                             {{ key | capitalize }}
                             <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
@@ -20,7 +21,9 @@
                     </thead>
                     <thead>
                     <tr>
-                        <th v-for="key in columns">
+                        <th v-for="key in columns"
+                            v-show="key === 'id' ? false : true"
+                        >
                             <input class="input form-control" v-model="searchOrder[key]" :placeholder="key"/>
                         </th>
                     </tr>
@@ -41,15 +44,18 @@
                         >
 
                             <td v-for="(key,index) in columns"
+                                v-show="entry[key] === entry['id'] ? false : true"
                                 :key="index"
                                 :data-index="index"
                             >
-                                {{entry[key]}}
+                                <span v-if="entry[key] === entry['serial']"><router-link :to="'/products/' + entry['id'] + '/edit'" >{{entry['serial']}}</router-link></span>
+                                <span v-else>{{entry[key]}}</span>
                             </td>
 
                         </tr>
                     </transition-group>
                 </table>
+                </div>
                 <nav aria-label="Page navigation">
                     <ul class="pagination">
                         <li>
@@ -133,8 +139,9 @@
                             var filter;
                             if(_.size(searchKey) == 1){
                             filter = (String(row[key]).toLowerCase().indexOf(filterKey)) || (String(row['name']).toLowerCase().indexOf(searchKey['name'].toLowerCase()));
-                            }else if (_.size(searchKey) == 7){
+                            }else if (_.size(searchKey) == 8){
                             filter =(String(row[key]).toLowerCase().indexOf(filterKey)) ||
+                                    (String(row['id']).toLowerCase().indexOf(searchKey['id'].toLowerCase())) ||
                                     (String(row['serial']).toLowerCase().indexOf(searchKey['serial'].toLowerCase())) ||
                                     (String(row['quantity']).toLowerCase().indexOf(searchKey['quantity'].toLowerCase())) ||
                                     (String(row['description']).toLowerCase().indexOf(searchKey['description'].toLowerCase())) ||
@@ -161,6 +168,9 @@
         filters: {
         capitalize: function (str) {
             return str.charAt(0).toUpperCase() + str.slice(1)
+        },
+        padend: function(str){
+            return _.toString(str).padEnd(3)
         }
         },
         methods: {

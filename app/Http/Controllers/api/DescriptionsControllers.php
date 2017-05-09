@@ -38,7 +38,12 @@ class DescriptionsControllers extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $name = $request->input('name');//
+
+        $brands = \App\Description::create([ 'name' => $name]);
+        return response()->json([
+            'data' => $brands
+        ]);
     }
 
     /**

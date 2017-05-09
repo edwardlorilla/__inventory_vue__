@@ -30,6 +30,9 @@ const createLocations = resolve => require(['./components/Locations/create.vue']
 const Manufactures = resolve => require(['./components/Manufactures/index.vue'], resolve);
 const createManufactures = resolve => require(['./components/Manufactures/create.vue'], resolve);
 const Products = resolve => require(['./components/Products/index.vue'], resolve);
+const ProductEdit = resolve => require(['./components/Products/edit.vue'], resolve);
+const ProductShow = resolve => require(['./components/Products/show.vue'], resolve);
+const ProductHistory = resolve => require(['./components/Products/History.vue'], resolve);
 const createProducts = resolve => require(['./components/Products/create.vue'], resolve);
 const createTransfers = resolve => require(['./components/Transfers/create.vue'], resolve);
 export default [
@@ -37,46 +40,33 @@ export default [
         path: '/brands',
         component: Brands,
         name: 'brands',
-        meta: {
-            progress: {
-                func: [
-                    {call: 'color', modifier: 'temp', argument: '#E91E63'},
-                    {call: 'fail', modifier: 'temp', argument: '#6e0000'},
-                    {call: 'location', modifier: 'temp', argument: 'top'},
-                    {call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
-                ]
-            }
-        }
+
     },
     {
         path: '/brands/create',
         component: createBrands,
         name: 'createBrands',
-        meta: {
-            progress: {
-                func: [
-                    {call: 'color', modifier: 'temp', argument: '#E91E63'},
-                    {call: 'fail', modifier: 'temp', argument: '#6e0000'},
-                    {call: 'location', modifier: 'temp', argument: 'top'},
-                    {call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
-                ]
-            }
-        }
     },
     {
         path: '/products',
         component: Products,
         name: 'products',
-        meta: {
-            progress: {
-                func: [
-                    {call: 'color', modifier: 'temp', argument: '#E91E63'},
-                    {call: 'fail', modifier: 'temp', argument: '#6e0000'},
-                    {call: 'location', modifier: 'temp', argument: 'top'},
-                    {call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
-                ]
+
+    },
+    {
+        path: '/products/:id', component: ProductShow,
+        children: [
+            {
+                path: 'edit',
+                name:'productEdit',
+                component: ProductEdit
+            },
+            {
+                path: 'history',
+                component: ProductHistory
             }
-        }
+        ]
+
     },
     {
         path: '/products/create',

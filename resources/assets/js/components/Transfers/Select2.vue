@@ -1,14 +1,14 @@
 <template>
 <select  class="input-sm" :name="name">
         <slot></slot>
-    </select>
+</select>
 </template>
 <style src="select2/dist/css/select2.min.css"></style>
 <style src="select2-bootstrap-theme/dist/select2-bootstrap.min.css"></style>
 <script>
     import Select2 from 'select2';
     export default{
-    props: ['options', 'value', 'name'],
+    props: ['options', 'value', 'name', 'urlName'],
     data(){
         return{
             msg:''
@@ -21,35 +21,41 @@
          // init select2
             .select2({theme: "bootstrap", data: this.options,
             placeholder: 'Select one',
-            allowClear: true,
+            allowClear: false,
             tags:true,
             createTag: function (params) {
-            var term = $.trim(params.term) + (vm.options.some(function(r) {
-                          return r.text == params.term
-                        }) ? "" : " (new)");
+                console.log(vm.urlName)
+                var term
+                if(!_.isEmpty(vm.urlName)){
+                    term = $.trim(params.term) + (vm.options.some(function(r) {
+                            return r.text == params.term
+                            }) ? "" : " (new)");
 
-            if (term === '') {
-              return null;
-            }
-            return {
-                    id: term,
-                    text: term,
-                    isNewFlag: true
+                if (term === '') {
+                  return null;
                 }
-              }
+                return {
+                        id: term,
+                        text: term,
+                        isNewFlag: true
+                    }
+                }
+            }
             })
             .val(this.value)
             .trigger('change')
             .on( 'select2:select', function( e ) {
-
+                if(!_.isEmpty(vm.urlName)){
                     if( e.params.data.isNewFlag ) {
-                    if (/ \(new\)$/.test(e.params.data.text)) {
-                        console.log(/ \(new\)$/.exec(e.params.data.text))
-                        console.log($.trim(e.params.data.text.replace(/ \(new\)$/, '')));
-                        var post = $.trim(e.params.data.text.replace(/ \(new\)$/, ''));
-                        axios.post('../api/brands', {name : post}).then(response => {
-                             $(this).find('[value="'+e.params.data.id+'"]').replaceWith('<option selected value="'+response.data.data.id+'">'+response.data.data.name+'</option>');
-                        })
+                        if (/ \(new\)$/.test(e.params.data.text)) {
+                            console.log(/ \(new\)$/.exec(e.params.data.text))
+                            console.log($.trim(e.params.data.text.replace(/ \(new\)$/, '')));
+                            var post = $.trim(e.params.data.text.replace(/ \(new\)$/, ''));
+                            axios.post(vm.urlName, {name : post}).then(response => {
+                                console.log(response)
+                                 $(this).find('[value="'+e.params.data.id+'"]').replaceWith('<option selected value="'+response.data.data.id+'">'+response.data.data.name+'</option>');
+                            })
+                        }
                     }
                 }else{
                     console.log(e.params.data)

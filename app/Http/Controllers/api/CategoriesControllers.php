@@ -38,7 +38,12 @@ class CategoriesControllers extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $name = $request->input('name');//
+
+        $brands = \App\Category::create([ 'name' => $name]);
+        return response()->json([
+            'data' => $brands
+        ]);
     }
 
     /**

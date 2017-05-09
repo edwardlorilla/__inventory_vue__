@@ -38,7 +38,7 @@ class LocationsControllers extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**

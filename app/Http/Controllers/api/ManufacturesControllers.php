@@ -38,7 +38,12 @@ class ManufacturesControllers extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $name = $request->input('name');//
+
+        $brands = \App\Manufacture::create([ 'name' => $name]);
+        return response()->json([
+            'data' => $brands
+        ]);
     }
 
     /**

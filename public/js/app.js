@@ -27,7 +27,7 @@
 /******/
 /******/ 	// objects to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		13: 0
+/******/ 		16: 0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -930,25 +930,26 @@ __webpack_require__(34);
 
 
 
+
 axios.interceptors.request.use(function (config) {
-  // Do something before request is sent
-  __WEBPACK_IMPORTED_MODULE_5_nprogress___default.a.start();
-  return config;
+    // Do something before request is sent
+    __WEBPACK_IMPORTED_MODULE_5_nprogress___default.a.start();
+    return config;
 }, function (error) {
-  // Do something with request error
-  console.error(error);
-  return Promise.reject(error);
+    // Do something with request error
+    console.error(error);
+    return Promise.reject(error);
 });
 
 // Add a response interceptor
 axios.interceptors.response.use(function (response) {
-  // Do something with response data
-  __WEBPACK_IMPORTED_MODULE_5_nprogress___default.a.done();
-  return response;
+    // Do something with response data
+    __WEBPACK_IMPORTED_MODULE_5_nprogress___default.a.done();
+    return response;
 }, function (error) {
-  // Do something with response error
-  console.error(error);
-  return Promise.reject(error);
+    // Do something with response error
+    console.error(error);
+    return Promise.reject(error);
 });
 
 /*$( document ).ajaxSend(function( event, request, settings ) {
@@ -956,20 +957,20 @@ console.log(1);
 NProgress.start();
 });*/
 $(document).ajaxComplete(function (event, request, settings) {
-  console.log(2);
-  __WEBPACK_IMPORTED_MODULE_5_nprogress___default.a.done();
+    console.log(2);
+    __WEBPACK_IMPORTED_MODULE_5_nprogress___default.a.done();
 });
 $(document).ajaxStart(function () {
-  __WEBPACK_IMPORTED_MODULE_5_nprogress___default.a.start();
+    __WEBPACK_IMPORTED_MODULE_5_nprogress___default.a.start();
 });
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_4_v_hotkey___default.a);
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
-  mode: 'history',
-  base: __dirname,
-  linkActiveClass: 'active',
-  routes: __WEBPACK_IMPORTED_MODULE_2__routes_js__["a" /* default */]
+    mode: 'history',
+    base: __dirname,
+    linkActiveClass: 'active',
+    routes: __WEBPACK_IMPORTED_MODULE_2__routes_js__["a" /* default */]
 });
 
 new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_0_vue___default.a.util.extend({ router: router }, __WEBPACK_IMPORTED_MODULE_3__components_App_vue___default.a)).$mount('#el');
@@ -12497,68 +12498,75 @@ var Brands = function Brands(resolve) {
 };
 // const Brands = resolve => require(['./components/Brands/index.vue'], resolve);
 var createBrands = function createBrands(resolve) {
-    return __webpack_require__.e/* require */(12).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(53)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    return __webpack_require__.e/* require */(14).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(53)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 var Categories = function Categories(resolve) {
     return __webpack_require__.e/* require */(5).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(55)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 var createCategories = function createCategories(resolve) {
-    return __webpack_require__.e/* require */(11).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(54)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    return __webpack_require__.e/* require */(13).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(54)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 var Descriptions = function Descriptions(resolve) {
     return __webpack_require__.e/* require */(4).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(57)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 var createDescriptions = function createDescriptions(resolve) {
-    return __webpack_require__.e/* require */(10).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(56)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    return __webpack_require__.e/* require */(12).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(56)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 var Locations = function Locations(resolve) {
     return __webpack_require__.e/* require */(3).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(59)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 var createLocations = function createLocations(resolve) {
-    return __webpack_require__.e/* require */(9).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(58)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    return __webpack_require__.e/* require */(11).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(58)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 var Manufactures = function Manufactures(resolve) {
     return __webpack_require__.e/* require */(2).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(61)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 var createManufactures = function createManufactures(resolve) {
-    return __webpack_require__.e/* require */(8).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(60)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    return __webpack_require__.e/* require */(10).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(60)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 var Products = function Products(resolve) {
-    return __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(63)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    return __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(65)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+};
+var ProductEdit = function ProductEdit(resolve) {
+    return __webpack_require__.e/* require */(8).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(64)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+};
+var ProductShow = function ProductShow(resolve) {
+    return __webpack_require__.e/* require */(7).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(66)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+};
+var ProductHistory = function ProductHistory(resolve) {
+    return __webpack_require__.e/* require */(15).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(62)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 var createProducts = function createProducts(resolve) {
-    return __webpack_require__.e/* require */(7).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(62)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    return __webpack_require__.e/* require */(9).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(63)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 var createTransfers = function createTransfers(resolve) {
-    return __webpack_require__.e/* require */(0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(64)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    return __webpack_require__.e/* require */(0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(67)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 /* harmony default export */ __webpack_exports__["a"] = ([{
     path: '/brands',
     component: Brands,
-    name: 'brands',
-    meta: {
-        progress: {
-            func: [{ call: 'color', modifier: 'temp', argument: '#E91E63' }, { call: 'fail', modifier: 'temp', argument: '#6e0000' }, { call: 'location', modifier: 'temp', argument: 'top' }, { call: 'transition', modifier: 'temp', argument: { speed: '1.5s', opacity: '0.6s', termination: 400 } }]
-        }
-    }
+    name: 'brands'
+
 }, {
     path: '/brands/create',
     component: createBrands,
-    name: 'createBrands',
-    meta: {
-        progress: {
-            func: [{ call: 'color', modifier: 'temp', argument: '#E91E63' }, { call: 'fail', modifier: 'temp', argument: '#6e0000' }, { call: 'location', modifier: 'temp', argument: 'top' }, { call: 'transition', modifier: 'temp', argument: { speed: '1.5s', opacity: '0.6s', termination: 400 } }]
-        }
-    }
+    name: 'createBrands'
 }, {
     path: '/products',
     component: Products,
-    name: 'products',
-    meta: {
-        progress: {
-            func: [{ call: 'color', modifier: 'temp', argument: '#E91E63' }, { call: 'fail', modifier: 'temp', argument: '#6e0000' }, { call: 'location', modifier: 'temp', argument: 'top' }, { call: 'transition', modifier: 'temp', argument: { speed: '1.5s', opacity: '0.6s', termination: 400 } }]
-        }
-    }
+    name: 'products'
+
+}, {
+    path: '/products/:id', component: ProductShow,
+    children: [{
+        path: 'edit',
+        name: 'productEdit',
+        component: ProductEdit
+    }, {
+        path: 'history',
+        component: ProductHistory
+    }]
+
 }, {
     path: '/products/create',
     component: createProducts,

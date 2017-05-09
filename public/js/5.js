@@ -1,6 +1,6 @@
 webpackJsonp([5],{
 
-/***/ 100:
+/***/ 111:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -65,13 +65,13 @@ if (false) {
 
 /***/ }),
 
-/***/ 111:
+/***/ 125:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(87);
+var content = __webpack_require__(94);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -97,13 +97,13 @@ if(false) {
 
 
 /* styles */
-__webpack_require__(111)
+__webpack_require__(125)
 
 var Component = __webpack_require__(11)(
   /* script */
-  __webpack_require__(73),
+  __webpack_require__(76),
   /* template */
-  __webpack_require__(100),
+  __webpack_require__(111),
   /* scopeId */
   null,
   /* cssModules */
@@ -131,11 +131,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 65:
+/***/ 68:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -270,8 +276,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     var filter;
                     if (_.size(searchKey) == 1) {
                         filter = String(row[key]).toLowerCase().indexOf(filterKey) || String(row['name']).toLowerCase().indexOf(searchKey['name'].toLowerCase());
-                    } else if (_.size(searchKey) == 7) {
-                        filter = String(row[key]).toLowerCase().indexOf(filterKey) || String(row['serial']).toLowerCase().indexOf(searchKey['serial'].toLowerCase()) || String(row['quantity']).toLowerCase().indexOf(searchKey['quantity'].toLowerCase()) || String(row['description']).toLowerCase().indexOf(searchKey['description'].toLowerCase()) || String(row['location']).toLowerCase().indexOf(searchKey['location'].toLowerCase()) || String(row['manufacture']).toLowerCase().indexOf(searchKey['manufacture'].toLowerCase()) || String(row['model']).toLowerCase().indexOf(searchKey['model'].toLowerCase()) || String(row['category']).toLowerCase().indexOf(searchKey['category'].toLowerCase());
+                    } else if (_.size(searchKey) == 8) {
+                        filter = String(row[key]).toLowerCase().indexOf(filterKey) || String(row['id']).toLowerCase().indexOf(searchKey['id'].toLowerCase()) || String(row['serial']).toLowerCase().indexOf(searchKey['serial'].toLowerCase()) || String(row['quantity']).toLowerCase().indexOf(searchKey['quantity'].toLowerCase()) || String(row['description']).toLowerCase().indexOf(searchKey['description'].toLowerCase()) || String(row['location']).toLowerCase().indexOf(searchKey['location'].toLowerCase()) || String(row['manufacture']).toLowerCase().indexOf(searchKey['manufacture'].toLowerCase()) || String(row['model']).toLowerCase().indexOf(searchKey['model'].toLowerCase()) || String(row['category']).toLowerCase().indexOf(searchKey['category'].toLowerCase());
                     }
                     return filter > -1;
                 });
@@ -290,6 +296,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     filters: {
         capitalize: function capitalize(str) {
             return str.charAt(0).toUpperCase() + str.slice(1);
+        },
+        padend: function padend(str) {
+            return _.toString(str).padEnd(3);
         }
     },
     methods: {
@@ -322,26 +331,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 66:
+/***/ 69:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)();
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 /***/ }),
 
-/***/ 67:
+/***/ 70:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(69)
+__webpack_require__(72)
 
 var Component = __webpack_require__(11)(
   /* script */
-  __webpack_require__(65),
-  /* template */
   __webpack_require__(68),
+  /* template */
+  __webpack_require__(71),
   /* scopeId */
   null,
   /* cssModules */
@@ -369,7 +378,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 68:
+/***/ 71:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -381,7 +390,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "panel-heading"
   }, [_vm._v("Brands")]), _vm._v(" "), _c('div', {
-    staticClass: "panel-body"
+    staticClass: "panel-body "
+  }, [_c('div', {
+    staticClass: "table-responsive"
   }, [_c('table', {
     staticClass: "table table-striped table-bordered",
     attrs: {
@@ -389,6 +400,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('thead', [_c('tr', _vm._l((_vm.columns), function(key) {
     return _c('th', {
+      directives: [{
+        name: "show",
+        rawName: "v-show",
+        value: (key === 'id' ? false : true),
+        expression: "key === 'id' ? false : true"
+      }],
       class: {
         active: _vm.sortKey == key
       },
@@ -402,7 +419,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       class: _vm.sortOrders[key] > 0 ? 'asc' : 'dsc'
     })])
   }))]), _vm._v(" "), _c('thead', [_c('tr', _vm._l((_vm.columns), function(key) {
-    return _c('th', [_c('input', {
+    return _c('th', {
+      directives: [{
+        name: "show",
+        rawName: "v-show",
+        value: (key === 'id' ? false : true),
+        expression: "key === 'id' ? false : true"
+      }]
+    }, [_c('input', {
       directives: [{
         name: "model",
         rawName: "v-model",
@@ -448,13 +472,23 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, _vm._l((_vm.columns), function(key, index) {
       return _c('td', {
+        directives: [{
+          name: "show",
+          rawName: "v-show",
+          value: (entry[key] === entry['id'] ? false : true),
+          expression: "entry[key] === entry['id'] ? false : true"
+        }],
         key: index,
         attrs: {
           "data-index": index
         }
-      }, [_vm._v("\n                            " + _vm._s(entry[key]) + "\n                        ")])
+      }, [(entry[key] === entry['serial']) ? _c('span', [_c('router-link', {
+        attrs: {
+          "to": '/products/' + entry['id'] + '/edit'
+        }
+      }, [_vm._v(_vm._s(_vm._f("padend")(entry['serial'])))])], 1) : _c('span', [_vm._v(_vm._s(entry[key]))])])
     }))
-  }))], 1), _vm._v(" "), _c('nav', {
+  }))], 1)]), _vm._v(" "), _c('nav', {
     attrs: {
       "aria-label": "Page navigation"
     }
@@ -520,13 +554,13 @@ if (false) {
 
 /***/ }),
 
-/***/ 69:
+/***/ 72:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(66);
+var content = __webpack_require__(69);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -547,12 +581,12 @@ if(false) {
 
 /***/ }),
 
-/***/ 73:
+/***/ 76:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Filtering_Filter_vue__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Filtering_Filter_vue__ = __webpack_require__(70);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Filtering_Filter_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Filtering_Filter_vue__);
 //
 //
@@ -616,7 +650,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 87:
+/***/ 94:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)();

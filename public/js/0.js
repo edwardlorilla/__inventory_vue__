@@ -3,1338 +3,6 @@ webpackJsonp([0],{
 /***/ 101:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('select', {
-    staticClass: "input-sm",
-    attrs: {
-      "name": _vm.name
-    }
-  }, [_vm._t("default")], 2)
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-4cf11814", module.exports)
-  }
-}
-
-/***/ }),
-
-/***/ 104:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "container-fluid"
-  }, [_c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    class: {
-      'col-md-8 col-md-offset-2': !_vm.showAddSerial, 'col-lg-12': _vm.showAddSerial
-    }
-  }, [_c('div', {
-    staticClass: "panel panel-default"
-  }, [_c('div', {
-    staticClass: "panel-heading"
-  }), _vm._v(" "), _c('div', {
-    staticClass: "panel-body"
-  }, [_c('section', {
-    staticClass: "panel"
-  }, [_c('div', {
-    staticClass: "panel panel-footer"
-  }, [_c('header', {
-    staticClass: "panel panel-default"
-  }, [_c('h3', [_vm._v(_vm._s(_vm.showAddSerial ? 'Create Brand New Items CFAT' : 'Create Cfat'))])])]), _vm._v(" "), _c('div', {
-    staticClass: "panel panel-footer"
-  }, [_c('form', {
-    attrs: {
-      "method": "POST",
-      "action": "../api/transfers",
-      "accept-charset": "UTF-8"
-    }
-  }, [_c('input', {
-    attrs: {
-      "name": "_token",
-      "type": "hidden"
-    },
-    domProps: {
-      "value": _vm.laravelToken
-    }
-  }), _vm._v(" "), _c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "table-responsive"
-  }, [_c('table', {
-    staticClass: "table table-bordered "
-  }, [_c('thead', [_c('th', [_vm._v("Serial")]), _vm._v(" "), _c('th', [_vm._v("Status")]), _vm._v(" "), _c('th', [_vm._v("Action")]), _vm._v(" "), _c('th', [_vm._v("Quantity")]), _vm._v(" "), (_vm.showAddSerial) ? _c('th', [_vm._v("Model")]) : _vm._e(), _vm._v(" "), (_vm.showAddSerial) ? _c('th', [_vm._v("Categories")]) : _vm._e(), _vm._v(" "), (_vm.showAddSerial) ? _c('th', [_vm._v("Description")]) : _vm._e(), _vm._v(" "), (_vm.showAddSerial) ? _c('th', [_vm._v("Manufacture")]) : _vm._e(), _vm._v(" "), _c('th', [_vm._v("Transfer Location")]), _vm._v(" "), _c('th', {
-    staticStyle: {
-      "text-align": "center"
-    }
-  }, [_c('a', {
-    directives: [{
-      name: "hotkey",
-      rawName: "v-hotkey",
-      value: (_vm.addTd),
-      expression: "addTd"
-    }],
-    staticClass: "addRow",
-    on: {
-      "click": _vm.addRow
-    }
-  }, [_c('i', {
-    staticClass: "glyphicon glyphicon-plus"
-  })])])]), _vm._v(" "), _c('tbody', _vm._l((_vm.addRows), function(addTd, index) {
-    return _c('tr', [_c('td', {
-      class: {
-        'has-error': addTd.hasError
-      }
-    }, [(_vm.showAddSerial) ? _c('div', {
-      staticClass: "input-group input-group-sm"
-    }, [_c('input', {
-      directives: [{
-        name: "model",
-        rawName: "v-model",
-        value: (addTd.createModel),
-        expression: "addTd.createModel"
-      }],
-      staticClass: "form-control input-sm",
-      attrs: {
-        "name": "serial[]",
-        "type": "text"
-      },
-      domProps: {
-        "value": (addTd.createModel)
-      },
-      on: {
-        "change": function($event) {
-          _vm.getQuantity(addTd.product, index)
-        },
-        "input": function($event) {
-          if ($event.target.composing) { return; }
-          addTd.createModel = $event.target.value
-        }
-      }
-    }), _vm._v(" "), _c('span', {
-      staticClass: "input-group-btn"
-    }, [_c('button', {
-      staticClass: "btn btn-sm btn-danger",
-      on: {
-        "click": function($event) {
-          $event.preventDefault();
-          _vm.showAddSerial = false
-        }
-      }
-    }, [_c('i', {
-      staticClass: "glyphicon glyphicon-remove"
-    })])])]) : _c('div', {
-      staticClass: "input-group input-group-sm"
-    }, [_c('span', {
-      staticClass: "input-group-btn input-group-sm"
-    }, [_c('button', {
-      staticClass: "btn btn-primary btn-sm",
-      on: {
-        "click": function($event) {
-          $event.preventDefault();
-          _vm.showAddSerial = !_vm.showAddSerial
-        }
-      }
-    }, [_c('i', {
-      staticClass: "glyphicon glyphicon-plus"
-    })])]), _vm._v(" "), _c('select2', {
-      attrs: {
-        "options": _vm.products,
-        "name": "serial[]"
-      },
-      on: {
-        "selectValue": function($event) {
-          _vm.validateDuplicate($event, index)
-        },
-        "selectQuantityValue": function($event) {
-          addTd.maxQuantity = $event
-        },
-        "selectStatusValue": function($event) {
-          addTd.status = $event;
-          addTd.status == 0 ? addTd.action = 3 : addTd.action = 2
-        },
-        "selectManufactureValue": function($event) {
-          addTd.manufacture = $event
-        },
-        "selectDescriptionValue": function($event) {
-          addTd.description = $event
-        },
-        "selectLocationValue": function($event) {
-          addTd.location = $event
-        },
-        "selectCategoryValue": function($event) {
-          addTd.category = $event
-        },
-        "selectModelValue": function($event) {
-          addTd.model = $event
-        }
-      },
-      model: {
-        value: (addTd.product),
-        callback: function($$v) {
-          addTd.product = _vm._n($$v)
-        },
-        expression: "addTd.product"
-      }
-    }, [_c('option', {
-      attrs: {
-        "disabled": "",
-        "value": "0"
-      }
-    }, [_vm._v("Select one")])])], 1), _vm._v(" "), _c('span', {
-      staticClass: "help-block",
-      class: {
-        'hidden': !addTd.hasError
-      },
-      attrs: {
-        "id": "helpBlock2"
-      }
-    }, [_vm._v("Duplicated Entry")])]), _vm._v(" "), _c('td', [_c('select', {
-      directives: [{
-        name: "model",
-        rawName: "v-model",
-        value: (addTd.status),
-        expression: "addTd.status"
-      }],
-      staticClass: "form-control input-sm",
-      attrs: {
-        "name": "action[]"
-      },
-      on: {
-        "change": function($event) {
-          var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
-            return o.selected
-          }).map(function(o) {
-            var val = "_value" in o ? o._value : o.value;
-            return val
-          });
-          addTd.status = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
-        }
-      }
-    }, [_c('option', {
-      attrs: {
-        "value": "1"
-      }
-    }, [_vm._v("\n                                                            Working\n                                                        ")]), _vm._v(" "), _c('option', {
-      attrs: {
-        "value": "0"
-      }
-    }, [_vm._v("\n                                                            Defective\n                                                        ")])])]), _vm._v(" "), _c('td', [_c('select', {
-      directives: [{
-        name: "model",
-        rawName: "v-model",
-        value: (addTd.action),
-        expression: "addTd.action"
-      }],
-      staticClass: "form-control input-sm",
-      attrs: {
-        "name": "status[]"
-      },
-      on: {
-        "change": function($event) {
-          var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
-            return o.selected
-          }).map(function(o) {
-            var val = "_value" in o ? o._value : o.value;
-            return val
-          });
-          addTd.action = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
-        }
-      }
-    }, [_c('option', {
-      attrs: {
-        "value": "1"
-      }
-    }, [_vm._v("\n                                                            TRANSFER\n                                                        ")]), _vm._v(" "), _c('option', {
-      attrs: {
-        "value": "2"
-      }
-    }, [_vm._v("\n                                                            DEPLOY\n                                                        ")]), _vm._v(" "), _c('option', {
-      attrs: {
-        "value": "3"
-      }
-    }, [_vm._v("\n                                                            REPLACED\n                                                        ")])])]), _vm._v(" "), _c('td', [_c('input', {
-      directives: [{
-        name: "model",
-        rawName: "v-model.number",
-        value: (addTd.quantity ? 1 : addTd.quantity),
-        expression: "addTd.quantity ? 1 : addTd.quantity",
-        modifiers: {
-          "number": true
-        }
-      }],
-      staticClass: "form-control input-sm",
-      attrs: {
-        "name": "quantity[]",
-        "min": "1",
-        "max": addTd.maxQuantity ? addTd.maxQuantity : addTd.maxQuantity == 0 ? 1 : 0,
-        "type": "number",
-        "required": ""
-      },
-      domProps: {
-        "value": (addTd.quantity ? 1 : addTd.quantity)
-      },
-      on: {
-        "input": function($event) {
-          if ($event.target.composing) { return; }
-          addTd.quantity ? 1 : addTd.quantity = _vm._n($event.target.value)
-        },
-        "blur": function($event) {
-          _vm.$forceUpdate()
-        }
-      }
-    })]), _vm._v(" "), (_vm.showAddSerial) ? _c('td', [(addTd.showModel) ? _c('div', {
-      staticClass: "input-group input-group-sm"
-    }, [_c('input', {
-      directives: [{
-        name: "model",
-        rawName: "v-model",
-        value: (addTd.createModel),
-        expression: "addTd.createModel"
-      }],
-      staticClass: "form-control  input-sm",
-      attrs: {
-        "name": "createModel[]",
-        "type": "text"
-      },
-      domProps: {
-        "value": (addTd.createModel)
-      },
-      on: {
-        "input": function($event) {
-          if ($event.target.composing) { return; }
-          addTd.createModel = $event.target.value
-        }
-      }
-    }), _vm._v(" "), _c('span', {
-      staticClass: "input-group-btn"
-    }, [_c('button', {
-      staticClass: "btn btn-sm btn-primary",
-      on: {
-        "click": function($event) {
-          $event.preventDefault();
-          _vm.createModelMethod(index)
-        }
-      }
-    }, [_c('i', {
-      staticClass: "glyphicon glyphicon-plus"
-    })]), _vm._v(" "), _c('button', {
-      staticClass: "btn btn-sm btn-danger",
-      on: {
-        "click": function($event) {
-          $event.preventDefault();
-          addTd.showModel = false
-        }
-      }
-    }, [_c('i', {
-      staticClass: "glyphicon glyphicon-remove"
-    })])])]) : _c('div', {
-      staticClass: "input-group input-group-sm p"
-    }, [_c('span', {
-      staticClass: "input-group-btn"
-    }, [_c('button', {
-      staticClass: "btn btn-sm btn-primary",
-      on: {
-        "click": function($event) {
-          $event.preventDefault();
-          addTd.showModel = !addTd.showModel
-        }
-      }
-    }, [_c('i', {
-      staticClass: "glyphicon glyphicon-plus"
-    })])]), _vm._v(" "), _c('select2', {
-      attrs: {
-        "options": _vm.brands,
-        "name": "model[]"
-      },
-      model: {
-        value: (addTd.model),
-        callback: function($$v) {
-          addTd.model = _vm._n($$v)
-        },
-        expression: "addTd.model"
-      }
-    }, [_c('option', {
-      attrs: {
-        "disabled": "",
-        "value": "0"
-      }
-    }, [_vm._v("Select one")])])], 1)]) : _vm._e(), _vm._v(" "), (_vm.showAddSerial) ? _c('td', [(addTd.showCategory) ? _c('div', {
-      staticClass: "input-group input-group-sm"
-    }, [_c('input', {
-      directives: [{
-        name: "model",
-        rawName: "v-model",
-        value: (addTd.createCategory),
-        expression: "addTd.createCategory"
-      }],
-      staticClass: "form-control input-sm",
-      attrs: {
-        "name": "createCategory[]",
-        "type": "text"
-      },
-      domProps: {
-        "value": (addTd.createCategory)
-      },
-      on: {
-        "input": function($event) {
-          if ($event.target.composing) { return; }
-          addTd.createCategory = $event.target.value
-        }
-      }
-    }), _vm._v(" "), _c('span', {
-      staticClass: "input-group-btn"
-    }, [_c('button', {
-      staticClass: "btn btn-sm btn-primary",
-      on: {
-        "click": function($event) {
-          $event.preventDefault();
-          _vm.createCategoryMethod(index)
-        }
-      }
-    }, [_c('i', {
-      staticClass: "glyphicon glyphicon-plus"
-    })]), _vm._v(" "), _c('button', {
-      staticClass: "btn btn-sm btn-danger",
-      on: {
-        "click": function($event) {
-          $event.preventDefault();
-          addTd.showCategory = false
-        }
-      }
-    }, [_c('i', {
-      staticClass: "glyphicon glyphicon-remove"
-    })])])]) : _c('div', {
-      staticClass: "input-group input-group-sm"
-    }, [_c('span', {
-      staticClass: "input-group-btn"
-    }, [_c('button', {
-      staticClass: "btn btn-sm btn-primary",
-      on: {
-        "click": function($event) {
-          $event.preventDefault();
-          addTd.showCategory = !addTd.showCategory
-        }
-      }
-    }, [_c('i', {
-      staticClass: "glyphicon glyphicon-plus"
-    })])]), _vm._v(" "), _c('select2', {
-      attrs: {
-        "options": _vm.categories,
-        "name": "category[]"
-      },
-      model: {
-        value: (addTd.category),
-        callback: function($$v) {
-          addTd.category = _vm._n($$v)
-        },
-        expression: "addTd.category"
-      }
-    }, [_c('option', {
-      attrs: {
-        "disabled": "",
-        "value": "0"
-      }
-    }, [_vm._v("Select one")])])], 1)]) : _vm._e(), _vm._v(" "), (_vm.showAddSerial) ? _c('td', [(addTd.showDescription) ? _c('div', {
-      staticClass: "input-group input-group-sm"
-    }, [_c('input', {
-      directives: [{
-        name: "model",
-        rawName: "v-model",
-        value: (addTd.createDescription),
-        expression: "addTd.createDescription"
-      }],
-      staticClass: "form-control input-sm",
-      attrs: {
-        "name": "createDescription[]",
-        "type": "text"
-      },
-      domProps: {
-        "value": (addTd.createDescription)
-      },
-      on: {
-        "input": function($event) {
-          if ($event.target.composing) { return; }
-          addTd.createDescription = $event.target.value
-        }
-      }
-    }), _vm._v(" "), _c('span', {
-      staticClass: "input-group-btn"
-    }, [_c('button', {
-      staticClass: "btn btn-sm btn-primary",
-      on: {
-        "click": function($event) {
-          $event.preventDefault();
-          _vm.createDescriptionMethod(index)
-        }
-      }
-    }, [_c('i', {
-      staticClass: "glyphicon glyphicon-plus"
-    })]), _vm._v(" "), _c('button', {
-      staticClass: "btn btn-sm btn-danger",
-      on: {
-        "click": function($event) {
-          $event.preventDefault();
-          addTd.showDescription = false
-        }
-      }
-    }, [_c('i', {
-      staticClass: "glyphicon glyphicon-remove"
-    })])])]) : _c('div', {
-      staticClass: "input-group input-group-sm"
-    }, [_c('span', {
-      staticClass: "input-group-btn"
-    }, [_c('button', {
-      staticClass: "btn btn-sm btn-primary",
-      on: {
-        "click": function($event) {
-          $event.preventDefault();
-          addTd.showDescription = !addTd.showDescription
-        }
-      }
-    }, [_c('i', {
-      staticClass: "glyphicon glyphicon-plus"
-    })])]), _vm._v(" "), _c('select2', {
-      attrs: {
-        "options": _vm.descriptions,
-        "name": "description[]"
-      },
-      model: {
-        value: (addTd.description),
-        callback: function($$v) {
-          addTd.description = _vm._n($$v)
-        },
-        expression: "addTd.description"
-      }
-    }, [_c('option', {
-      attrs: {
-        "disabled": "",
-        "value": "0"
-      }
-    }, [_vm._v("Select one")])])], 1)]) : _vm._e(), _vm._v(" "), (_vm.showAddSerial) ? _c('td', [(addTd.showManufacture) ? _c('div', {
-      staticClass: "input-group input-group-sm"
-    }, [_c('input', {
-      directives: [{
-        name: "model",
-        rawName: "v-model",
-        value: (addTd.createManufacture),
-        expression: "addTd.createManufacture"
-      }],
-      staticClass: "form-control input-sm",
-      attrs: {
-        "name": "createManufacture[]",
-        "type": "text"
-      },
-      domProps: {
-        "value": (addTd.createManufacture)
-      },
-      on: {
-        "input": function($event) {
-          if ($event.target.composing) { return; }
-          addTd.createManufacture = $event.target.value
-        }
-      }
-    }), _vm._v(" "), _c('span', {
-      staticClass: "input-group-btn"
-    }, [_c('button', {
-      staticClass: "btn btn-sm btn-primary",
-      on: {
-        "click": function($event) {
-          $event.preventDefault();
-          _vm.createManufactureMethod(index)
-        }
-      }
-    }, [_c('i', {
-      staticClass: "glyphicon glyphicon-plus"
-    })]), _vm._v(" "), _c('button', {
-      staticClass: "btn btn-sm btn-danger",
-      on: {
-        "click": function($event) {
-          $event.preventDefault();
-          addTd.showManufacture = false
-        }
-      }
-    }, [_c('i', {
-      staticClass: "glyphicon glyphicon-remove"
-    })])])]) : _c('div', {
-      staticClass: "input-group input-group-sm"
-    }, [_c('span', {
-      staticClass: "input-group-btn"
-    }, [_c('button', {
-      staticClass: "btn btn-sm btn-primary",
-      on: {
-        "click": function($event) {
-          $event.preventDefault();
-          addTd.showManufacture = !addTd.showManufacture
-        }
-      }
-    }, [_c('i', {
-      staticClass: "glyphicon glyphicon-plus"
-    })])]), _vm._v(" "), _c('select2', {
-      attrs: {
-        "options": _vm.manufactures,
-        "name": "manufactures[]"
-      },
-      model: {
-        value: (addTd.manufacture),
-        callback: function($$v) {
-          addTd.manufacture = _vm._n($$v)
-        },
-        expression: "addTd.manufacture"
-      }
-    }, [_c('option', {
-      attrs: {
-        "disabled": "",
-        "value": "0"
-      }
-    }, [_vm._v("Select one")])])], 1)]) : _vm._e(), _vm._v(" "), _c('td', [_c('select2', {
-      attrs: {
-        "options": _vm.locations,
-        "name": "location[]"
-      },
-      model: {
-        value: (addTd.location),
-        callback: function($$v) {
-          addTd.location = _vm._n($$v)
-        },
-        expression: "addTd.location"
-      }
-    }, [_c('option', {
-      attrs: {
-        "disabled": "",
-        "value": "0"
-      }
-    }, [_vm._v("Select one")])])], 1), _vm._v(" "), _c('td', [_c('button', {
-      staticClass: "btn btn-sm btn-danger",
-      on: {
-        "click": function($event) {
-          $event.preventDefault();
-          _vm.addRows.splice(index, 1)
-        }
-      }
-    }, [_c('i', {
-      staticClass: "glyphicon glyphicon-remove"
-    })])])])
-  }))]), _vm._v(" "), _c('button', {
-    staticClass: "btn btn-primary pull-right",
-    on: {
-      "click": _vm.addSerial
-    }
-  }, [_vm._v("Add Serial\n                                        ")])])])])])])])])])])])
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-694382ee", module.exports)
-  }
-}
-
-/***/ }),
-
-/***/ 112:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(88);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(12)("48e2f4fc", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-4cf11814\",\"scoped\":false,\"hasInlineConfig\":true}!./select2-bootstrap.min.css", function() {
-     var newContent = require("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-4cf11814\",\"scoped\":false,\"hasInlineConfig\":true}!./select2-bootstrap.min.css");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 113:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(89);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(12)("1437a1c9", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-4cf11814\",\"scoped\":false,\"hasInlineConfig\":true}!./select2.min.css", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-4cf11814\",\"scoped\":false,\"hasInlineConfig\":true}!./select2.min.css");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 64:
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(11)(
-  /* script */
-  __webpack_require__(83),
-  /* template */
-  __webpack_require__(104),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "C:\\xampp\\htdocs\\inventory_vue__\\resources\\assets\\js\\components\\Transfers\\create.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] create.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-694382ee", Component.options)
-  } else {
-    hotAPI.reload("data-v-694382ee", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 82:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_select2__ = __webpack_require__(92);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_select2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_select2__);
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['options', 'value', 'name'],
-    data: function data() {
-        return {
-            msg: ''
-        };
-    },
-    mounted: function mounted() {
-        var vm = this;
-
-        $(this.$el)
-        // init select2
-        .select2({ theme: "bootstrap", data: this.options,
-            placeholder: 'Select one',
-            allowClear: true,
-            tags: true,
-            createTag: function createTag(params) {
-                var term = $.trim(params.term) + (vm.options.some(function (r) {
-                    return r.text == params.term;
-                }) ? "" : " (new)");
-
-                if (term === '') {
-                    return null;
-                }
-                return {
-                    id: term,
-                    text: term,
-                    isNewFlag: true
-                };
-            }
-        }).val(this.value).trigger('change').on('select2:select', function (e) {
-            var _this = this;
-
-            if (e.params.data.isNewFlag) {
-                if (/ \(new\)$/.test(e.params.data.text)) {
-                    console.log(/ \(new\)$/.exec(e.params.data.text));
-                    console.log($.trim(e.params.data.text.replace(/ \(new\)$/, '')));
-                    var post = $.trim(e.params.data.text.replace(/ \(new\)$/, ''));
-                    axios.post('../api/brands', { name: post }).then(function (response) {
-                        $(_this).find('[value="' + e.params.data.id + '"]').replaceWith('<option selected value="' + response.data.data.id + '">' + response.data.data.name + '</option>');
-                    });
-                }
-            } else {
-                console.log(e.params.data);
-                vm.$emit('selectValue', e.params.data.id);
-                vm.$emit('selectQuantityValue', e.params.data.quantity);
-                vm.$emit('selectStatusValue', e.params.data.status);
-                vm.$emit('selectManufactureValue', e.params.data.manufacture);
-                vm.$emit('selectDescriptionValue', e.params.data.description);
-                vm.$emit('selectLocationValue', e.params.data.location);
-                vm.$emit('selectCategoryValue', e.params.data.category);
-                vm.$emit('selectModelValue', e.params.data.model);
-            }
-        })
-        // emit event on change.
-        .on('change', function (e) {
-            console.log(e);
-            vm.$emit('input', this.value);
-        });
-    },
-
-    watch: {
-        value: function value(_value) {
-            // update value
-            $(this.$el).val(_value).trigger('change');
-        },
-        options: function options(_options) {
-            // update options
-            $(this.$el).select2({ data: _options });
-        }
-    },
-    destroyed: function destroyed() {
-        $(this.$el).off().select2('destroy');
-    }
-});
-
-/***/ }),
-
-/***/ 83:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Select2_vue__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Select2_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Select2_vue__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            laravelToken: window.Laravel.csrfToken,
-            addRows: [],
-            brands: [],
-            categories: [],
-            products: [],
-            descriptions: [],
-            manufactures: [],
-            locations: [],
-            showAddSerial: false,
-            selected: []
-        };
-    },
-    mounted: function mounted() {
-        this.fetchProducts();
-        this.fetchModel();
-        this.fetchCategory();
-        this.fetchDescriptions();
-        this.fetchManufacture();
-        this.fetchLocation();
-    },
-
-    computed: {
-        addTd: function addTd() {
-            return {
-                enter: this.addRow,
-                esc: this.deleteRow
-            };
-        }
-    },
-    methods: {
-        validateDuplicate: function validateDuplicate(event, index) {
-            var vm = this;
-            var product = _.map(vm.addRows, 'product');
-            var pluckProduct = _.map(vm.products, 'id');
-            var intersect = _.intersection(product, vm.selected);
-            if (_.includes(vm.selected, vm.addRows[index].product)) {
-                console.log('Duplicated Entry');
-                this.addRows[index].hasError = true;
-            } else {
-                this.selected = intersect;
-                this.selected.push(this.addRows[index].product);
-                this.addRows[index].hasError = false;
-            }
-            console.log(pluckProduct);
-            console.log(index);
-        },
-        deleteRow: function deleteRow() {
-            this.addRows.pop();
-        },
-
-        addSerial: function addSerial() {
-            var addRows = _.map(this.addRows, function (num) {
-                return _.pick(num, 'quantity', 'serial', 'manufacture', 'description', 'location', 'category', 'model', 'status');
-            });
-
-            $.post("../api/transfers", { products: addRows, _token: window.Laravel.csrfToken }, function (result) {
-
-                console.log(result);
-            });
-        },
-        addRow: function addRow() {
-            this.addRows.push({
-                serial: null,
-                quantity: 1,
-                status: null,
-                action: null,
-                model: '',
-                category: null,
-                description: null,
-                manufacture: null,
-                location: null,
-
-                createModel: '',
-                createCategory: '',
-                createDescription: '',
-                createManufacture: '',
-
-                showAddSerial: false,
-                showModel: false,
-                showCategory: false,
-                showDescription: false,
-                showManufacture: false,
-
-                hasError: false,
-                maxQuantity: 0
-            });
-        },
-        createModelMethod: function createModelMethod(index) {},
-        getQuantity: function getQuantity(quantity, index) {
-            console.log(index);
-        },
-
-        fetchModel: function fetchModel() {
-            var that = this;
-            $.get("../api/brands", function (data, status) {
-                that.brands = _.map(data.brands, function (data) {
-                    var pick = _.pick(data, 'name', 'id');
-                    var object = { id: pick.id, text: pick.name };
-                    return object;
-                });
-            });
-            //axios.get('../api/brands').then(response => this.brands = _.map(response.data.brands, function(data){ return _.pick(data, 'name', 'id');}))
-        },
-        fetchCategory: function fetchCategory() {
-            var that = this;
-            $.get("../api/categories", function (data, status) {
-                that.categories = _.map(data.categories, function (data) {
-                    var pick = _.pick(data, 'name', 'id');
-                    var object = { id: pick.id, text: pick.name };
-                    return object;
-                });
-            });
-            // axios.get('../api/categories').then(response => this.categories = _.map(response.data.categories, function(data){ return _.pick(data, 'name', 'id');}))
-        },
-        fetchProducts: function fetchProducts() {
-            var that = this;
-            $.get("../api/products", function (data, status) {
-                that.products = _.map(data.products, function (data) {
-                    var pick = _.pick(data, 'serial', 'id', 'quantity', 'status', 'manufacture.id', 'description.id', 'location.id', 'category.id', 'brand.id');
-                    var object = { id: pick.id, text: pick.serial, quantity: pick.quantity, status: pick.status, manufacture: pick.manufacture.id, description: pick.description.id, location: pick.location.id, category: pick.category.id, model: pick.brand.id };
-                    return object;
-                });
-            });
-            //axios.get('../api/products').then(response => this.products = response.data.products)
-        },
-        fetchDescriptions: function fetchDescriptions() {
-            var that = this;
-            $.get("../api/descriptions", function (data, status) {
-                that.descriptions = _.map(data.descriptions, function (data) {
-                    var pick = _.pick(data, 'name', 'id');
-                    var object = { id: pick.id, text: pick.name };
-                    return object;
-                });
-            });
-            // axios.get('../api/descriptions').then(response => this.descriptions =  _.map(response.data.descriptions, function(data){ return _.pick(data, 'name', 'id');}))
-        },
-        fetchManufacture: function fetchManufacture() {
-            var that = this;
-            $.get("../api/manufactures", function (data, status) {
-                that.manufactures = _.map(data.manufactures, function (data) {
-                    var pick = _.pick(data, 'name', 'id');
-                    var object = { id: pick.id, text: pick.name };
-                    return object;
-                });
-            });
-            //   axios.get('../api/manufactures').then(response => this.manufactures =  _.map(response.data.manufactures, function(data){ return _.pick(data, 'name', 'id');}));
-        },
-        fetchLocation: function fetchLocation() {
-            var that = this;
-            $.get("../api/locations", function (data, status) {
-                that.locations = _.map(data.locations, function (data) {
-                    var pick = _.pick(data, 'name', 'id');
-                    var object = { id: pick.id, text: pick.name };
-                    return object;
-                });
-            });
-            //axios.get('../api/locations').then(response => this.locations =  _.map(response.data.locations, function(data){ return _.pick(data, 'name', 'id');}));
-        }
-
-    },
-    components: {
-        'select2': __WEBPACK_IMPORTED_MODULE_0__Select2_vue___default.a
-    }
-});
-
-/***/ }),
-
-/***/ 88:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)();
-exports.push([module.i, "/*!\n * Select2 Bootstrap Theme v0.1.0-beta.10 (https://select2.github.io/select2-bootstrap-theme)\n * Copyright 2015-2017 Florian Kissling and contributors (https://github.com/select2/select2-bootstrap-theme/graphs/contributors)\n * Licensed under MIT (https://github.com/select2/select2-bootstrap-theme/blob/master/LICENSE)\n */\n.select2-container--bootstrap{display:block\n}\n.select2-container--bootstrap .select2-selection{box-shadow:inset 0 1px 1px rgba(0,0,0,.075);background-color:#fff;border:1px solid #ccc;border-radius:4px;color:#555;font-size:14px;outline:0\n}\n.select2-container--bootstrap .select2-selection.form-control{border-radius:4px\n}\n.select2-container--bootstrap .select2-search--dropdown .select2-search__field{box-shadow:inset 0 1px 1px rgba(0,0,0,.075);background-color:#fff;border:1px solid #ccc;border-radius:4px;color:#555;font-size:14px\n}\n.select2-container--bootstrap .select2-search__field{outline:0\n}\n.select2-container--bootstrap .select2-search__field::-webkit-input-placeholder{color:#999\n}\n.select2-container--bootstrap .select2-search__field:-moz-placeholder{color:#999\n}\n.select2-container--bootstrap .select2-search__field::-moz-placeholder{color:#999;opacity:1\n}\n.select2-container--bootstrap .select2-search__field:-ms-input-placeholder{color:#999\n}\n.select2-container--bootstrap .select2-results__option{padding:6px 12px\n}\n.select2-container--bootstrap .select2-results__option[role=group]{padding:0\n}\n.select2-container--bootstrap .select2-results__option[aria-disabled=true]{color:#777;cursor:not-allowed\n}\n.select2-container--bootstrap .select2-results__option[aria-selected=true]{background-color:#f5f5f5;color:#262626\n}\n.select2-container--bootstrap .select2-results__option--highlighted[aria-selected]{background-color:#337ab7;color:#fff\n}\n.select2-container--bootstrap .select2-results__option .select2-results__option{padding:6px 12px\n}\n.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__group{padding-left:0\n}\n.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__option{margin-left:-12px;padding-left:24px\n}\n.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-24px;padding-left:36px\n}\n.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-36px;padding-left:48px\n}\n.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-48px;padding-left:60px\n}\n.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-60px;padding-left:72px\n}\n.select2-container--bootstrap .select2-results__group{color:#777;display:block;padding:6px 12px;font-size:12px;line-height:1.42857143;white-space:nowrap\n}\n.select2-container--bootstrap.select2-container--focus .select2-selection,.select2-container--bootstrap.select2-container--open .select2-selection{box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;border-color:#66afe9\n}\n.select2-container--bootstrap.select2-container--open .select2-selection .select2-selection__arrow b{border-color:transparent transparent #999;border-width:0 4px 4px\n}\n.select2-container--bootstrap.select2-container--open.select2-container--below .select2-selection{border-bottom-right-radius:0;border-bottom-left-radius:0;border-bottom-color:transparent\n}\n.select2-container--bootstrap.select2-container--open.select2-container--above .select2-selection{border-top-right-radius:0;border-top-left-radius:0;border-top-color:transparent\n}\n.select2-container--bootstrap .select2-selection__clear{color:#999;cursor:pointer;float:right;font-weight:700;margin-right:10px\n}\n.select2-container--bootstrap .select2-selection__clear:hover{color:#333\n}\n.select2-container--bootstrap.select2-container--disabled .select2-selection{border-color:#ccc;box-shadow:none\n}\n.select2-container--bootstrap.select2-container--disabled .select2-search__field,.select2-container--bootstrap.select2-container--disabled .select2-selection{cursor:not-allowed\n}\n.select2-container--bootstrap.select2-container--disabled .select2-selection,.select2-container--bootstrap.select2-container--disabled .select2-selection--multiple .select2-selection__choice{background-color:#eee\n}\n.select2-container--bootstrap.select2-container--disabled .select2-selection--multiple .select2-selection__choice__remove,.select2-container--bootstrap.select2-container--disabled .select2-selection__clear{display:none\n}\n.select2-container--bootstrap .select2-dropdown{box-shadow:0 6px 12px rgba(0,0,0,.175);border-color:#66afe9;overflow-x:hidden;margin-top:-1px\n}\n.select2-container--bootstrap .select2-dropdown--above{box-shadow:0 -6px 12px rgba(0,0,0,.175);margin-top:1px\n}\n.select2-container--bootstrap .select2-results>.select2-results__options{max-height:200px;overflow-y:auto\n}\n.select2-container--bootstrap .select2-selection--single{height:34px;line-height:1.42857143;padding:6px 24px 6px 12px\n}\n.select2-container--bootstrap .select2-selection--single .select2-selection__arrow{position:absolute;bottom:0;right:12px;top:0;width:4px\n}\n.select2-container--bootstrap .select2-selection--single .select2-selection__arrow b{border-color:#999 transparent transparent;border-style:solid;border-width:4px 4px 0;height:0;left:0;margin-left:-4px;margin-top:-2px;position:absolute;top:50%;width:0\n}\n.select2-container--bootstrap .select2-selection--single .select2-selection__rendered{color:#555;padding:0\n}\n.select2-container--bootstrap .select2-selection--single .select2-selection__placeholder{color:#999\n}\n.select2-container--bootstrap .select2-selection--multiple{min-height:34px;padding:0;height:auto\n}\n.select2-container--bootstrap .select2-selection--multiple .select2-selection__rendered{box-sizing:border-box;display:block;line-height:1.42857143;list-style:none;margin:0;overflow:hidden;padding:0;width:100%;text-overflow:ellipsis;white-space:nowrap\n}\n.select2-container--bootstrap .select2-selection--multiple .select2-selection__placeholder{color:#999;float:left;margin-top:5px\n}\n.select2-container--bootstrap .select2-selection--multiple .select2-selection__choice{color:#555;background:#fff;border:1px solid #ccc;border-radius:4px;cursor:default;float:left;margin:5px 0 0 6px;padding:0 6px\n}\n.select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field{background:0 0;padding:0 12px;height:32px;line-height:1.42857143;margin-top:0;min-width:5em\n}\n.select2-container--bootstrap .select2-selection--multiple .select2-selection__choice__remove{color:#999;cursor:pointer;display:inline-block;font-weight:700;margin-right:3px\n}\n.select2-container--bootstrap .select2-selection--multiple .select2-selection__choice__remove:hover{color:#333\n}\n.select2-container--bootstrap .select2-selection--multiple .select2-selection__clear{margin-top:6px\n}\n.form-group-sm .select2-container--bootstrap .select2-selection--single,.input-group-sm .select2-container--bootstrap .select2-selection--single,.select2-container--bootstrap .select2-selection--single.input-sm{border-radius:3px;font-size:12px;height:30px;line-height:1.5;padding:5px 22px 5px 10px\n}\n.form-group-sm .select2-container--bootstrap .select2-selection--single .select2-selection__arrow b,.input-group-sm .select2-container--bootstrap .select2-selection--single .select2-selection__arrow b,.select2-container--bootstrap .select2-selection--single.input-sm .select2-selection__arrow b{margin-left:-5px\n}\n.form-group-sm .select2-container--bootstrap .select2-selection--multiple,.input-group-sm .select2-container--bootstrap .select2-selection--multiple,.select2-container--bootstrap .select2-selection--multiple.input-sm{min-height:30px;border-radius:3px\n}\n.form-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice,.input-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice,.select2-container--bootstrap .select2-selection--multiple.input-sm .select2-selection__choice{font-size:12px;line-height:1.5;margin:4px 0 0 5px;padding:0 5px\n}\n.form-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field,.input-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field,.select2-container--bootstrap .select2-selection--multiple.input-sm .select2-search--inline .select2-search__field{padding:0 10px;font-size:12px;height:28px;line-height:1.5\n}\n.form-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-selection__clear,.input-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-selection__clear,.select2-container--bootstrap .select2-selection--multiple.input-sm .select2-selection__clear{margin-top:5px\n}\n.form-group-lg .select2-container--bootstrap .select2-selection--single,.input-group-lg .select2-container--bootstrap .select2-selection--single,.select2-container--bootstrap .select2-selection--single.input-lg{border-radius:6px;font-size:18px;height:46px;line-height:1.3333333;padding:10px 31px 10px 16px\n}\n.form-group-lg .select2-container--bootstrap .select2-selection--single .select2-selection__arrow,.input-group-lg .select2-container--bootstrap .select2-selection--single .select2-selection__arrow,.select2-container--bootstrap .select2-selection--single.input-lg .select2-selection__arrow{width:5px\n}\n.form-group-lg .select2-container--bootstrap .select2-selection--single .select2-selection__arrow b,.input-group-lg .select2-container--bootstrap .select2-selection--single .select2-selection__arrow b,.select2-container--bootstrap .select2-selection--single.input-lg .select2-selection__arrow b{border-width:5px 5px 0;margin-left:-10px;margin-top:-2.5px\n}\n.form-group-lg .select2-container--bootstrap .select2-selection--multiple,.input-group-lg .select2-container--bootstrap .select2-selection--multiple,.select2-container--bootstrap .select2-selection--multiple.input-lg{min-height:46px;border-radius:6px\n}\n.form-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice,.input-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice,.select2-container--bootstrap .select2-selection--multiple.input-lg .select2-selection__choice{font-size:18px;line-height:1.3333333;border-radius:4px;margin:9px 0 0 8px;padding:0 10px\n}\n.form-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field,.input-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field,.select2-container--bootstrap .select2-selection--multiple.input-lg .select2-search--inline .select2-search__field{padding:0 16px;font-size:18px;height:44px;line-height:1.3333333\n}\n.form-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-selection__clear,.input-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-selection__clear,.select2-container--bootstrap .select2-selection--multiple.input-lg .select2-selection__clear{margin-top:10px\n}\n.input-group-lg .select2-container--bootstrap .select2-selection.select2-container--open .select2-selection--single .select2-selection__arrow b,.select2-container--bootstrap .select2-selection.input-lg.select2-container--open .select2-selection--single .select2-selection__arrow b{border-color:transparent transparent #999;border-width:0 5px 5px\n}\n.select2-container--bootstrap[dir=rtl] .select2-selection--single{padding-left:24px;padding-right:12px\n}\n.select2-container--bootstrap[dir=rtl] .select2-selection--single .select2-selection__rendered{padding-right:0;padding-left:0;text-align:right\n}\n.select2-container--bootstrap[dir=rtl] .select2-selection--single .select2-selection__clear{float:left\n}\n.select2-container--bootstrap[dir=rtl] .select2-selection--single .select2-selection__arrow{left:12px;right:auto\n}\n.select2-container--bootstrap[dir=rtl] .select2-selection--single .select2-selection__arrow b{margin-left:0\n}\n.select2-container--bootstrap[dir=rtl] .select2-selection--multiple .select2-search--inline,.select2-container--bootstrap[dir=rtl] .select2-selection--multiple .select2-selection__choice,.select2-container--bootstrap[dir=rtl] .select2-selection--multiple .select2-selection__placeholder{float:right\n}\n.select2-container--bootstrap[dir=rtl] .select2-selection--multiple .select2-selection__choice{margin-left:0;margin-right:6px\n}\n.select2-container--bootstrap[dir=rtl] .select2-selection--multiple .select2-selection__choice__remove{margin-left:2px;margin-right:auto\n}\n.has-warning .select2-dropdown,.has-warning .select2-selection{border-color:#8a6d3b\n}\n.has-warning .select2-container--focus .select2-selection,.has-warning .select2-container--open .select2-selection{box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #c0a16b;border-color:#66512c\n}\n.has-warning.select2-drop-active{border-color:#66512c\n}\n.has-warning.select2-drop-active.select2-drop.select2-drop-above{border-top-color:#66512c\n}\n.has-error .select2-dropdown,.has-error .select2-selection{border-color:#a94442\n}\n.has-error .select2-container--focus .select2-selection,.has-error .select2-container--open .select2-selection{box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #ce8483;border-color:#843534\n}\n.has-error.select2-drop-active{border-color:#843534\n}\n.has-error.select2-drop-active.select2-drop.select2-drop-above{border-top-color:#843534\n}\n.has-success .select2-dropdown,.has-success .select2-selection{border-color:#3c763d\n}\n.has-success .select2-container--focus .select2-selection,.has-success .select2-container--open .select2-selection{box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #67b168;border-color:#2b542c\n}\n.has-success.select2-drop-active{border-color:#2b542c\n}\n.has-success.select2-drop-active.select2-drop.select2-drop-above{border-top-color:#2b542c\n}\n.input-group>.select2-hidden-accessible:first-child+.select2-container--bootstrap>.selection>.select2-selection,.input-group>.select2-hidden-accessible:first-child+.select2-container--bootstrap>.selection>.select2-selection.form-control{border-bottom-right-radius:0;border-top-right-radius:0\n}\n.input-group>.select2-hidden-accessible:not(:first-child)+.select2-container--bootstrap:not(:last-child)>.selection>.select2-selection,.input-group>.select2-hidden-accessible:not(:first-child)+.select2-container--bootstrap:not(:last-child)>.selection>.select2-selection.form-control{border-radius:0\n}\n.input-group>.select2-hidden-accessible:not(:first-child):not(:last-child)+.select2-container--bootstrap:last-child>.selection>.select2-selection,.input-group>.select2-hidden-accessible:not(:first-child):not(:last-child)+.select2-container--bootstrap:last-child>.selection>.select2-selection.form-control{border-bottom-left-radius:0;border-top-left-radius:0\n}\n.input-group>.select2-container--bootstrap{display:table;table-layout:fixed;position:relative;z-index:2;width:100%;margin-bottom:0\n}\n.input-group>.select2-container--bootstrap>.selection>.select2-selection.form-control{float:none\n}\n.input-group>.select2-container--bootstrap.select2-container--focus,.input-group>.select2-container--bootstrap.select2-container--open{z-index:3\n}\n.input-group>.select2-container--bootstrap,.input-group>.select2-container--bootstrap .input-group-btn,.input-group>.select2-container--bootstrap .input-group-btn .btn{vertical-align:top\n}\n.form-control.select2-hidden-accessible{position:absolute!important;width:1px!important\n}\n@media (min-width:768px){\n.form-inline .select2-container--bootstrap{display:inline-block\n}\n}\n", ""]);
-
-/***/ }),
-
-/***/ 89:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)();
-exports.push([module.i, "\n.select2-container{box-sizing:border-box;display:inline-block;margin:0;position:relative;vertical-align:middle\n}\n.select2-container .select2-selection--single{box-sizing:border-box;cursor:pointer;display:block;height:28px;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-select:none\n}\n.select2-container .select2-selection--single .select2-selection__rendered{display:block;padding-left:8px;padding-right:20px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap\n}\n.select2-container .select2-selection--single .select2-selection__clear{position:relative\n}\n.select2-container[dir=\"rtl\"] .select2-selection--single .select2-selection__rendered{padding-right:8px;padding-left:20px\n}\n.select2-container .select2-selection--multiple{box-sizing:border-box;cursor:pointer;display:block;min-height:32px;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-select:none\n}\n.select2-container .select2-selection--multiple .select2-selection__rendered{display:inline-block;overflow:hidden;padding-left:8px;text-overflow:ellipsis;white-space:nowrap\n}\n.select2-container .select2-search--inline{float:left\n}\n.select2-container .select2-search--inline .select2-search__field{box-sizing:border-box;border:none;font-size:100%;margin-top:5px;padding:0\n}\n.select2-container .select2-search--inline .select2-search__field::-webkit-search-cancel-button{-webkit-appearance:none\n}\n.select2-dropdown{background-color:white;border:1px solid #aaa;border-radius:4px;box-sizing:border-box;display:block;position:absolute;left:-100000px;width:100%;z-index:1051\n}\n.select2-results{display:block\n}\n.select2-results__options{list-style:none;margin:0;padding:0\n}\n.select2-results__option{padding:6px;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-select:none\n}\n.select2-results__option[aria-selected]{cursor:pointer\n}\n.select2-container--open .select2-dropdown{left:0\n}\n.select2-container--open .select2-dropdown--above{border-bottom:none;border-bottom-left-radius:0;border-bottom-right-radius:0\n}\n.select2-container--open .select2-dropdown--below{border-top:none;border-top-left-radius:0;border-top-right-radius:0\n}\n.select2-search--dropdown{display:block;padding:4px\n}\n.select2-search--dropdown .select2-search__field{padding:4px;width:100%;box-sizing:border-box\n}\n.select2-search--dropdown .select2-search__field::-webkit-search-cancel-button{-webkit-appearance:none\n}\n.select2-search--dropdown.select2-search--hide{display:none\n}\n.select2-close-mask{border:0;margin:0;padding:0;display:block;position:fixed;left:0;top:0;min-height:100%;min-width:100%;height:auto;width:auto;opacity:0;z-index:99;background-color:#fff;filter:alpha(opacity=0)\n}\n.select2-hidden-accessible{border:0 !important;clip:rect(0 0 0 0) !important;height:1px !important;margin:-1px !important;overflow:hidden !important;padding:0 !important;position:absolute !important;width:1px !important\n}\n.select2-container--default .select2-selection--single{background-color:#fff;border:1px solid #aaa;border-radius:4px\n}\n.select2-container--default .select2-selection--single .select2-selection__rendered{color:#444;line-height:28px\n}\n.select2-container--default .select2-selection--single .select2-selection__clear{cursor:pointer;float:right;font-weight:bold\n}\n.select2-container--default .select2-selection--single .select2-selection__placeholder{color:#999\n}\n.select2-container--default .select2-selection--single .select2-selection__arrow{height:26px;position:absolute;top:1px;right:1px;width:20px\n}\n.select2-container--default .select2-selection--single .select2-selection__arrow b{border-color:#888 transparent transparent transparent;border-style:solid;border-width:5px 4px 0 4px;height:0;left:50%;margin-left:-4px;margin-top:-2px;position:absolute;top:50%;width:0\n}\n.select2-container--default[dir=\"rtl\"] .select2-selection--single .select2-selection__clear{float:left\n}\n.select2-container--default[dir=\"rtl\"] .select2-selection--single .select2-selection__arrow{left:1px;right:auto\n}\n.select2-container--default.select2-container--disabled .select2-selection--single{background-color:#eee;cursor:default\n}\n.select2-container--default.select2-container--disabled .select2-selection--single .select2-selection__clear{display:none\n}\n.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b{border-color:transparent transparent #888 transparent;border-width:0 4px 5px 4px\n}\n.select2-container--default .select2-selection--multiple{background-color:white;border:1px solid #aaa;border-radius:4px;cursor:text\n}\n.select2-container--default .select2-selection--multiple .select2-selection__rendered{box-sizing:border-box;list-style:none;margin:0;padding:0 5px;width:100%\n}\n.select2-container--default .select2-selection--multiple .select2-selection__rendered li{list-style:none\n}\n.select2-container--default .select2-selection--multiple .select2-selection__placeholder{color:#999;margin-top:5px;float:left\n}\n.select2-container--default .select2-selection--multiple .select2-selection__clear{cursor:pointer;float:right;font-weight:bold;margin-top:5px;margin-right:10px\n}\n.select2-container--default .select2-selection--multiple .select2-selection__choice{background-color:#e4e4e4;border:1px solid #aaa;border-radius:4px;cursor:default;float:left;margin-right:5px;margin-top:5px;padding:0 5px\n}\n.select2-container--default .select2-selection--multiple .select2-selection__choice__remove{color:#999;cursor:pointer;display:inline-block;font-weight:bold;margin-right:2px\n}\n.select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover{color:#333\n}\n.select2-container--default[dir=\"rtl\"] .select2-selection--multiple .select2-selection__choice,.select2-container--default[dir=\"rtl\"] .select2-selection--multiple .select2-selection__placeholder,.select2-container--default[dir=\"rtl\"] .select2-selection--multiple .select2-search--inline{float:right\n}\n.select2-container--default[dir=\"rtl\"] .select2-selection--multiple .select2-selection__choice{margin-left:5px;margin-right:auto\n}\n.select2-container--default[dir=\"rtl\"] .select2-selection--multiple .select2-selection__choice__remove{margin-left:2px;margin-right:auto\n}\n.select2-container--default.select2-container--focus .select2-selection--multiple{border:solid black 1px;outline:0\n}\n.select2-container--default.select2-container--disabled .select2-selection--multiple{background-color:#eee;cursor:default\n}\n.select2-container--default.select2-container--disabled .select2-selection__choice__remove{display:none\n}\n.select2-container--default.select2-container--open.select2-container--above .select2-selection--single,.select2-container--default.select2-container--open.select2-container--above .select2-selection--multiple{border-top-left-radius:0;border-top-right-radius:0\n}\n.select2-container--default.select2-container--open.select2-container--below .select2-selection--single,.select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple{border-bottom-left-radius:0;border-bottom-right-radius:0\n}\n.select2-container--default .select2-search--dropdown .select2-search__field{border:1px solid #aaa\n}\n.select2-container--default .select2-search--inline .select2-search__field{background:transparent;border:none;outline:0;box-shadow:none;-webkit-appearance:textfield\n}\n.select2-container--default .select2-results>.select2-results__options{max-height:200px;overflow-y:auto\n}\n.select2-container--default .select2-results__option[role=group]{padding:0\n}\n.select2-container--default .select2-results__option[aria-disabled=true]{color:#999\n}\n.select2-container--default .select2-results__option[aria-selected=true]{background-color:#ddd\n}\n.select2-container--default .select2-results__option .select2-results__option{padding-left:1em\n}\n.select2-container--default .select2-results__option .select2-results__option .select2-results__group{padding-left:0\n}\n.select2-container--default .select2-results__option .select2-results__option .select2-results__option{margin-left:-1em;padding-left:2em\n}\n.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-2em;padding-left:3em\n}\n.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-3em;padding-left:4em\n}\n.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-4em;padding-left:5em\n}\n.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-5em;padding-left:6em\n}\n.select2-container--default .select2-results__option--highlighted[aria-selected]{background-color:#5897fb;color:white\n}\n.select2-container--default .select2-results__group{cursor:default;display:block;padding:6px\n}\n.select2-container--classic .select2-selection--single{background-color:#f7f7f7;border:1px solid #aaa;border-radius:4px;outline:0;background-image:linear-gradient(to bottom, #fff 50%, #eee 100%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEEEEEE', GradientType=0)\n}\n.select2-container--classic .select2-selection--single:focus{border:1px solid #5897fb\n}\n.select2-container--classic .select2-selection--single .select2-selection__rendered{color:#444;line-height:28px\n}\n.select2-container--classic .select2-selection--single .select2-selection__clear{cursor:pointer;float:right;font-weight:bold;margin-right:10px\n}\n.select2-container--classic .select2-selection--single .select2-selection__placeholder{color:#999\n}\n.select2-container--classic .select2-selection--single .select2-selection__arrow{background-color:#ddd;border:none;border-left:1px solid #aaa;border-top-right-radius:4px;border-bottom-right-radius:4px;height:26px;position:absolute;top:1px;right:1px;width:20px;background-image:linear-gradient(to bottom, #eee 50%, #ccc 100%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFCCCCCC', GradientType=0)\n}\n.select2-container--classic .select2-selection--single .select2-selection__arrow b{border-color:#888 transparent transparent transparent;border-style:solid;border-width:5px 4px 0 4px;height:0;left:50%;margin-left:-4px;margin-top:-2px;position:absolute;top:50%;width:0\n}\n.select2-container--classic[dir=\"rtl\"] .select2-selection--single .select2-selection__clear{float:left\n}\n.select2-container--classic[dir=\"rtl\"] .select2-selection--single .select2-selection__arrow{border:none;border-right:1px solid #aaa;border-radius:0;border-top-left-radius:4px;border-bottom-left-radius:4px;left:1px;right:auto\n}\n.select2-container--classic.select2-container--open .select2-selection--single{border:1px solid #5897fb\n}\n.select2-container--classic.select2-container--open .select2-selection--single .select2-selection__arrow{background:transparent;border:none\n}\n.select2-container--classic.select2-container--open .select2-selection--single .select2-selection__arrow b{border-color:transparent transparent #888 transparent;border-width:0 4px 5px 4px\n}\n.select2-container--classic.select2-container--open.select2-container--above .select2-selection--single{border-top:none;border-top-left-radius:0;border-top-right-radius:0;background-image:linear-gradient(to bottom, #fff 0%, #eee 50%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEEEEEE', GradientType=0)\n}\n.select2-container--classic.select2-container--open.select2-container--below .select2-selection--single{border-bottom:none;border-bottom-left-radius:0;border-bottom-right-radius:0;background-image:linear-gradient(to bottom, #eee 50%, #fff 100%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFFFFFFF', GradientType=0)\n}\n.select2-container--classic .select2-selection--multiple{background-color:white;border:1px solid #aaa;border-radius:4px;cursor:text;outline:0\n}\n.select2-container--classic .select2-selection--multiple:focus{border:1px solid #5897fb\n}\n.select2-container--classic .select2-selection--multiple .select2-selection__rendered{list-style:none;margin:0;padding:0 5px\n}\n.select2-container--classic .select2-selection--multiple .select2-selection__clear{display:none\n}\n.select2-container--classic .select2-selection--multiple .select2-selection__choice{background-color:#e4e4e4;border:1px solid #aaa;border-radius:4px;cursor:default;float:left;margin-right:5px;margin-top:5px;padding:0 5px\n}\n.select2-container--classic .select2-selection--multiple .select2-selection__choice__remove{color:#888;cursor:pointer;display:inline-block;font-weight:bold;margin-right:2px\n}\n.select2-container--classic .select2-selection--multiple .select2-selection__choice__remove:hover{color:#555\n}\n.select2-container--classic[dir=\"rtl\"] .select2-selection--multiple .select2-selection__choice{float:right\n}\n.select2-container--classic[dir=\"rtl\"] .select2-selection--multiple .select2-selection__choice{margin-left:5px;margin-right:auto\n}\n.select2-container--classic[dir=\"rtl\"] .select2-selection--multiple .select2-selection__choice__remove{margin-left:2px;margin-right:auto\n}\n.select2-container--classic.select2-container--open .select2-selection--multiple{border:1px solid #5897fb\n}\n.select2-container--classic.select2-container--open.select2-container--above .select2-selection--multiple{border-top:none;border-top-left-radius:0;border-top-right-radius:0\n}\n.select2-container--classic.select2-container--open.select2-container--below .select2-selection--multiple{border-bottom:none;border-bottom-left-radius:0;border-bottom-right-radius:0\n}\n.select2-container--classic .select2-search--dropdown .select2-search__field{border:1px solid #aaa;outline:0\n}\n.select2-container--classic .select2-search--inline .select2-search__field{outline:0;box-shadow:none\n}\n.select2-container--classic .select2-dropdown{background-color:#fff;border:1px solid transparent\n}\n.select2-container--classic .select2-dropdown--above{border-bottom:none\n}\n.select2-container--classic .select2-dropdown--below{border-top:none\n}\n.select2-container--classic .select2-results>.select2-results__options{max-height:200px;overflow-y:auto\n}\n.select2-container--classic .select2-results__option[role=group]{padding:0\n}\n.select2-container--classic .select2-results__option[aria-disabled=true]{color:grey\n}\n.select2-container--classic .select2-results__option--highlighted[aria-selected]{background-color:#3875d7;color:#fff\n}\n.select2-container--classic .select2-results__group{cursor:default;display:block;padding:6px\n}\n.select2-container--classic.select2-container--open .select2-dropdown{border-color:#5897fb\n}\n", ""]);
-
-/***/ }),
-
-/***/ 92:
-/***/ (function(module, exports, __webpack_require__) {
-
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var require;var require;/*!
  * Select2 4.0.3
  * https://select2.github.io
@@ -7067,19 +5735,58 @@ S2.define('jquery.select2',[
 
 /***/ }),
 
-/***/ 93:
+/***/ 102:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(113)
-__webpack_require__(112)
+__webpack_require__(128)
 
 var Component = __webpack_require__(11)(
   /* script */
-  __webpack_require__(82),
+  __webpack_require__(87),
   /* template */
-  __webpack_require__(101),
+  __webpack_require__(113),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "C:\\xampp\\htdocs\\inventory_vue__\\resources\\assets\\js\\components\\Transfers\\Add.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Add.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-55920b7f", Component.options)
+  } else {
+    hotAPI.reload("data-v-55920b7f", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 103:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(127)
+__webpack_require__(126)
+
+var Component = __webpack_require__(11)(
+  /* script */
+  __webpack_require__(88),
+  /* template */
+  __webpack_require__(112),
   /* scopeId */
   null,
   /* cssModules */
@@ -7104,6 +5811,1387 @@ if (false) {(function () {
 
 module.exports = Component.exports
 
+
+/***/ }),
+
+/***/ 112:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('select', {
+    staticClass: "input-sm",
+    attrs: {
+      "name": _vm.name
+    }
+  }, [_vm._t("default")], 2)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-4cf11814", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ 113:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    class: {
+      'has-error': _vm.hasError
+    }
+  }, [_c('div', {
+    staticClass: "input-group input-group-sm"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.value),
+      expression: "value"
+    }],
+    staticClass: "form-control  input-sm",
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.value)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.value = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('span', {
+    staticClass: "input-group-btn"
+  }, [_c('button', {
+    staticClass: "btn btn-sm btn-primary",
+    attrs: {
+      "disabled": _vm.disableButton
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.createMethod()
+      }
+    }
+  }, [_c('i', {
+    staticClass: "glyphicon glyphicon-plus"
+  })]), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-sm btn-danger",
+    attrs: {
+      "disabled": _vm.disableButton
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.$emit('close')
+      }
+    }
+  }, [_c('i', {
+    staticClass: "glyphicon glyphicon-remove"
+  })])])]), _vm._v(" "), _c('span', {
+    staticClass: "help-block",
+    class: {
+      'hidden': !_vm.hasError
+    },
+    attrs: {
+      "id": "helpBlock2"
+    }
+  }, [_vm._v("Not Valid Entry")])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-55920b7f", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ 116:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "container-fluid"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    class: {
+      'col-md-8 col-md-offset-2': !_vm.showAddSerial, 'col-lg-12': _vm.showAddSerial
+    }
+  }, [_c('div', {
+    staticClass: "panel panel-default"
+  }, [_c('div', {
+    staticClass: "panel-heading"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "panel-body"
+  }, [_c('section', {
+    staticClass: "panel"
+  }, [_c('div', {
+    staticClass: "panel panel-footer"
+  }, [_c('header', {
+    staticClass: "panel panel-default"
+  }, [_c('h3', [_vm._v(_vm._s(_vm.showAddSerial ? 'Create Brand New Items CFAT' : 'Create Cfat'))])])]), _vm._v(" "), _c('div', {
+    staticClass: "panel panel-footer"
+  }, [_c('form', {
+    attrs: {
+      "method": "POST",
+      "action": "../api/transfers",
+      "accept-charset": "UTF-8"
+    }
+  }, [_c('input', {
+    attrs: {
+      "name": "_token",
+      "type": "hidden"
+    },
+    domProps: {
+      "value": _vm.laravelToken
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "table-responsive"
+  }, [_c('table', {
+    staticClass: "table table-bordered "
+  }, [_c('thead', [_c('th', [_vm._v("Serial")]), _vm._v(" "), _c('th', [_vm._v("Status")]), _vm._v(" "), _c('th', [_vm._v("Action")]), _vm._v(" "), _c('th', [_vm._v("Quantity")]), _vm._v(" "), (_vm.showAddSerial) ? _c('th', [_vm._v("Model")]) : _vm._e(), _vm._v(" "), (_vm.showAddSerial) ? _c('th', [_vm._v("Categories")]) : _vm._e(), _vm._v(" "), (_vm.showAddSerial) ? _c('th', [_vm._v("Description")]) : _vm._e(), _vm._v(" "), (_vm.showAddSerial) ? _c('th', [_vm._v("Manufacture")]) : _vm._e(), _vm._v(" "), _c('th', [_vm._v("Transfer Location")]), _vm._v(" "), _c('th', {
+    staticStyle: {
+      "text-align": "center"
+    }
+  }, [_c('a', {
+    directives: [{
+      name: "hotkey",
+      rawName: "v-hotkey",
+      value: (_vm.addTd),
+      expression: "addTd"
+    }],
+    staticClass: "addRow",
+    on: {
+      "click": _vm.addRow
+    }
+  }, [_c('i', {
+    staticClass: "glyphicon glyphicon-plus"
+  })])])]), _vm._v(" "), _c('tbody', _vm._l((_vm.addRows), function(addTd, index) {
+    return _c('tr', [_c('td', {
+      class: {
+        'has-error': addTd.hasError
+      }
+    }, [(_vm.showAddSerial) ? _c('div', {
+      staticClass: "input-group input-group-sm"
+    }, [_c('input', {
+      directives: [{
+        name: "model",
+        rawName: "v-model",
+        value: (addTd.createSerial),
+        expression: "addTd.createSerial"
+      }],
+      staticClass: "form-control input-sm",
+      attrs: {
+        "required": "",
+        "name": "serial[]",
+        "type": "text"
+      },
+      domProps: {
+        "value": (addTd.createSerial)
+      },
+      on: {
+        "change": function($event) {
+          _vm.getQuantity(addTd.product, index)
+        },
+        "input": function($event) {
+          if ($event.target.composing) { return; }
+          addTd.createSerial = $event.target.value
+        }
+      }
+    }), _vm._v(" "), _c('span', {
+      staticClass: "input-group-btn"
+    }, [_c('button', {
+      staticClass: "btn btn-sm btn-danger",
+      on: {
+        "click": function($event) {
+          $event.preventDefault();
+          _vm.showAddSerial = false
+        }
+      }
+    }, [_c('i', {
+      staticClass: "glyphicon glyphicon-remove"
+    })])])]) : _c('div', {
+      staticClass: "input-group input-group-sm"
+    }, [_c('span', {
+      staticClass: "input-group-btn input-group-sm"
+    }, [_c('button', {
+      staticClass: "btn btn-primary btn-sm",
+      on: {
+        "click": function($event) {
+          $event.preventDefault();
+          _vm.showAddSerial = !_vm.showAddSerial
+        }
+      }
+    }, [_c('i', {
+      staticClass: "glyphicon glyphicon-plus"
+    })])]), _vm._v(" "), _c('select2', {
+      attrs: {
+        "options": _vm.products,
+        "name": "serial[]",
+        "required": ""
+      },
+      on: {
+        "selectValue": function($event) {
+          _vm.validateDuplicate($event, index)
+        },
+        "selectQuantityValue": function($event) {
+          addTd.maxQuantity = $event
+        },
+        "selectStatusValue": function($event) {
+          addTd.status = $event;
+          addTd.status == 0 ? addTd.action = 3 : addTd.action = 2
+        },
+        "selectManufactureValue": function($event) {
+          addTd.manufacture = $event
+        },
+        "selectDescriptionValue": function($event) {
+          addTd.description = $event
+        },
+        "selectLocationValue": function($event) {
+          addTd.location = $event
+        },
+        "selectCategoryValue": function($event) {
+          addTd.category = $event
+        },
+        "selectModelValue": function($event) {
+          addTd.model = $event
+        }
+      },
+      model: {
+        value: (addTd.product),
+        callback: function($$v) {
+          addTd.product = _vm._n($$v)
+        },
+        expression: "addTd.product"
+      }
+    }, [_c('option', {
+      attrs: {
+        "disabled": "",
+        "value": "0"
+      }
+    }, [_vm._v("Select one")])])], 1), _vm._v(" "), _c('span', {
+      staticClass: "help-block",
+      class: {
+        'hidden': !addTd.hasError
+      },
+      attrs: {
+        "id": "helpBlock2"
+      }
+    }, [_vm._v("Duplicated Entry")])]), _vm._v(" "), _c('td', [_c('select', {
+      directives: [{
+        name: "model",
+        rawName: "v-model",
+        value: (addTd.status),
+        expression: "addTd.status"
+      }],
+      staticClass: "form-control input-sm",
+      attrs: {
+        "required": "",
+        "name": "action[]"
+      },
+      on: {
+        "change": function($event) {
+          var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
+            return o.selected
+          }).map(function(o) {
+            var val = "_value" in o ? o._value : o.value;
+            return val
+          });
+          addTd.status = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+        }
+      }
+    }, [_c('option', {
+      attrs: {
+        "value": "1"
+      }
+    }, [_vm._v("\n                                                            Working\n                                                        ")]), _vm._v(" "), _c('option', {
+      attrs: {
+        "value": "0"
+      }
+    }, [_vm._v("\n                                                            Defective\n                                                        ")])])]), _vm._v(" "), _c('td', [_c('select', {
+      directives: [{
+        name: "model",
+        rawName: "v-model",
+        value: (addTd.action),
+        expression: "addTd.action"
+      }],
+      staticClass: "form-control input-sm",
+      attrs: {
+        "required": "",
+        "name": "status[]"
+      },
+      on: {
+        "change": function($event) {
+          var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
+            return o.selected
+          }).map(function(o) {
+            var val = "_value" in o ? o._value : o.value;
+            return val
+          });
+          addTd.action = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+        }
+      }
+    }, [_c('option', {
+      attrs: {
+        "value": "1"
+      }
+    }, [_vm._v("\n                                                            TRANSFER\n                                                        ")]), _vm._v(" "), _c('option', {
+      attrs: {
+        "value": "2"
+      }
+    }, [_vm._v("\n                                                            DEPLOY\n                                                        ")]), _vm._v(" "), _c('option', {
+      attrs: {
+        "value": "3"
+      }
+    }, [_vm._v("\n                                                            REPLACED\n                                                        ")])])]), _vm._v(" "), _c('td', [_c('input', {
+      directives: [{
+        name: "model",
+        rawName: "v-model.number",
+        value: (addTd.quantity ? 1 : addTd.quantity),
+        expression: "addTd.quantity ? 1 : addTd.quantity",
+        modifiers: {
+          "number": true
+        }
+      }],
+      staticClass: "form-control input-sm",
+      attrs: {
+        "name": "quantity[]",
+        "min": "1",
+        "max": addTd.maxQuantity ? addTd.maxQuantity : addTd.maxQuantity == 0 ? 1 : 0,
+        "type": "number",
+        "required": ""
+      },
+      domProps: {
+        "value": (addTd.quantity ? 1 : addTd.quantity)
+      },
+      on: {
+        "input": function($event) {
+          if ($event.target.composing) { return; }
+          addTd.quantity ? 1 : addTd.quantity = _vm._n($event.target.value)
+        },
+        "blur": function($event) {
+          _vm.$forceUpdate()
+        }
+      }
+    })]), _vm._v(" "), (_vm.showAddSerial) ? _c('td', [(addTd.showModel) ? _c('div', [_c('add', {
+      attrs: {
+        "urlName": "../api/brands"
+      },
+      on: {
+        "close": function($event) {
+          addTd.showModel = false
+        },
+        "fetch": _vm.fetchModel
+      }
+    })], 1) : _c('div', {
+      staticClass: "input-group input-group-sm p"
+    }, [_c('span', {
+      staticClass: "input-group-btn"
+    }, [_c('button', {
+      staticClass: "btn btn-sm btn-primary",
+      on: {
+        "click": function($event) {
+          $event.preventDefault();
+          addTd.showModel = !addTd.showModel
+        }
+      }
+    }, [_c('i', {
+      staticClass: "glyphicon glyphicon-plus"
+    })])]), _vm._v(" "), _c('select2', {
+      attrs: {
+        "options": _vm.brands,
+        "urlName": "../api/brands",
+        "name": "model[]",
+        "required": ""
+      },
+      model: {
+        value: (addTd.model),
+        callback: function($$v) {
+          addTd.model = _vm._n($$v)
+        },
+        expression: "addTd.model"
+      }
+    }, [_c('option', {
+      attrs: {
+        "disabled": "",
+        "value": "0"
+      }
+    }, [_vm._v("Select one")])])], 1)]) : _vm._e(), _vm._v(" "), (_vm.showAddSerial) ? _c('td', [(addTd.showCategory) ? _c('div', [_c('add', {
+      attrs: {
+        "urlName": "../api/categories"
+      },
+      on: {
+        "close": function($event) {
+          addTd.showCategory = false
+        },
+        "fetch": _vm.fetchCategory
+      }
+    })], 1) : _c('div', {
+      staticClass: "input-group input-group-sm"
+    }, [_c('span', {
+      staticClass: "input-group-btn"
+    }, [_c('button', {
+      staticClass: "btn btn-sm btn-primary",
+      on: {
+        "click": function($event) {
+          $event.preventDefault();
+          addTd.showCategory = !addTd.showCategory
+        }
+      }
+    }, [_c('i', {
+      staticClass: "glyphicon glyphicon-plus"
+    })])]), _vm._v(" "), _c('select2', {
+      attrs: {
+        "options": _vm.categories,
+        "name": "category[]",
+        "urlName": "../api/categories",
+        "required": ""
+      },
+      model: {
+        value: (addTd.category),
+        callback: function($$v) {
+          addTd.category = _vm._n($$v)
+        },
+        expression: "addTd.category"
+      }
+    }, [_c('option', {
+      attrs: {
+        "disabled": "",
+        "value": "0"
+      }
+    }, [_vm._v("Select one")])])], 1)]) : _vm._e(), _vm._v(" "), (_vm.showAddSerial) ? _c('td', [(addTd.showDescription) ? _c('div', [_c('add', {
+      attrs: {
+        "urlName": "../api/descriptions"
+      },
+      on: {
+        "close": function($event) {
+          addTd.showDescription = false
+        },
+        "fetch": _vm.fetchDescriptions
+      }
+    })], 1) : _c('div', {
+      staticClass: "input-group input-group-sm"
+    }, [_c('span', {
+      staticClass: "input-group-btn"
+    }, [_c('button', {
+      staticClass: "btn btn-sm btn-primary",
+      on: {
+        "click": function($event) {
+          $event.preventDefault();
+          addTd.showDescription = !addTd.showDescription
+        }
+      }
+    }, [_c('i', {
+      staticClass: "glyphicon glyphicon-plus"
+    })])]), _vm._v(" "), _c('select2', {
+      attrs: {
+        "options": _vm.descriptions,
+        "name": "description[]",
+        "urlName": "../api/descriptions"
+      },
+      model: {
+        value: (addTd.description),
+        callback: function($$v) {
+          addTd.description = _vm._n($$v)
+        },
+        expression: "addTd.description"
+      }
+    }, [_c('option', {
+      attrs: {
+        "disabled": "",
+        "value": "0"
+      }
+    }, [_vm._v("Select one")])])], 1)]) : _vm._e(), _vm._v(" "), (_vm.showAddSerial) ? _c('td', [(addTd.showManufacture) ? _c('div', [_c('add', {
+      attrs: {
+        "urlName": "../api/manufactures"
+      },
+      on: {
+        "close": function($event) {
+          addTd.showManufacture = false
+        },
+        "fetch": _vm.fetchManufacture
+      }
+    })], 1) : _c('div', {
+      staticClass: "input-group input-group-sm"
+    }, [_c('span', {
+      staticClass: "input-group-btn"
+    }, [_c('button', {
+      staticClass: "btn btn-sm btn-primary",
+      on: {
+        "click": function($event) {
+          $event.preventDefault();
+          addTd.showManufacture = !addTd.showManufacture
+        }
+      }
+    }, [_c('i', {
+      staticClass: "glyphicon glyphicon-plus"
+    })])]), _vm._v(" "), _c('select2', {
+      attrs: {
+        "options": _vm.manufactures,
+        "name": "manufactures[]",
+        "urlName": "../api/manufactures",
+        "required": ""
+      },
+      model: {
+        value: (addTd.manufacture),
+        callback: function($$v) {
+          addTd.manufacture = _vm._n($$v)
+        },
+        expression: "addTd.manufacture"
+      }
+    }, [_c('option', {
+      attrs: {
+        "disabled": "",
+        "value": "0"
+      }
+    }, [_vm._v("Select one")])])], 1)]) : _vm._e(), _vm._v(" "), _c('td', [_c('select2', {
+      attrs: {
+        "options": _vm.locations,
+        "name": "location[]",
+        "required": ""
+      },
+      model: {
+        value: (addTd.location),
+        callback: function($$v) {
+          addTd.location = _vm._n($$v)
+        },
+        expression: "addTd.location"
+      }
+    }, [_c('option', {
+      attrs: {
+        "disabled": "",
+        "value": "0"
+      }
+    }, [_vm._v("Select one")])])], 1), _vm._v(" "), _c('td', [_c('button', {
+      staticClass: "btn btn-sm btn-danger",
+      on: {
+        "click": function($event) {
+          $event.preventDefault();
+          _vm.removeTD(index)
+        }
+      }
+    }, [_c('i', {
+      staticClass: "glyphicon glyphicon-remove"
+    })])])])
+  }))]), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-primary pull-right",
+    attrs: {
+      "disabled": _vm.disableAddSerial
+    },
+    on: {
+      "click": _vm.addSerial
+    }
+  }, [_vm._v("Add Serial\n                                        ")])])])])])])])])])])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-694382ee", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ 126:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(95);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(12)("48e2f4fc", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-4cf11814\",\"scoped\":false,\"hasInlineConfig\":true}!./select2-bootstrap.min.css", function() {
+     var newContent = require("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-4cf11814\",\"scoped\":false,\"hasInlineConfig\":true}!./select2-bootstrap.min.css");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ 127:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(96);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(12)("1437a1c9", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-4cf11814\",\"scoped\":false,\"hasInlineConfig\":true}!./select2.min.css", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-4cf11814\",\"scoped\":false,\"hasInlineConfig\":true}!./select2.min.css");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ 128:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(97);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(12)("ef355a28", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-55920b7f\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Add.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-55920b7f\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Add.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ 67:
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(11)(
+  /* script */
+  __webpack_require__(89),
+  /* template */
+  __webpack_require__(116),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "C:\\xampp\\htdocs\\inventory_vue__\\resources\\assets\\js\\components\\Transfers\\create.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] create.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-694382ee", Component.options)
+  } else {
+    hotAPI.reload("data-v-694382ee", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 87:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        urlName: String
+    },
+    data: function data() {
+        return {
+            value: '',
+            disableButton: false,
+            hasError: false
+        };
+    },
+
+    methods: {
+        createMethod: function createMethod() {
+            var _this = this;
+
+            var vm = this;
+            vm.disableButton = true;
+            if (!_.isEmpty(vm.value)) {
+                axios.post(vm.urlName, { name: vm.value }).then(function (response) {
+                    vm.disableButton = false;
+                    vm.hasError = false;
+                    _this.$emit('fetch');
+                });
+            } else {
+                vm.disableButton = false;
+                vm.hasError = true;
+            }
+        }
+    }
+});
+
+/***/ }),
+
+/***/ 88:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_select2__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_select2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_select2__);
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['options', 'value', 'name', 'urlName'],
+    data: function data() {
+        return {
+            msg: ''
+        };
+    },
+    mounted: function mounted() {
+        var vm = this;
+
+        $(this.$el)
+        // init select2
+        .select2({ theme: "bootstrap", data: this.options,
+            placeholder: 'Select one',
+            allowClear: false,
+            tags: true,
+            createTag: function createTag(params) {
+                console.log(vm.urlName);
+                var term;
+                if (!_.isEmpty(vm.urlName)) {
+                    term = $.trim(params.term) + (vm.options.some(function (r) {
+                        return r.text == params.term;
+                    }) ? "" : " (new)");
+
+                    if (term === '') {
+                        return null;
+                    }
+                    return {
+                        id: term,
+                        text: term,
+                        isNewFlag: true
+                    };
+                }
+            }
+        }).val(this.value).trigger('change').on('select2:select', function (e) {
+            var _this = this;
+
+            if (!_.isEmpty(vm.urlName)) {
+                if (e.params.data.isNewFlag) {
+                    if (/ \(new\)$/.test(e.params.data.text)) {
+                        console.log(/ \(new\)$/.exec(e.params.data.text));
+                        console.log($.trim(e.params.data.text.replace(/ \(new\)$/, '')));
+                        var post = $.trim(e.params.data.text.replace(/ \(new\)$/, ''));
+                        axios.post(vm.urlName, { name: post }).then(function (response) {
+                            console.log(response);
+                            $(_this).find('[value="' + e.params.data.id + '"]').replaceWith('<option selected value="' + response.data.data.id + '">' + response.data.data.name + '</option>');
+                        });
+                    }
+                }
+            } else {
+                console.log(e.params.data);
+                vm.$emit('selectValue', e.params.data.id);
+                vm.$emit('selectQuantityValue', e.params.data.quantity);
+                vm.$emit('selectStatusValue', e.params.data.status);
+                vm.$emit('selectManufactureValue', e.params.data.manufacture);
+                vm.$emit('selectDescriptionValue', e.params.data.description);
+                vm.$emit('selectLocationValue', e.params.data.location);
+                vm.$emit('selectCategoryValue', e.params.data.category);
+                vm.$emit('selectModelValue', e.params.data.model);
+            }
+        })
+        // emit event on change.
+        .on('change', function (e) {
+            console.log(e);
+            vm.$emit('input', this.value);
+        });
+    },
+
+    watch: {
+        value: function value(_value) {
+            // update value
+            $(this.$el).val(_value).trigger('change');
+        },
+        options: function options(_options) {
+            // update options
+            $(this.$el).select2({ data: _options });
+        }
+    },
+    destroyed: function destroyed() {
+        $(this.$el).off().select2('destroy');
+    }
+});
+
+/***/ }),
+
+/***/ 89:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Select2_vue__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Select2_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Select2_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Add_vue__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Add_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Add_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            laravelToken: window.Laravel.csrfToken,
+            addRows: [],
+            brands: [],
+            categories: [],
+            products: [],
+            descriptions: [],
+            manufactures: [],
+            locations: [],
+            showAddSerial: false,
+            selected: [],
+            disabledButton: false
+        };
+    },
+    mounted: function mounted() {
+        this.fetchProducts();
+        this.fetchModel();
+        this.fetchCategory();
+        this.fetchDescriptions();
+        this.fetchManufacture();
+        this.fetchLocation();
+    },
+
+    computed: {
+        addTd: function addTd() {
+            return {
+                enter: this.addRow,
+                esc: this.deleteRow
+            };
+        },
+        disableAddSerial: function disableAddSerial() {
+            var vm = this;
+            return _.isEmpty(vm.addRows);
+        }
+    },
+    methods: {
+        validateDuplicate: function validateDuplicate(event, index) {
+            var vm = this;
+            var product = _.map(vm.addRows, 'product');
+            var pluckProduct = _.map(vm.products, 'id');
+            var intersect = _.intersection(product, vm.selected);
+            this.selected = intersect;
+            if (_.includes(vm.selected, vm.addRows[index].product)) {
+                console.log('Duplicated Entry');
+                this.addRows[index].hasError = true;
+            } else {
+                this.selected = intersect;
+                this.selected.push(this.addRows[index].product);
+                this.addRows[index].hasError = false;
+            }
+            console.log(pluckProduct);
+            console.log(index);
+        },
+        deleteRow: function deleteRow() {
+            this.addRows.pop();
+        },
+
+        addSerial: function addSerial() {},
+        addRow: function addRow() {
+            this.addRows.push({
+                product: '',
+                serial: null,
+                quantity: 1,
+                status: null,
+                action: null,
+                model: '',
+                category: null,
+                description: null,
+                manufacture: null,
+                location: null,
+
+                createModel: '',
+                createCategory: '',
+                createDescription: '',
+                createManufacture: '',
+                createSerial: '',
+
+                showAddSerial: false,
+                showModel: false,
+                showCategory: false,
+                showDescription: false,
+                showManufacture: false,
+
+                hasError: false,
+                maxQuantity: 0
+            });
+        },
+        removeTD: function removeTD(index) {
+            this.addRows.splice(index, 1);
+            var vm = this;
+            var product = _.map(vm.addRows, 'product');
+            var intersect = _.intersection(product, vm.selected);
+            this.selected = intersect;
+        },
+
+        fetchModel: function fetchModel() {
+            var that = this;
+            $.get("../api/brands", function (data, status) {
+                that.brands = _.map(data.brands, function (data) {
+                    var pick = _.pick(data, 'name', 'id');
+                    var object = { id: pick.id, text: pick.name };
+                    return object;
+                });
+            });
+            //axios.get('../api/brands').then(response => this.brands = _.map(response.data.brands, function(data){ return _.pick(data, 'name', 'id');}))
+        },
+        fetchCategory: function fetchCategory() {
+            var that = this;
+            $.get("../api/categories", function (data, status) {
+                that.categories = _.map(data.categories, function (data) {
+                    var pick = _.pick(data, 'name', 'id');
+                    var object = { id: pick.id, text: pick.name };
+                    return object;
+                });
+            });
+            // axios.get('../api/categories').then(response => this.categories = _.map(response.data.categories, function(data){ return _.pick(data, 'name', 'id');}))
+        },
+        fetchProducts: function fetchProducts() {
+            var that = this;
+            $.get("../api/products", function (data, status) {
+                that.products = _.map(data.products, function (data) {
+                    var pick = _.pick(data, 'serial', 'id', 'quantity', 'status', 'manufacture.id', 'description.id', 'location.id', 'category.id', 'brand.id');
+                    var object = { id: pick.id, text: pick.serial, quantity: pick.quantity, status: pick.status, manufacture: pick.manufacture.id, description: pick.description.id, location: pick.location.id, category: pick.category.id, model: pick.brand.id };
+                    return object;
+                });
+            });
+            //axios.get('../api/products').then(response => this.products = response.data.products)
+        },
+        fetchDescriptions: function fetchDescriptions() {
+            var that = this;
+            $.get("../api/descriptions", function (data, status) {
+                that.descriptions = _.map(data.descriptions, function (data) {
+                    var pick = _.pick(data, 'name', 'id');
+                    var object = { id: pick.id, text: pick.name };
+                    return object;
+                });
+            });
+            // axios.get('../api/descriptions').then(response => this.descriptions =  _.map(response.data.descriptions, function(data){ return _.pick(data, 'name', 'id');}))
+        },
+        fetchManufacture: function fetchManufacture() {
+            var that = this;
+            $.get("../api/manufactures", function (data, status) {
+                that.manufactures = _.map(data.manufactures, function (data) {
+                    var pick = _.pick(data, 'name', 'id');
+                    var object = { id: pick.id, text: pick.name };
+                    return object;
+                });
+            });
+            //   axios.get('../api/manufactures').then(response => this.manufactures =  _.map(response.data.manufactures, function(data){ return _.pick(data, 'name', 'id');}));
+        },
+        fetchLocation: function fetchLocation() {
+            var that = this;
+            $.get("../api/locations", function (data, status) {
+                that.locations = _.map(data.locations, function (data) {
+                    var pick = _.pick(data, 'name', 'id');
+                    var object = { id: pick.id, text: pick.name };
+                    return object;
+                });
+            });
+            //axios.get('../api/locations').then(response => this.locations =  _.map(response.data.locations, function(data){ return _.pick(data, 'name', 'id');}));
+        }
+
+    },
+    components: {
+        'select2': __WEBPACK_IMPORTED_MODULE_0__Select2_vue___default.a,
+        'add': __WEBPACK_IMPORTED_MODULE_1__Add_vue___default.a
+    }
+});
+
+/***/ }),
+
+/***/ 95:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)();
+exports.push([module.i, "/*!\n * Select2 Bootstrap Theme v0.1.0-beta.10 (https://select2.github.io/select2-bootstrap-theme)\n * Copyright 2015-2017 Florian Kissling and contributors (https://github.com/select2/select2-bootstrap-theme/graphs/contributors)\n * Licensed under MIT (https://github.com/select2/select2-bootstrap-theme/blob/master/LICENSE)\n */\n.select2-container--bootstrap{display:block\n}\n.select2-container--bootstrap .select2-selection{box-shadow:inset 0 1px 1px rgba(0,0,0,.075);background-color:#fff;border:1px solid #ccc;border-radius:4px;color:#555;font-size:14px;outline:0\n}\n.select2-container--bootstrap .select2-selection.form-control{border-radius:4px\n}\n.select2-container--bootstrap .select2-search--dropdown .select2-search__field{box-shadow:inset 0 1px 1px rgba(0,0,0,.075);background-color:#fff;border:1px solid #ccc;border-radius:4px;color:#555;font-size:14px\n}\n.select2-container--bootstrap .select2-search__field{outline:0\n}\n.select2-container--bootstrap .select2-search__field::-webkit-input-placeholder{color:#999\n}\n.select2-container--bootstrap .select2-search__field:-moz-placeholder{color:#999\n}\n.select2-container--bootstrap .select2-search__field::-moz-placeholder{color:#999;opacity:1\n}\n.select2-container--bootstrap .select2-search__field:-ms-input-placeholder{color:#999\n}\n.select2-container--bootstrap .select2-results__option{padding:6px 12px\n}\n.select2-container--bootstrap .select2-results__option[role=group]{padding:0\n}\n.select2-container--bootstrap .select2-results__option[aria-disabled=true]{color:#777;cursor:not-allowed\n}\n.select2-container--bootstrap .select2-results__option[aria-selected=true]{background-color:#f5f5f5;color:#262626\n}\n.select2-container--bootstrap .select2-results__option--highlighted[aria-selected]{background-color:#337ab7;color:#fff\n}\n.select2-container--bootstrap .select2-results__option .select2-results__option{padding:6px 12px\n}\n.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__group{padding-left:0\n}\n.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__option{margin-left:-12px;padding-left:24px\n}\n.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-24px;padding-left:36px\n}\n.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-36px;padding-left:48px\n}\n.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-48px;padding-left:60px\n}\n.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-60px;padding-left:72px\n}\n.select2-container--bootstrap .select2-results__group{color:#777;display:block;padding:6px 12px;font-size:12px;line-height:1.42857143;white-space:nowrap\n}\n.select2-container--bootstrap.select2-container--focus .select2-selection,.select2-container--bootstrap.select2-container--open .select2-selection{box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;border-color:#66afe9\n}\n.select2-container--bootstrap.select2-container--open .select2-selection .select2-selection__arrow b{border-color:transparent transparent #999;border-width:0 4px 4px\n}\n.select2-container--bootstrap.select2-container--open.select2-container--below .select2-selection{border-bottom-right-radius:0;border-bottom-left-radius:0;border-bottom-color:transparent\n}\n.select2-container--bootstrap.select2-container--open.select2-container--above .select2-selection{border-top-right-radius:0;border-top-left-radius:0;border-top-color:transparent\n}\n.select2-container--bootstrap .select2-selection__clear{color:#999;cursor:pointer;float:right;font-weight:700;margin-right:10px\n}\n.select2-container--bootstrap .select2-selection__clear:hover{color:#333\n}\n.select2-container--bootstrap.select2-container--disabled .select2-selection{border-color:#ccc;box-shadow:none\n}\n.select2-container--bootstrap.select2-container--disabled .select2-search__field,.select2-container--bootstrap.select2-container--disabled .select2-selection{cursor:not-allowed\n}\n.select2-container--bootstrap.select2-container--disabled .select2-selection,.select2-container--bootstrap.select2-container--disabled .select2-selection--multiple .select2-selection__choice{background-color:#eee\n}\n.select2-container--bootstrap.select2-container--disabled .select2-selection--multiple .select2-selection__choice__remove,.select2-container--bootstrap.select2-container--disabled .select2-selection__clear{display:none\n}\n.select2-container--bootstrap .select2-dropdown{box-shadow:0 6px 12px rgba(0,0,0,.175);border-color:#66afe9;overflow-x:hidden;margin-top:-1px\n}\n.select2-container--bootstrap .select2-dropdown--above{box-shadow:0 -6px 12px rgba(0,0,0,.175);margin-top:1px\n}\n.select2-container--bootstrap .select2-results>.select2-results__options{max-height:200px;overflow-y:auto\n}\n.select2-container--bootstrap .select2-selection--single{height:34px;line-height:1.42857143;padding:6px 24px 6px 12px\n}\n.select2-container--bootstrap .select2-selection--single .select2-selection__arrow{position:absolute;bottom:0;right:12px;top:0;width:4px\n}\n.select2-container--bootstrap .select2-selection--single .select2-selection__arrow b{border-color:#999 transparent transparent;border-style:solid;border-width:4px 4px 0;height:0;left:0;margin-left:-4px;margin-top:-2px;position:absolute;top:50%;width:0\n}\n.select2-container--bootstrap .select2-selection--single .select2-selection__rendered{color:#555;padding:0\n}\n.select2-container--bootstrap .select2-selection--single .select2-selection__placeholder{color:#999\n}\n.select2-container--bootstrap .select2-selection--multiple{min-height:34px;padding:0;height:auto\n}\n.select2-container--bootstrap .select2-selection--multiple .select2-selection__rendered{box-sizing:border-box;display:block;line-height:1.42857143;list-style:none;margin:0;overflow:hidden;padding:0;width:100%;text-overflow:ellipsis;white-space:nowrap\n}\n.select2-container--bootstrap .select2-selection--multiple .select2-selection__placeholder{color:#999;float:left;margin-top:5px\n}\n.select2-container--bootstrap .select2-selection--multiple .select2-selection__choice{color:#555;background:#fff;border:1px solid #ccc;border-radius:4px;cursor:default;float:left;margin:5px 0 0 6px;padding:0 6px\n}\n.select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field{background:0 0;padding:0 12px;height:32px;line-height:1.42857143;margin-top:0;min-width:5em\n}\n.select2-container--bootstrap .select2-selection--multiple .select2-selection__choice__remove{color:#999;cursor:pointer;display:inline-block;font-weight:700;margin-right:3px\n}\n.select2-container--bootstrap .select2-selection--multiple .select2-selection__choice__remove:hover{color:#333\n}\n.select2-container--bootstrap .select2-selection--multiple .select2-selection__clear{margin-top:6px\n}\n.form-group-sm .select2-container--bootstrap .select2-selection--single,.input-group-sm .select2-container--bootstrap .select2-selection--single,.select2-container--bootstrap .select2-selection--single.input-sm{border-radius:3px;font-size:12px;height:30px;line-height:1.5;padding:5px 22px 5px 10px\n}\n.form-group-sm .select2-container--bootstrap .select2-selection--single .select2-selection__arrow b,.input-group-sm .select2-container--bootstrap .select2-selection--single .select2-selection__arrow b,.select2-container--bootstrap .select2-selection--single.input-sm .select2-selection__arrow b{margin-left:-5px\n}\n.form-group-sm .select2-container--bootstrap .select2-selection--multiple,.input-group-sm .select2-container--bootstrap .select2-selection--multiple,.select2-container--bootstrap .select2-selection--multiple.input-sm{min-height:30px;border-radius:3px\n}\n.form-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice,.input-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice,.select2-container--bootstrap .select2-selection--multiple.input-sm .select2-selection__choice{font-size:12px;line-height:1.5;margin:4px 0 0 5px;padding:0 5px\n}\n.form-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field,.input-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field,.select2-container--bootstrap .select2-selection--multiple.input-sm .select2-search--inline .select2-search__field{padding:0 10px;font-size:12px;height:28px;line-height:1.5\n}\n.form-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-selection__clear,.input-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-selection__clear,.select2-container--bootstrap .select2-selection--multiple.input-sm .select2-selection__clear{margin-top:5px\n}\n.form-group-lg .select2-container--bootstrap .select2-selection--single,.input-group-lg .select2-container--bootstrap .select2-selection--single,.select2-container--bootstrap .select2-selection--single.input-lg{border-radius:6px;font-size:18px;height:46px;line-height:1.3333333;padding:10px 31px 10px 16px\n}\n.form-group-lg .select2-container--bootstrap .select2-selection--single .select2-selection__arrow,.input-group-lg .select2-container--bootstrap .select2-selection--single .select2-selection__arrow,.select2-container--bootstrap .select2-selection--single.input-lg .select2-selection__arrow{width:5px\n}\n.form-group-lg .select2-container--bootstrap .select2-selection--single .select2-selection__arrow b,.input-group-lg .select2-container--bootstrap .select2-selection--single .select2-selection__arrow b,.select2-container--bootstrap .select2-selection--single.input-lg .select2-selection__arrow b{border-width:5px 5px 0;margin-left:-10px;margin-top:-2.5px\n}\n.form-group-lg .select2-container--bootstrap .select2-selection--multiple,.input-group-lg .select2-container--bootstrap .select2-selection--multiple,.select2-container--bootstrap .select2-selection--multiple.input-lg{min-height:46px;border-radius:6px\n}\n.form-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice,.input-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice,.select2-container--bootstrap .select2-selection--multiple.input-lg .select2-selection__choice{font-size:18px;line-height:1.3333333;border-radius:4px;margin:9px 0 0 8px;padding:0 10px\n}\n.form-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field,.input-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field,.select2-container--bootstrap .select2-selection--multiple.input-lg .select2-search--inline .select2-search__field{padding:0 16px;font-size:18px;height:44px;line-height:1.3333333\n}\n.form-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-selection__clear,.input-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-selection__clear,.select2-container--bootstrap .select2-selection--multiple.input-lg .select2-selection__clear{margin-top:10px\n}\n.input-group-lg .select2-container--bootstrap .select2-selection.select2-container--open .select2-selection--single .select2-selection__arrow b,.select2-container--bootstrap .select2-selection.input-lg.select2-container--open .select2-selection--single .select2-selection__arrow b{border-color:transparent transparent #999;border-width:0 5px 5px\n}\n.select2-container--bootstrap[dir=rtl] .select2-selection--single{padding-left:24px;padding-right:12px\n}\n.select2-container--bootstrap[dir=rtl] .select2-selection--single .select2-selection__rendered{padding-right:0;padding-left:0;text-align:right\n}\n.select2-container--bootstrap[dir=rtl] .select2-selection--single .select2-selection__clear{float:left\n}\n.select2-container--bootstrap[dir=rtl] .select2-selection--single .select2-selection__arrow{left:12px;right:auto\n}\n.select2-container--bootstrap[dir=rtl] .select2-selection--single .select2-selection__arrow b{margin-left:0\n}\n.select2-container--bootstrap[dir=rtl] .select2-selection--multiple .select2-search--inline,.select2-container--bootstrap[dir=rtl] .select2-selection--multiple .select2-selection__choice,.select2-container--bootstrap[dir=rtl] .select2-selection--multiple .select2-selection__placeholder{float:right\n}\n.select2-container--bootstrap[dir=rtl] .select2-selection--multiple .select2-selection__choice{margin-left:0;margin-right:6px\n}\n.select2-container--bootstrap[dir=rtl] .select2-selection--multiple .select2-selection__choice__remove{margin-left:2px;margin-right:auto\n}\n.has-warning .select2-dropdown,.has-warning .select2-selection{border-color:#8a6d3b\n}\n.has-warning .select2-container--focus .select2-selection,.has-warning .select2-container--open .select2-selection{box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #c0a16b;border-color:#66512c\n}\n.has-warning.select2-drop-active{border-color:#66512c\n}\n.has-warning.select2-drop-active.select2-drop.select2-drop-above{border-top-color:#66512c\n}\n.has-error .select2-dropdown,.has-error .select2-selection{border-color:#a94442\n}\n.has-error .select2-container--focus .select2-selection,.has-error .select2-container--open .select2-selection{box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #ce8483;border-color:#843534\n}\n.has-error.select2-drop-active{border-color:#843534\n}\n.has-error.select2-drop-active.select2-drop.select2-drop-above{border-top-color:#843534\n}\n.has-success .select2-dropdown,.has-success .select2-selection{border-color:#3c763d\n}\n.has-success .select2-container--focus .select2-selection,.has-success .select2-container--open .select2-selection{box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #67b168;border-color:#2b542c\n}\n.has-success.select2-drop-active{border-color:#2b542c\n}\n.has-success.select2-drop-active.select2-drop.select2-drop-above{border-top-color:#2b542c\n}\n.input-group>.select2-hidden-accessible:first-child+.select2-container--bootstrap>.selection>.select2-selection,.input-group>.select2-hidden-accessible:first-child+.select2-container--bootstrap>.selection>.select2-selection.form-control{border-bottom-right-radius:0;border-top-right-radius:0\n}\n.input-group>.select2-hidden-accessible:not(:first-child)+.select2-container--bootstrap:not(:last-child)>.selection>.select2-selection,.input-group>.select2-hidden-accessible:not(:first-child)+.select2-container--bootstrap:not(:last-child)>.selection>.select2-selection.form-control{border-radius:0\n}\n.input-group>.select2-hidden-accessible:not(:first-child):not(:last-child)+.select2-container--bootstrap:last-child>.selection>.select2-selection,.input-group>.select2-hidden-accessible:not(:first-child):not(:last-child)+.select2-container--bootstrap:last-child>.selection>.select2-selection.form-control{border-bottom-left-radius:0;border-top-left-radius:0\n}\n.input-group>.select2-container--bootstrap{display:table;table-layout:fixed;position:relative;z-index:2;width:100%;margin-bottom:0\n}\n.input-group>.select2-container--bootstrap>.selection>.select2-selection.form-control{float:none\n}\n.input-group>.select2-container--bootstrap.select2-container--focus,.input-group>.select2-container--bootstrap.select2-container--open{z-index:3\n}\n.input-group>.select2-container--bootstrap,.input-group>.select2-container--bootstrap .input-group-btn,.input-group>.select2-container--bootstrap .input-group-btn .btn{vertical-align:top\n}\n.form-control.select2-hidden-accessible{position:absolute!important;width:1px!important\n}\n@media (min-width:768px){\n.form-inline .select2-container--bootstrap{display:inline-block\n}\n}\n", ""]);
+
+/***/ }),
+
+/***/ 96:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)();
+exports.push([module.i, "\n.select2-container{box-sizing:border-box;display:inline-block;margin:0;position:relative;vertical-align:middle\n}\n.select2-container .select2-selection--single{box-sizing:border-box;cursor:pointer;display:block;height:28px;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-select:none\n}\n.select2-container .select2-selection--single .select2-selection__rendered{display:block;padding-left:8px;padding-right:20px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap\n}\n.select2-container .select2-selection--single .select2-selection__clear{position:relative\n}\n.select2-container[dir=\"rtl\"] .select2-selection--single .select2-selection__rendered{padding-right:8px;padding-left:20px\n}\n.select2-container .select2-selection--multiple{box-sizing:border-box;cursor:pointer;display:block;min-height:32px;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-select:none\n}\n.select2-container .select2-selection--multiple .select2-selection__rendered{display:inline-block;overflow:hidden;padding-left:8px;text-overflow:ellipsis;white-space:nowrap\n}\n.select2-container .select2-search--inline{float:left\n}\n.select2-container .select2-search--inline .select2-search__field{box-sizing:border-box;border:none;font-size:100%;margin-top:5px;padding:0\n}\n.select2-container .select2-search--inline .select2-search__field::-webkit-search-cancel-button{-webkit-appearance:none\n}\n.select2-dropdown{background-color:white;border:1px solid #aaa;border-radius:4px;box-sizing:border-box;display:block;position:absolute;left:-100000px;width:100%;z-index:1051\n}\n.select2-results{display:block\n}\n.select2-results__options{list-style:none;margin:0;padding:0\n}\n.select2-results__option{padding:6px;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-select:none\n}\n.select2-results__option[aria-selected]{cursor:pointer\n}\n.select2-container--open .select2-dropdown{left:0\n}\n.select2-container--open .select2-dropdown--above{border-bottom:none;border-bottom-left-radius:0;border-bottom-right-radius:0\n}\n.select2-container--open .select2-dropdown--below{border-top:none;border-top-left-radius:0;border-top-right-radius:0\n}\n.select2-search--dropdown{display:block;padding:4px\n}\n.select2-search--dropdown .select2-search__field{padding:4px;width:100%;box-sizing:border-box\n}\n.select2-search--dropdown .select2-search__field::-webkit-search-cancel-button{-webkit-appearance:none\n}\n.select2-search--dropdown.select2-search--hide{display:none\n}\n.select2-close-mask{border:0;margin:0;padding:0;display:block;position:fixed;left:0;top:0;min-height:100%;min-width:100%;height:auto;width:auto;opacity:0;z-index:99;background-color:#fff;filter:alpha(opacity=0)\n}\n.select2-hidden-accessible{border:0 !important;clip:rect(0 0 0 0) !important;height:1px !important;margin:-1px !important;overflow:hidden !important;padding:0 !important;position:absolute !important;width:1px !important\n}\n.select2-container--default .select2-selection--single{background-color:#fff;border:1px solid #aaa;border-radius:4px\n}\n.select2-container--default .select2-selection--single .select2-selection__rendered{color:#444;line-height:28px\n}\n.select2-container--default .select2-selection--single .select2-selection__clear{cursor:pointer;float:right;font-weight:bold\n}\n.select2-container--default .select2-selection--single .select2-selection__placeholder{color:#999\n}\n.select2-container--default .select2-selection--single .select2-selection__arrow{height:26px;position:absolute;top:1px;right:1px;width:20px\n}\n.select2-container--default .select2-selection--single .select2-selection__arrow b{border-color:#888 transparent transparent transparent;border-style:solid;border-width:5px 4px 0 4px;height:0;left:50%;margin-left:-4px;margin-top:-2px;position:absolute;top:50%;width:0\n}\n.select2-container--default[dir=\"rtl\"] .select2-selection--single .select2-selection__clear{float:left\n}\n.select2-container--default[dir=\"rtl\"] .select2-selection--single .select2-selection__arrow{left:1px;right:auto\n}\n.select2-container--default.select2-container--disabled .select2-selection--single{background-color:#eee;cursor:default\n}\n.select2-container--default.select2-container--disabled .select2-selection--single .select2-selection__clear{display:none\n}\n.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b{border-color:transparent transparent #888 transparent;border-width:0 4px 5px 4px\n}\n.select2-container--default .select2-selection--multiple{background-color:white;border:1px solid #aaa;border-radius:4px;cursor:text\n}\n.select2-container--default .select2-selection--multiple .select2-selection__rendered{box-sizing:border-box;list-style:none;margin:0;padding:0 5px;width:100%\n}\n.select2-container--default .select2-selection--multiple .select2-selection__rendered li{list-style:none\n}\n.select2-container--default .select2-selection--multiple .select2-selection__placeholder{color:#999;margin-top:5px;float:left\n}\n.select2-container--default .select2-selection--multiple .select2-selection__clear{cursor:pointer;float:right;font-weight:bold;margin-top:5px;margin-right:10px\n}\n.select2-container--default .select2-selection--multiple .select2-selection__choice{background-color:#e4e4e4;border:1px solid #aaa;border-radius:4px;cursor:default;float:left;margin-right:5px;margin-top:5px;padding:0 5px\n}\n.select2-container--default .select2-selection--multiple .select2-selection__choice__remove{color:#999;cursor:pointer;display:inline-block;font-weight:bold;margin-right:2px\n}\n.select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover{color:#333\n}\n.select2-container--default[dir=\"rtl\"] .select2-selection--multiple .select2-selection__choice,.select2-container--default[dir=\"rtl\"] .select2-selection--multiple .select2-selection__placeholder,.select2-container--default[dir=\"rtl\"] .select2-selection--multiple .select2-search--inline{float:right\n}\n.select2-container--default[dir=\"rtl\"] .select2-selection--multiple .select2-selection__choice{margin-left:5px;margin-right:auto\n}\n.select2-container--default[dir=\"rtl\"] .select2-selection--multiple .select2-selection__choice__remove{margin-left:2px;margin-right:auto\n}\n.select2-container--default.select2-container--focus .select2-selection--multiple{border:solid black 1px;outline:0\n}\n.select2-container--default.select2-container--disabled .select2-selection--multiple{background-color:#eee;cursor:default\n}\n.select2-container--default.select2-container--disabled .select2-selection__choice__remove{display:none\n}\n.select2-container--default.select2-container--open.select2-container--above .select2-selection--single,.select2-container--default.select2-container--open.select2-container--above .select2-selection--multiple{border-top-left-radius:0;border-top-right-radius:0\n}\n.select2-container--default.select2-container--open.select2-container--below .select2-selection--single,.select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple{border-bottom-left-radius:0;border-bottom-right-radius:0\n}\n.select2-container--default .select2-search--dropdown .select2-search__field{border:1px solid #aaa\n}\n.select2-container--default .select2-search--inline .select2-search__field{background:transparent;border:none;outline:0;box-shadow:none;-webkit-appearance:textfield\n}\n.select2-container--default .select2-results>.select2-results__options{max-height:200px;overflow-y:auto\n}\n.select2-container--default .select2-results__option[role=group]{padding:0\n}\n.select2-container--default .select2-results__option[aria-disabled=true]{color:#999\n}\n.select2-container--default .select2-results__option[aria-selected=true]{background-color:#ddd\n}\n.select2-container--default .select2-results__option .select2-results__option{padding-left:1em\n}\n.select2-container--default .select2-results__option .select2-results__option .select2-results__group{padding-left:0\n}\n.select2-container--default .select2-results__option .select2-results__option .select2-results__option{margin-left:-1em;padding-left:2em\n}\n.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-2em;padding-left:3em\n}\n.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-3em;padding-left:4em\n}\n.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-4em;padding-left:5em\n}\n.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-5em;padding-left:6em\n}\n.select2-container--default .select2-results__option--highlighted[aria-selected]{background-color:#5897fb;color:white\n}\n.select2-container--default .select2-results__group{cursor:default;display:block;padding:6px\n}\n.select2-container--classic .select2-selection--single{background-color:#f7f7f7;border:1px solid #aaa;border-radius:4px;outline:0;background-image:linear-gradient(to bottom, #fff 50%, #eee 100%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEEEEEE', GradientType=0)\n}\n.select2-container--classic .select2-selection--single:focus{border:1px solid #5897fb\n}\n.select2-container--classic .select2-selection--single .select2-selection__rendered{color:#444;line-height:28px\n}\n.select2-container--classic .select2-selection--single .select2-selection__clear{cursor:pointer;float:right;font-weight:bold;margin-right:10px\n}\n.select2-container--classic .select2-selection--single .select2-selection__placeholder{color:#999\n}\n.select2-container--classic .select2-selection--single .select2-selection__arrow{background-color:#ddd;border:none;border-left:1px solid #aaa;border-top-right-radius:4px;border-bottom-right-radius:4px;height:26px;position:absolute;top:1px;right:1px;width:20px;background-image:linear-gradient(to bottom, #eee 50%, #ccc 100%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFCCCCCC', GradientType=0)\n}\n.select2-container--classic .select2-selection--single .select2-selection__arrow b{border-color:#888 transparent transparent transparent;border-style:solid;border-width:5px 4px 0 4px;height:0;left:50%;margin-left:-4px;margin-top:-2px;position:absolute;top:50%;width:0\n}\n.select2-container--classic[dir=\"rtl\"] .select2-selection--single .select2-selection__clear{float:left\n}\n.select2-container--classic[dir=\"rtl\"] .select2-selection--single .select2-selection__arrow{border:none;border-right:1px solid #aaa;border-radius:0;border-top-left-radius:4px;border-bottom-left-radius:4px;left:1px;right:auto\n}\n.select2-container--classic.select2-container--open .select2-selection--single{border:1px solid #5897fb\n}\n.select2-container--classic.select2-container--open .select2-selection--single .select2-selection__arrow{background:transparent;border:none\n}\n.select2-container--classic.select2-container--open .select2-selection--single .select2-selection__arrow b{border-color:transparent transparent #888 transparent;border-width:0 4px 5px 4px\n}\n.select2-container--classic.select2-container--open.select2-container--above .select2-selection--single{border-top:none;border-top-left-radius:0;border-top-right-radius:0;background-image:linear-gradient(to bottom, #fff 0%, #eee 50%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEEEEEE', GradientType=0)\n}\n.select2-container--classic.select2-container--open.select2-container--below .select2-selection--single{border-bottom:none;border-bottom-left-radius:0;border-bottom-right-radius:0;background-image:linear-gradient(to bottom, #eee 50%, #fff 100%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFFFFFFF', GradientType=0)\n}\n.select2-container--classic .select2-selection--multiple{background-color:white;border:1px solid #aaa;border-radius:4px;cursor:text;outline:0\n}\n.select2-container--classic .select2-selection--multiple:focus{border:1px solid #5897fb\n}\n.select2-container--classic .select2-selection--multiple .select2-selection__rendered{list-style:none;margin:0;padding:0 5px\n}\n.select2-container--classic .select2-selection--multiple .select2-selection__clear{display:none\n}\n.select2-container--classic .select2-selection--multiple .select2-selection__choice{background-color:#e4e4e4;border:1px solid #aaa;border-radius:4px;cursor:default;float:left;margin-right:5px;margin-top:5px;padding:0 5px\n}\n.select2-container--classic .select2-selection--multiple .select2-selection__choice__remove{color:#888;cursor:pointer;display:inline-block;font-weight:bold;margin-right:2px\n}\n.select2-container--classic .select2-selection--multiple .select2-selection__choice__remove:hover{color:#555\n}\n.select2-container--classic[dir=\"rtl\"] .select2-selection--multiple .select2-selection__choice{float:right\n}\n.select2-container--classic[dir=\"rtl\"] .select2-selection--multiple .select2-selection__choice{margin-left:5px;margin-right:auto\n}\n.select2-container--classic[dir=\"rtl\"] .select2-selection--multiple .select2-selection__choice__remove{margin-left:2px;margin-right:auto\n}\n.select2-container--classic.select2-container--open .select2-selection--multiple{border:1px solid #5897fb\n}\n.select2-container--classic.select2-container--open.select2-container--above .select2-selection--multiple{border-top:none;border-top-left-radius:0;border-top-right-radius:0\n}\n.select2-container--classic.select2-container--open.select2-container--below .select2-selection--multiple{border-bottom:none;border-bottom-left-radius:0;border-bottom-right-radius:0\n}\n.select2-container--classic .select2-search--dropdown .select2-search__field{border:1px solid #aaa;outline:0\n}\n.select2-container--classic .select2-search--inline .select2-search__field{outline:0;box-shadow:none\n}\n.select2-container--classic .select2-dropdown{background-color:#fff;border:1px solid transparent\n}\n.select2-container--classic .select2-dropdown--above{border-bottom:none\n}\n.select2-container--classic .select2-dropdown--below{border-top:none\n}\n.select2-container--classic .select2-results>.select2-results__options{max-height:200px;overflow-y:auto\n}\n.select2-container--classic .select2-results__option[role=group]{padding:0\n}\n.select2-container--classic .select2-results__option[aria-disabled=true]{color:grey\n}\n.select2-container--classic .select2-results__option--highlighted[aria-selected]{background-color:#3875d7;color:#fff\n}\n.select2-container--classic .select2-results__group{cursor:default;display:block;padding:6px\n}\n.select2-container--classic.select2-container--open .select2-dropdown{border-color:#5897fb\n}\n", ""]);
+
+/***/ }),
+
+/***/ 97:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)();
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 /***/ })
 
