@@ -29,6 +29,7 @@ axios.interceptors.request.use(function (config) {
 axios.interceptors.response.use(function (response) {
     // Do something with response data
     NProgress.done();
+
     return response;
 }, function (error) {
     // Do something with response error

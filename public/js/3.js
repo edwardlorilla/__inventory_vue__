@@ -1,6 +1,6 @@
 webpackJsonp([3],{
 
-/***/ 119:
+/***/ 113:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -15,10 +15,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "tag": "button",
       "to": {
-        name: 'createLocations'
+        name: 'createManufactures'
       }
     }
-  }, [_vm._v("Create Location\n    ")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("Create Manufacture\n    ")]), _vm._v(" "), _c('div', {
     staticClass: "form-group pull-right"
   }, [_c('input', {
     directives: [{
@@ -55,13 +55,13 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-744037c6", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-0ff54680", module.exports)
   }
 }
 
 /***/ }),
 
-/***/ 130:
+/***/ 131:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -71,13 +71,13 @@ var content = __webpack_require__(99);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(12)("22c225f6", content, false);
+var update = __webpack_require__(12)("62b255d6", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-744037c6\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-744037c6\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-0ff54680\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-0ff54680\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -88,24 +88,24 @@ if(false) {
 
 /***/ }),
 
-/***/ 59:
+/***/ 61:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(130)
+__webpack_require__(131)
 
 var Component = __webpack_require__(11)(
   /* script */
-  __webpack_require__(80),
+  __webpack_require__(90),
   /* template */
-  __webpack_require__(119),
+  __webpack_require__(113),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\inventory_vue__\\resources\\assets\\js\\components\\Locations\\index.vue"
+Component.options.__file = "C:\\xampp\\htdocs\\inventory_vue__\\resources\\assets\\js\\components\\Manufactures\\index.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] index.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -116,9 +116,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-744037c6", Component.options)
+    hotAPI.createRecord("data-v-0ff54680", Component.options)
   } else {
-    hotAPI.reload("data-v-744037c6", Component.options)
+    hotAPI.reload("data-v-0ff54680", Component.options)
   }
 })()}
 
@@ -482,7 +482,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         attrs: {
           "to": '/products/' + entry['id'] + '/edit'
         }
-      }, [_vm._v(_vm._s(_vm._f("padend")(entry['serial'])))])], 1) : _c('span', [_vm._v(_vm._s(entry[key]))])])
+      }, [_vm._v(_vm._s(entry['serial']))])], 1) : _c('span', [_vm._v(_vm._s(entry[key]))])])
     }))
   }))], 1)]), _vm._v(" "), _c('nav', {
     attrs: {
@@ -577,7 +577,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 80:
+/***/ 90:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -637,11 +637,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         fetchbrands: function fetchbrands() {
-            //axios.get('api/locations').then(response => this.brands = response.data.locations)
             var that = this;
             that.loading = true;
-            $.get("api/locations", function (data, status) {
-                that.brands = _.map(data.locations, function (data) {
+            $.get("api/manufactures", function (data, status) {
+                that.brands = _.map(data.manufactures, function (data) {
                     return _.pick(data, 'name', 'id');
                 });
                 that.loading = false;

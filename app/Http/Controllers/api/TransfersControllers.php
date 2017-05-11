@@ -222,4 +222,9 @@ class TransfersControllers extends Controller
     {
         //
     }
+
+    public function history($transfer)
+    {
+       return  \App\Tranfer::with('product', 'location')->where('product_id', $transfer)->orderBy('updated_at', 'desc')->get();
+    }
 }

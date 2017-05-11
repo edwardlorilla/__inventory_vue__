@@ -52,7 +52,8 @@
                             console.log($.trim(e.params.data.text.replace(/ \(new\)$/, '')));
                             var post = $.trim(e.params.data.text.replace(/ \(new\)$/, ''));
                             axios.post(vm.urlName, {name : post}).then(response => {
-                                console.log(response)
+                                console.log(response.data.data.id)
+                                 vm.$emit('modelId',response.data.data.id)
                                  $(this).find('[value="'+e.params.data.id+'"]').replaceWith('<option selected value="'+response.data.data.id+'">'+response.data.data.name+'</option>');
                             })
                         }

@@ -265,7 +265,7 @@
                                                     <td>
                                                         <select2 :options="locations" name="location[]"
                                                                  required
-                                                                 v-model.number="addTd.location">
+                                                                 v-model="addTd.location">
                                                             <option disabled value="0">Select one</option>
                                                         </select2>
                                                     </td>

@@ -47,6 +47,7 @@ export default [
         component: createBrands,
         name: 'createBrands',
     },
+    //products
     {
         path: '/products',
         component: Products,
@@ -55,34 +56,19 @@ export default [
     },
     {
         path: '/products/:id', component: ProductShow,
-        children: [
-            {
-                path: 'edit',
-                name:'productEdit',
-                component: ProductEdit
-            },
-            {
-                path: 'history',
-                component: ProductHistory
-            }
-        ]
-
+    },
+    {
+        path: '/products/:id/edit', component: ProductEdit
+    },
+    {
+        path: '/products/:id/history', component: ProductHistory
     },
     {
         path: '/products/create',
         component: createProducts,
         name: 'createProducts',
-        meta: {
-            progress: {
-                func: [
-                    {call: 'color', modifier: 'temp', argument: '#E91E63'},
-                    {call: 'fail', modifier: 'temp', argument: '#6e0000'},
-                    {call: 'location', modifier: 'temp', argument: 'top'},
-                    {call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
-                ]
-            }
-        }
     },
+    //end of products
     {
         path: '/categories',
         component: Categories,

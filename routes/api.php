@@ -22,4 +22,5 @@ Route::resource('descriptions', 'api\DescriptionsControllers');
 Route::resource('locations', 'api\LocationsControllers');
 Route::resource('manufactures', 'api\ManufacturesControllers');
 Route::resource('transfers', 'api\TransfersControllers');
+Route::get('transfers/{transfers}/history', 'api\TransfersControllers@history');
 Route::resource('products', 'api\ProductsControllers');

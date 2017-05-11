@@ -85,7 +85,20 @@ class ProductsControllers extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = \App\Product::with(['location' => function($query) {
+            $query->select(['id', 'name']);
+        },'manufacture' => function($query) {
+            $query->select(['id', 'name']);
+        },'description' => function($query) {
+            $query->select(['id', 'name']);
+        }, 'category' => function($query) {
+            $query->select(['id', 'name']);
+        },  'brand' => function($query) {
+            $query->select(['id', 'name']);
+        }] )->where('id' , $id)->first();
+        return response()->json([
+            'data' => $data
+        ]);
     }
 
     /**
@@ -97,7 +110,22 @@ class ProductsControllers extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+       \App\Product::where('id', $id)->update(
+            [
+                'serial' => $request->input('products.serial'),
+                'quantity' => $request->input('products.quantity'),
+                'manufacture_id' => $request->input('products.manufacture'),
+                'description_id' => $request->input('products.description'),
+                'location_id' => $request->input('products.location'),
+                'category_id' => $request->input('products.category'),
+                'brand_id' => $request->input('products.model'),
+                'status' => $request->input('products.status')
+            ]
+        );
+        return response()->json([
+            'data' => ['message' => 'Tech Item ' . $request->input('products.serial') . ' has updated' ]
+        ]);
     }
 
     /**
