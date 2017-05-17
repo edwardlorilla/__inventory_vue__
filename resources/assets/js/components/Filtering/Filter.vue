@@ -1,12 +1,11 @@
 
 <template>
     <div>
-
         <div style="margin-top: 8px;" class="panel panel-default">
-            <div class="panel-heading">Brands</div>
+            <div class="panel-heading">{{titleHead}}</div>
             <div class="panel-body ">
                 <div class="table-responsive">
-                <table id="example" class="table table-striped table-bordered">
+                <table  class="table table-striped table-bordered">
                     <thead>
                     <tr>
                         <th v-for="key in columns"
@@ -14,7 +13,7 @@
                             v-show="key === 'id' ? false : true"
                             :class="{ active: sortKey == key }">
                             {{ key | capitalize }}
-                            <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
+                            <span class="glyphicon" :class="sortOrders[key] > 0 ? 'glyphicon-sort-by-attributes' : 'glyphicon-sort-by-attributes-alt'">
                                     </span>
                         </th>
                     </tr>
@@ -24,6 +23,7 @@
                         <th v-for="key in columns"
                             v-show="key === 'id' ? false : true"
                         >
+
                             <input class="input form-control" v-model="searchOrder[key]" :placeholder="key"/>
                         </th>
                     </tr>
@@ -48,7 +48,12 @@
                                 :key="index"
                                 :data-index="index"
                             >
-                                <span v-if="entry[key] === entry['serial']"><router-link :to="'/products/' + entry['id'] + '/edit'" >{{entry['serial']}}</router-link></span>
+                                <span v-if="entry[key] === entry['serial']"><router-link :to="'/products/' + entry['id'] + '/edit'" >{{entry[key]}}</router-link></span>
+                                <span v-else-if="entry[key] === entry['name'] && titleHead === 'Manufactures'"><router-link :to="'/manufactures/' + entry['id'] + '/edit'" >{{entry[key]}}</router-link></span>
+                                <span v-else-if="entry[key] === entry['name'] && titleHead === 'Locations'"><router-link :to="'/locations/' + entry['id'] + '/edit'" >{{entry[key]}}</router-link></span>
+                                <span v-else-if="entry[key] === entry['name'] && titleHead === 'Descriptions'"><router-link :to="'/descriptions/' + entry['id'] + '/edit'" >{{entry[key]}}</router-link></span>
+                                <span v-else-if="entry[key] === entry['name'] && titleHead === 'Categories'"><router-link :to="'/categories/' + entry['id'] + '/edit'" >{{entry[key]}}</router-link></span>
+                                <span v-else-if="entry[key] === entry['name'] && titleHead === 'Models'"><router-link :to="'/brands/' + entry['id'] + '/edit'" >{{entry[key]}}</router-link></span>
                                 <span v-else>{{entry[key]}}</span>
                             </td>
 
@@ -83,14 +88,13 @@
         </div>
     </div>
 </template>
-<style>
-</style>
 <script>
     export default{
         props: {
         data: Array,
         columns: Array,
-        filterKey: String
+        filterKey: String,
+        titleHead:String
         },
         data: function () {
         var sortOrders = {}
@@ -115,6 +119,9 @@
             error: null
         }
         },
+        mounted(){
+            document.title = this.titleHead
+        },
         computed: {
             totalPages: function() {
             return Math.ceil(this.filteredData.length / this.itemsPerPage)
@@ -138,12 +145,28 @@
                         return Object.keys(row).some(function (key) {
                             var filter;
                             if(_.size(searchKey) == 1){
-                            filter = (String(row[key]).toLowerCase().indexOf(filterKey)) || (String(row['name']).toLowerCase().indexOf(searchKey['name'].toLowerCase()));
-                            }else if (_.size(searchKey) == 8){
+                                filter = (String(row[key]).toLowerCase().indexOf(filterKey)) ||
+                                (String(row['name']).toLowerCase().indexOf(searchKey['name'].toLowerCase()));
+                            }else if( _.size(searchKey) == 2 || _.size(searchKey) == 3){
+                                filter = (String(row[key]).toLowerCase().indexOf(filterKey)) ||
+                                (String(row['id']).toLowerCase().indexOf(searchKey['id'].toLowerCase())) ||
+                                (String(row['name']).toLowerCase().indexOf(searchKey['name'].toLowerCase())) ||
+                                (String(row['productCount']).toLowerCase().indexOf(searchKey['productCount'].toLowerCase()));
+                            }else if( _.size(searchKey) == 4 ){
+                                filter = (String(row[key]).toLowerCase().indexOf(filterKey)) ||
+                                (String(row['updated']).toLowerCase().indexOf(searchKey['updated'].toLowerCase())) ||
+                                (String(row['serial']).toLowerCase().indexOf(searchKey['serial'].toLowerCase()))||
+                                (String(row['to']).toLowerCase().indexOf(searchKey['to'].toLowerCase()))||
+                                (String(row['from']).toLowerCase().indexOf(searchKey['from'].toLowerCase()));
+                            }
+                            else if (_.size(searchKey) >= 10){
                             filter =(String(row[key]).toLowerCase().indexOf(filterKey)) ||
                                     (String(row['id']).toLowerCase().indexOf(searchKey['id'].toLowerCase())) ||
+                                    (String(row['updated']).toLowerCase().indexOf(searchKey['updated'].toLowerCase())) ||
                                     (String(row['serial']).toLowerCase().indexOf(searchKey['serial'].toLowerCase())) ||
+                                    (String(row['assetSerial']).toLowerCase().indexOf(searchKey['assetSerial'].toLowerCase())) ||
                                     (String(row['quantity']).toLowerCase().indexOf(searchKey['quantity'].toLowerCase())) ||
+                                    (String(row['status']).toLowerCase().indexOf(searchKey['status'].toLowerCase())) ||
                                     (String(row['description']).toLowerCase().indexOf(searchKey['description'].toLowerCase())) ||
                                     (String(row['location']).toLowerCase().indexOf(searchKey['location'].toLowerCase())) ||
                                     (String(row['manufacture']).toLowerCase().indexOf(searchKey['manufacture'].toLowerCase())) ||

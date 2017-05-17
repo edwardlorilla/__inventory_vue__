@@ -3,10 +3,15 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Create Description</div>
+                    <div class="panel-heading">Create {{textData}}</div>
 
                     <div class="panel-body">
+                        <create-data
+                                :urlString="urlData"
+                                :textLabel="textData"
+                        >
 
+                        </create-data>
                     </div>
                 </div>
             </div>
@@ -15,9 +20,19 @@
 </template>
 
 <script>
+    import createData from './../Filtering/create.vue';
     export default {
+        data(){
+            return{
+                textData: 'Descriptions',
+                urlData: '../api/descriptions'
+            }
+        },
+        components:{
+            'create-data':createData
+        },
         mounted() {
-            console.log('Component mounted.')
+            document.title = 'Create ' + this.textData
         }
     }
 </script>

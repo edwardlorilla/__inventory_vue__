@@ -20,6 +20,7 @@
         </div>
         <div v-if="brands">
             <demo-grid
+                titleHead="Models"
                     :data="brands"
                     :columns="brandsColumns"
                     :filter-key="searchQuery">
@@ -47,7 +48,7 @@
     return{
     tokenLaravel: window.Laravel.csrfToken,
     searchQuery: '',
-    brandsColumns: ['name',],
+    brandsColumns: ['id', 'name','productCount'],
     brands: [],
 
 
@@ -58,9 +59,13 @@
     },
 
     methods:{
-    fetchbrands(){
-    axios.get('api/brands').then(response => this.brands = response.data.brands)
-    }
+        fetchbrands(){
+            axios.get('api/brands').then(response => this.brands = _.map(response.data.brands, function(num){
+                        var pick = _.pick(num, 'id', 'name', 'products')
+                        var object = {id: pick.id, name: pick.name, productCount: _.size(pick.products)}
+                        return object
+                    }))
+        }
     }
     }
 

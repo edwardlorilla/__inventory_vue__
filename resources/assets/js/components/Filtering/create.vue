@@ -4,7 +4,7 @@
             <label>{{textLabel}} Name</label>
             <input type="text"
                    class="form-control"
-                   v-model="fetchDataString"
+                   v-model="nameData"
                    placeholder="Name"
                    @keydown.enter.prevent = 'postData'
             >
@@ -21,26 +21,14 @@
         },
         data(){
             return{
-                fetchDataString: ''
+                nameData: ''
             }
         },
-        mounted(){
-            this.fetchData(this.$route.params.id)
-        },
         methods:{
-            fetchData(dataId){
-                var vm = this
-                axios.get('../' + vm.urlString + '/' + dataId + '/edit').then(response => {
-                console.log(response)
-                    vm.fetchDataString = response.data.data.name
-                })
-                .catch(function (error) {
-                    NotyAlert.notyAlert('error', 'something went wrong');
-                })
-            },
+
             postData(){
             var vm = this
-            axios.patch('../' +  vm.urlString + '/' + vm.$route.params.id  , {name: vm.fetchDataString }).then(response => {
+            axios.post( vm.urlString , {name: vm.nameData }).then(response => {
                  NotyAlert.notyAlert('success', response.data.message)
             })
             .catch(function (error) {

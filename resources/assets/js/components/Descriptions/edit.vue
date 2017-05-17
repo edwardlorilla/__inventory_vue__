@@ -3,36 +3,37 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Create {{textData}}</div>
+                    <div class="panel-heading">Edit {{textData}}</div>
 
                     <div class="panel-body">
-                        <create-data
+                        <edit-data
                                 :urlString="urlData"
                                 :textLabel="textData"
                         >
-
-                        </create-data>
+                        </edit-data>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </template>
-
+<style src="noty/lib/noty.css"></style>
 <script>
-    import createData from './../Filtering/create.vue';
+    import NotyAlert from './../Noty/notyAlert';
+    import editData from './../Filtering/Edit.vue';
     export default {
         data(){
             return{
-                textData: 'Categories',
-                urlData: '../api/categories'
+                textData: 'Descriptions',
+                urlData: '../api/descriptions',
             }
         },
         components:{
-            'create-data':createData
+            'edit-data':editData
         },
         mounted() {
-            document.title = 'Create ' + this.textData
-        }
+
+            document.title = 'Edit ' + this.textData
+        },
     }
 </script>

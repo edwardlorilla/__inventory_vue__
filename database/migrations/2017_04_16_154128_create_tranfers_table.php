@@ -16,7 +16,10 @@ class CreateTranfersTable extends Migration
         Schema::create('tranfers', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('location_id')->default(0);
-            $table->integer('product_id');
+            $table->integer('product_id')->unsigned();
+            $table->foreign('product_id')
+                ->references('id')->on('products')
+                ->onDelete('cascade');
             $table->integer('status');
             $table->timestamps();
         });

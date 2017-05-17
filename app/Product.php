@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $fillable = [
-        'quantity', 'serial', 'manufacture_id', 'description_id', 'location_id', 'category_id', 'brand_id', 'status',
+        'quantity', 'serial', 'manufacture_id', 'description_id', 'location_id', 'category_id', 'brand_id', 'status','assetSerial'
     ];
     public function transfers()
     {

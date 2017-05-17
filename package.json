@@ -16,13 +16,18 @@
     "jquery": "^3.1.1",
     "laravel-mix": "0.*",
     "lodash": "^4.17.4",
-    "vue": "^2.1.10"
+    "vue": "^2.1.10",
+    "vue-particles": "^1.0.5"
   },
   "dependencies": {
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-stage-2": "^6.24.1",
     "noty": "^3.1.0",
     "nprogress": "^0.2.0",
     "v-hotkey": "^0.1.2",
     "vee-validate": "^2.0.0-rc.3",
-    "vue-router": "^2.5.2"
+    "vue-particles": "^1.0.5",
+    "vue-router": "^2.5.2",
+    "vue-xlsx-table": "^1.2.7"
   }
 }

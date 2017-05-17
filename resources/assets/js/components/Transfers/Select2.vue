@@ -1,7 +1,7 @@
 <template>
-<select  class="input-sm" :name="name">
+    <select class="input-sm" :name="name">
         <slot></slot>
-</select>
+    </select>
 </template>
 <style src="select2/dist/css/select2.min.css"></style>
 <style src="select2-bootstrap-theme/dist/select2-bootstrap.min.css"></style>
@@ -24,14 +24,13 @@
             allowClear: false,
             tags:true,
             createTag: function (params) {
-                console.log(vm.urlName)
                 var term
                 if(!_.isEmpty(vm.urlName)){
                     term = $.trim(params.term) + (vm.options.some(function(r) {
                             return r.text == params.term
                             }) ? "" : " (new)");
 
-                if (term === '') {
+                if (term === '' || term === ' (new)') {
                   return null;
                 }
                 return {
@@ -48,18 +47,15 @@
                 if(!_.isEmpty(vm.urlName)){
                     if( e.params.data.isNewFlag ) {
                         if (/ \(new\)$/.test(e.params.data.text)) {
-                            console.log(/ \(new\)$/.exec(e.params.data.text))
-                            console.log($.trim(e.params.data.text.replace(/ \(new\)$/, '')));
+
                             var post = $.trim(e.params.data.text.replace(/ \(new\)$/, ''));
                             axios.post(vm.urlName, {name : post}).then(response => {
-                                console.log(response.data.data.id)
                                  vm.$emit('modelId',response.data.data.id)
                                  $(this).find('[value="'+e.params.data.id+'"]').replaceWith('<option selected value="'+response.data.data.id+'">'+response.data.data.name+'</option>');
                             })
                         }
                     }
                 }else{
-                    console.log(e.params.data)
                     vm.$emit('selectValue',e.params.data.id )
                     vm.$emit('selectQuantityValue',e.params.data.quantity )
                     vm.$emit('selectStatusValue',e.params.data.status )
@@ -73,7 +69,6 @@
                 })
             // emit event on change.
             .on('change', function (e) {
-            console.log(e)
             vm.$emit('input', this.value)
 
         })
@@ -92,4 +87,5 @@
             $(this.$el).off().select2('destroy')
         }
     }
+
 </script>

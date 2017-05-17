@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
 
-            <div  class="col-md-10 col-md-offset-1">
+            <div  class="col-lg-12">
 
                 <router-link class="btn btn-primary" tag="button" :to="{ name: 'createProducts' }">Create Products
                 </router-link>
@@ -14,6 +14,7 @@
                 </div>
 
                 <demo-grid
+                        titleHead="Products"
                         :data="brands"
                         :columns="brandsColumns"
                         :filter-key="searchQuery">
@@ -21,20 +22,6 @@
             </div>
 
             </div>
-        <!-- beforeRouteEnter (to, from, next) {
-            console.log('routeEnter');
-            $.get("../api/products", function(data, status){
-              next(vm => vm.fetchbrands(data, status))
-            })
-        },
-        beforeRouteUpdate (to, from, next) {
-            var that = this;
-            that.brands = [],
-            console.log('befreRouteUpdate')
-            $.get("../api/products", function(data, status){
-              next(vm => vm.fetchbrands(data, status))
-            })
-        },-->
         </div>
 </template>
 <style>
@@ -49,7 +36,7 @@
     data(){
     return{
             searchQuery: '',
-            brandsColumns: ['id', 'serial','quantity','category','description','location','manufacture' ,'model'],
+            brandsColumns: ['id','updated', 'serial' , 'assetSerial','quantity','status','category','description','location','manufacture' ,'model'],
             brands: [],
             limitLength: 5,
 
@@ -75,8 +62,19 @@
 
              axios.get("../api/products").then(function(response){
                 that.brands = _.map(response.data.products, function(num){
-                var pick = _.pick(num, 'id', 'quantity','serial','manufacture.name','description.name','location.name','category.name','brand.name', 'status');
-                var objectProduct = {id:pick.id, quantity:pick.quantity, serial:pick.serial, manufacture:pick.manufacture.name, description:pick.description.name, location:pick.location.name,category:pick.category.name,model:pick.brand.name, status: status };
+                var pick = _.pick(num, 'id', 'quantity','serial','manufacture','description','location','category','brand', 'status', 'updated_at','assetSerial');
+                var objectProduct = {
+                id:pick.id,
+                quantity:pick.quantity,
+                serial: _.isEmpty(pick.serial) ? 'NOT SERIAL DEFINED' : pick.serial,
+                assetSerial: _.isEmpty(pick.assetSerial) ? 'NOT DEFINED' : pick.assetSerial,
+                manufacture:pick.manufacture ? pick.manufacture.name : 'NOT DEFINED',
+                description:pick.description.name,
+                location:pick.location.name,
+                category:pick.category.name,
+                model:pick.brand.name,
+                status: pick.status === 1 ? 'WORKING' : 'DEFECTIVE',
+                updated:pick.updated_at};
                 return objectProduct})
                 that.loading = false
              })

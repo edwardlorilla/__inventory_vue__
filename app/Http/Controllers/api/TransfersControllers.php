@@ -16,10 +16,18 @@ class TransfersControllers extends Controller
      */
     public function index()
     {
-        $brands = \App\Tranfer::orderBy('created_at','desc')->get();
+        $brands = \App\Tranfer::with([
+            'product' => function($query) {
+                $query->select(['id', 'serial']);
+            },
+            'location' => function($query) {
+                $query->select(['id', 'lastLocation', 'name']);
+            }
+
+        ])->orderBy('created_at','desc')->get();
         return response()->json([
-            'transfers' => $brands
-            ]);
+            'data' => $brands
+        ]);
     }
 
     /**

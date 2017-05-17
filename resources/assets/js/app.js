@@ -6,7 +6,6 @@
  */
 
 require('./bootstrap');
-
 import  Vue from 'vue';
 import VueRouter from 'vue-router';
 import routes from './routes.js';
@@ -15,6 +14,8 @@ import VueHotkey from 'v-hotkey'
 
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
+import VueParticles from 'vue-particles'
+import vueXlsxTable from 'vue-xlsx-table'
 axios.interceptors.request.use(function (config) {
     // Do something before request is sent
     NProgress.start();
@@ -24,7 +25,6 @@ axios.interceptors.request.use(function (config) {
     console.error(error)
     return Promise.reject(error);
 });
-
 // Add a response interceptor
 axios.interceptors.response.use(function (response) {
     // Do something with response data
@@ -36,20 +36,21 @@ axios.interceptors.response.use(function (response) {
     console.error(error)
     return Promise.reject(error);
 });
-
 /*$( document ).ajaxSend(function( event, request, settings ) {
 console.log(1);
 NProgress.start();
 });*/
+
 $(document ).ajaxComplete(function( event, request, settings ) {
     console.log(2);
     NProgress.done();
 });
+
 $(document ).ajaxStart(function( ) {
     NProgress.start();
 });
-
-
+Vue.use(vueXlsxTable, {rABS: false})
+Vue.use(VueParticles)
 Vue.use(VueRouter);
 Vue.use(VueHotkey);
 const router = new VueRouter({

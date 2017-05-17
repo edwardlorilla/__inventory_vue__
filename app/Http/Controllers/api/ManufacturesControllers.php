@@ -42,7 +42,7 @@ class ManufacturesControllers extends Controller
 
         $brands = \App\Manufacture::create([ 'name' => $name]);
         return response()->json([
-            'data' => $brands
+            'data' => $brands,  'message' => 'brands ' .$name . 'has been created'
         ]);
     }
 
@@ -65,7 +65,10 @@ class ManufacturesControllers extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = \App\Manufacture::where('id' , $id)->first();
+        return response()->json([
+            'data' => $data
+        ]);
     }
 
     /**
@@ -77,7 +80,14 @@ class ManufacturesControllers extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        \App\Manufacture::where('id', $id)->update(
+            [
+                'name' => $request->input('name')
+            ]
+        );
+        return response()->json([
+            'message' => 'Tech Item ' . $request->input('name') . ' has updated'
+        ]);
     }
 
     /**

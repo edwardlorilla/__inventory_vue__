@@ -14,7 +14,7 @@ class BrandControllers extends Controller
      */
     public function index()
     {
-        $brands = \App\Brand::orderBy('created_at','desc')->get();
+        $brands = \App\Brand::with('products')->orderBy('updated_at','desc')->get();
         return response()->json([
             'brands' => $brands
             ]);
@@ -38,11 +38,11 @@ class BrandControllers extends Controller
      */
     public function store(Request $request)
     {
-        $name = $request->input('name');//
+        $name = $request->input('name');
 
-            $brands = \App\Brand::create([ 'name' => $name]);
+        $brands = \App\Brand::create([ 'name' => $name]);
         return response()->json([
-            'data' => $brands
+            'message' => 'brands ' .$name . 'has been created', 'data' => $brands
         ]);
     }
 
@@ -65,7 +65,10 @@ class BrandControllers extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = \App\Brand::where('id' , $id)->first();
+        return response()->json([
+            'data' => $data
+        ]);
     }
 
     /**
@@ -77,7 +80,14 @@ class BrandControllers extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        \App\Brand::where('id', $id)->update(
+            [
+                'name' => $request->input('name')
+            ]
+        );
+        return response()->json([
+            'message' => 'Tech Item ' . $request->input('name') . ' has updated'
+        ]);
     }
 
     /**

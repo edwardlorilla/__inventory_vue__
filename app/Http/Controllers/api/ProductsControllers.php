@@ -14,9 +14,11 @@ class ProductsControllers extends Controller
      */
     public function index()
     {
-        $brands = \App\Product::with(['location' => function($query) {
+        $brands = \App\Product::with([
+        'location' => function($query) {
             $query->select(['id', 'name']);
-        },'manufacture' => function($query) {
+        },
+        'manufacture' => function($query) {
             $query->select(['id', 'name']);
         },'description' => function($query) {
             $query->select(['id', 'name']);
@@ -24,7 +26,7 @@ class ProductsControllers extends Controller
             $query->select(['id', 'name']);
         },  'brand' => function($query) {
             $query->select(['id', 'name']);
-        }] )->orderBy('created_at','desc')->get();
+        }] )->orderBy('updated_at','desc')->get();
         return response()->json([
             'products' => $brands
         ]);
@@ -59,13 +61,63 @@ class ProductsControllers extends Controller
                    'location_id' => $request->input('products.'.$key.'.location'),
                    'category_id' => $request->input('products.'.$key.'.category'),
                    'brand_id' => $request->input('products.'.$key.'.model'),
-                   'status' => $request->input('products.'.$key.'.status')
+                   'status' => $request->input('products.'.$key.'.status'),
+                   'assetSerial' => $request->input('products.'.$key.'.assetSerial')
                ]
            );
        }
 
     }
+    public function importData(Request $request)
+    {
 
+        $manufacture = [] ;
+        $description = [];
+        $category = [];
+        $model = [];
+        $productsConvert = [];
+        foreach ($request->products as $key => $value) {
+            $manufacture[$key] = \App\Manufacture::updateOrCreate(
+                ['name' => $request->input('products.'.$key.'.manufacture')],
+                [
+                    'name' =>  $request->input('products.'.$key.'.manufacture')
+                ]
+            )->id;
+            $description[$key] = \App\Description::updateOrCreate(
+                ['name' => $request->input('products.'.$key.'.description')],
+                [
+                    'name' =>  $request->input('products.'.$key.'.description')
+                ]
+            )->id;
+            $category[$key] = \App\Category::updateOrCreate(
+                ['name' => $request->input('products.'.$key.'.category')],
+                [
+                    'name' =>  $request->input('products.'.$key.'.category')
+                ]
+            )->id;
+            $model[$key]= \App\Brand::updateOrCreate(
+                ['name' => $request->input('products.'.$key.'.model')],
+                [
+                    'name' =>  $request->input('products.'.$key.'.model')
+                ]
+            )->id;
+
+            $productsConvert[] =
+            [
+                'serial' => $request->input('products.'.$key.'.serial'),
+                'quantity' => $request->input('products.'.$key.'.quantity'),
+                'manufacture_id' => $manufacture[$key],
+                'description_id' => $description[$key],
+                'category_id' => $category[$key],
+                'brand_id' => $model[$key],
+                'status' =>  1,
+                'assetSerial' => $request->input('products.'.$key.'.assetSerial')
+            ];
+        }
+
+        return response()
+            ->json($productsConvert);
+    }
     /**
      * Display the specified resource.
      *
@@ -120,7 +172,8 @@ class ProductsControllers extends Controller
                 'location_id' => $request->input('products.location'),
                 'category_id' => $request->input('products.category'),
                 'brand_id' => $request->input('products.model'),
-                'status' => $request->input('products.status')
+                'status' => $request->input('products.status'),
+                'assetSerial' => $request->input('products.assetSerial')
             ]
         );
         return response()->json([
@@ -136,6 +189,9 @@ class ProductsControllers extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = \App\Product::where('id', $id)->first();
+
+        $product->delete();
+
     }
 }

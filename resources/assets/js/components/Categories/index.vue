@@ -4,7 +4,7 @@
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <router-link class="btn btn-primary" tag="button" :to="{ name: 'createDescriptions' }">Create Description
+                <router-link class="btn btn-primary" tag="button" :to="{ name: 'createCategories' }">Create Categories
                 </router-link>
                 <div class="form-group pull-right">
 
@@ -14,6 +14,7 @@
                 </div>
         <div v-if="brands">
             <demo-grid
+                titleHead="Categories"
                 :data="brands"
                 :columns="brandsColumns"
                 :filter-key="searchQuery">

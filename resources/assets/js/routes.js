@@ -21,25 +21,49 @@ const Brands = resolve => {
 }
 // const Brands = resolve => require(['./components/Brands/index.vue'], resolve);
 const createBrands = resolve => require(['./components/Brands/create.vue'], resolve);
+const editBrands = resolve => require(['./components/Brands/edit.vue'], resolve);
+
 const Categories = resolve => require(['./components/Categories/index.vue'], resolve);
 const createCategories = resolve => require(['./components/Categories/create.vue'], resolve);
+const editCategories = resolve => require(['./components/Categories/edit.vue'], resolve);
+
 const Descriptions = resolve => require(['./components/Descriptions/index.vue'], resolve);
 const createDescriptions = resolve => require(['./components/Descriptions/create.vue'], resolve);
+const editDescriptions = resolve => require(['./components/Descriptions/edit.vue'], resolve);
+
 const Locations = resolve => require(['./components/Locations/index.vue'], resolve);
 const createLocations = resolve => require(['./components/Locations/create.vue'], resolve);
+const editLocations = resolve => require(['./components/Locations/create.vue'], resolve);
+
 const Manufactures = resolve => require(['./components/Manufactures/index.vue'], resolve);
 const createManufactures = resolve => require(['./components/Manufactures/create.vue'], resolve);
+const editManufactures = resolve => require(['./components/Manufactures/edit.vue'], resolve);
+
 const Products = resolve => require(['./components/Products/index.vue'], resolve);
 const ProductEdit = resolve => require(['./components/Products/edit.vue'], resolve);
 const ProductShow = resolve => require(['./components/Products/show.vue'], resolve);
 const ProductHistory = resolve => require(['./components/Products/History.vue'], resolve);
 const createProducts = resolve => require(['./components/Products/create.vue'], resolve);
+
 const createTransfers = resolve => require(['./components/Transfers/create.vue'], resolve);
+const Transfers = resolve => require(['./components/Transfers/index.vue'], resolve);
+const Error404 = resolve => require(['./components/Error/404.vue'], resolve);
+const Contact = resolve => require(['./components/Contact/Contacts.vue'], resolve);
 export default [
     {
         path: '/brands',
         component: Brands,
         name: 'brands',
+
+    },{
+        path: '*',
+        component: Error404,
+        name: '404',
+
+    },{
+        path: '/developers',
+        component: Contact,
+        name: 'developer',
 
     },
     {
@@ -47,162 +71,103 @@ export default [
         component: createBrands,
         name: 'createBrands',
     },
+    {
+        path: '/brands/:id/edit',
+        component: editBrands,
+        name: 'editBrands',
+    },
     //products
     {
-        path: '/products',
+        path: '/techitems/create',
+        component: createProducts,
+        name: 'createProducts',
+    },
+    {
+        path: '/techitems',
         component: Products,
         name: 'products',
 
     },
     {
-        path: '/products/:id', component: ProductShow,
+        path: '/techitem/import', component: ProductShow,
     },
     {
-        path: '/products/:id/edit', component: ProductEdit
+        path: '/techitem/:id/edit', component: ProductEdit
     },
     {
-        path: '/products/:id/history', component: ProductHistory
+        path: '/techitem/:id/history', component: ProductHistory
     },
-    {
-        path: '/products/create',
-        component: createProducts,
-        name: 'createProducts',
-    },
+
     //end of products
     {
         path: '/categories',
         component: Categories,
-        name: 'categories',
-        meta: {
-            progress: {
-                func: [
-                    {call: 'color', modifier: 'temp', argument: '#E91E63'},
-                    {call: 'fail', modifier: 'temp', argument: '#6e0000'},
-                    {call: 'location', modifier: 'temp', argument: 'top'},
-                    {call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
-                ]
-            }
-        }
+        name: 'categories'
     },
     {
         path: '/categories/create',
         component: createCategories,
-        name: 'createCategories',
-        meta: {
-            progress: {
-                func: [
-                    {call: 'color', modifier: 'temp', argument: '#E91E63'},
-                    {call: 'fail', modifier: 'temp', argument: '#6e0000'},
-                    {call: 'location', modifier: 'temp', argument: 'top'},
-                    {call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
-                ]
-            }
-        }
+        name: 'createCategories'
+    },
+    {
+        path: '/categories/:id/edit',
+        component: editCategories,
+        name: 'editCategories'
     },
     {
         path: '/descriptions',
         component: Descriptions,
-        name: 'descriptions',
-        meta: {
-            progress: {
-                func: [
-                    {call: 'color', modifier: 'temp', argument: '#E91E63'},
-                    {call: 'fail', modifier: 'temp', argument: '#6e0000'},
-                    {call: 'location', modifier: 'temp', argument: 'top'},
-                    {call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
-                ]
-            }
-        }
+        name: 'descriptions'
     },
     {
         path: '/descriptions/create',
         component: createDescriptions,
-        name: 'createDescriptions',
-        meta: {
-            progress: {
-                func: [
-                    {call: 'color', modifier: 'temp', argument: '#E91E63'},
-                    {call: 'fail', modifier: 'temp', argument: '#6e0000'},
-                    {call: 'location', modifier: 'temp', argument: 'top'},
-                    {call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
-                ]
-            }
-        }
+        name: 'createDescriptions'
+    },
+    {
+        path: '/descriptions/:id/edit',
+        component: editDescriptions,
+        name: 'editDescriptions'
     },
     {
         path: '/locations',
         component: Locations,
-        name: 'locations',
-        meta: {
-            progress: {
-                func: [
-                    {call: 'color', modifier: 'temp', argument: '#E91E63'},
-                    {call: 'fail', modifier: 'temp', argument: '#6e0000'},
-                    {call: 'location', modifier: 'temp', argument: 'top'},
-                    {call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
-                ]
-            }
-        }
+        name: 'locations'
     },
     {
         path: '/locations/create',
         component: createLocations,
-        name: 'createLocations',
-        meta: {
-            progress: {
-                func: [
-                    {call: 'color', modifier: 'temp', argument: '#E91E63'},
-                    {call: 'fail', modifier: 'temp', argument: '#6e0000'},
-                    {call: 'location', modifier: 'temp', argument: 'top'},
-                    {call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
-                ]
-            }
-        }
+        name: 'createLocations'
+    },
+    {
+        path: '/locations/:id/edit',
+        component: editLocations,
+        name: 'editLocations'
     },
     {
         path: '/manufactures',
         component: Manufactures,
-        name: 'manufactures',
-        meta: {
-            progress: {
-                func: [
-                    {call: 'color', modifier: 'temp', argument: '#E91E63'},
-                    {call: 'fail', modifier: 'temp', argument: '#6e0000'},
-                    {call: 'location', modifier: 'temp', argument: 'top'},
-                    {call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
-                ]
-            }
-        }
+        name: 'manufactures'
     },
     {
         path: '/manufactures/create',
         component: createManufactures,
-        name: 'createManufactures',
-        meta: {
-            progress: {
-                func: [
-                    {call: 'color', modifier: 'temp', argument: '#E91E63'},
-                    {call: 'fail', modifier: 'temp', argument: '#6e0000'},
-                    {call: 'location', modifier: 'temp', argument: 'top'},
-                    {call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
-                ]
-            }
-        }
+        name: 'createManufactures'
+    },
+    {
+        path: '/manufactures/:id/edit',
+        component: editManufactures,
+        name: 'editManufactures'
     },
     {
         path: '/transfers/create',
         component: createTransfers,
-        name: 'createTransfers',
-        meta: {
-            progress: {
-                func: [
-                    {call: 'color', modifier: 'temp', argument: '#E91E63'},
-                    {call: 'fail', modifier: 'temp', argument: '#6e0000'},
-                    {call: 'location', modifier: 'temp', argument: 'top'},
-                    {call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
-                ]
-            }
-        }
+        name: 'createTransfers'
+    },
+    {
+        path: '/transfers',
+        component: Transfers,
+        name: 'indexTransfers'
     },
 
 ]

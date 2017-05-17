@@ -1,7 +1,9 @@
 <template>
 
     <div id="el">
+
         <nav class="navbar navbar-default navbar-static-top">
+        <!--<nav class="navbar navbar-inverse navbar-static-top">-->
             <div class="container-fluid">
                 <div class="navbar-header">
 
@@ -14,46 +16,112 @@
                         </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" >
-                        Inventory
-                        </a>
+                    <router-link class="navbar-brand" :to="{ name: 'indexTransfers' }" >Inventory</router-link>
                     </div>
 
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <div class="collapse navbar-collapse" id="app-navbar-collapse" >
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-left">
-                        <li>
-                            <router-link :to="{ name: 'createTransfers' }">Create CFAT</router-link>
-                        <li>
-                            <router-link :to="{ name: 'products' }">Tech Items</router-link>
-                        </li>
-                        <li><router-link :to="{ name: 'descriptions' }" >Descriptions</router-link></li>
-                        <li><router-link :to="{ name: 'brands' }" >Models</router-link></li>
-                        <li><router-link :to="{ name: 'manufactures' }" >Manufacures</router-link></li>
-                        <li><router-link :to="{ name: 'locations' }" >Locations</router-link></li>
-                        <li><router-link :to="{ name: 'categories' }" >Categories</router-link></li>
+                    <ul v-hotkey="keymap" class="nav navbar-nav navbar-left">
+
+                            <router-link tag="li" :to="{ name: 'createTransfers' }"><a>Create CFAT</a></router-link>
+
+                            <router-link tag="li" :to="{ name: 'products' }"><a>Tech Items</a></router-link>
+
+                        <router-link tag="li" :to="{ name: 'descriptions' }" ><a>Descriptions</a></router-link>
+                        <router-link tag="li" :to="{ name: 'brands' }" ><a>Models</a></router-link>
+                        <router-link tag="li" :to="{ name: 'manufactures' }" ><a>Manufacures</a></router-link>
+                        <router-link tag="li" :to="{ name: 'locations' }" ><a>Locations</a></router-link>
+                        <router-link tag="li" :to="{ name: 'categories' }" ><a>Categories</a></router-link>
                         </ul>
                     </div>
                 </div>
             </nav>
-        <transition name="fade" mode="in-out" >
+        <transition name="fade" mode="out-in" appear >
             <router-view ></router-view>
         </transition>
+        <vue-particles
+                color="#8eb4cb"
+                :clickEffect="false"
+        ></vue-particles>
+        <div class="navbar navbar-default navbar-fixed-bottom">
+            <div class="container">
+                <p class="navbar-text pull-left">Copyright © {{dataDate}}
+                    <router-link  :to="{ name: 'developer' }" >Mindanao Kokusai Daigaku</router-link>
+                </p>
+
+
+            </div>
+
+
+        </div>
+
     </div>
 </template>
 <style>
     .fade-enter-active, .fade-leave-active {
-      transition: opacity .3s ease;
+      transition: opacity 0.3s
     }
-    .fade-enter, .fade-leave-to  {
+
+    .fade-enter, .fade-leave-active {
       opacity: 0
     }
-    /* Center the loader */
-
+    #particles-js {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -10;
+     }
 </style>
+
 <script>
-
     export default {
-
+        data(){
+            return{
+                dataDateString: '',
+            }
+        },
+        methods:{
+            createCfat(){
+                 this.$router.push({ name: 'createTransfers' })
+            },
+            product(){
+                this.$router.push({ name: 'products' })
+            },
+            descriptions(){
+                this.$router.push({ name: 'descriptions' })
+            },
+            brands(){
+                this.$router.push({ name: 'brands' })
+            },
+            manufactures(){
+                this.$router.push({ name: 'manufactures' })
+            },
+            locations(){
+                this.$router.push({ name: 'locations' })
+            },
+            categories(){
+                this.$router.push({ name: 'categories' })
+            },
+        },
+        computed:{
+            dataDate(){
+                var d = new Date();
+                var vm = this
+                return d.getFullYear()
+            },
+             keymap (){
+                return {
+                    'shift+1': this.createCfat,
+                    'shift+2': this.product,
+                    'shift+3': this.descriptions,
+                    'shift+4': this.brands,
+                    'shift+5': this.manufactures,
+                    'shift+6': this.locations,
+                    'shift+7': this.categories,
+                }
+            },
+        },
     }
 </script>

@@ -23,4 +23,5 @@ Route::resource('locations', 'api\LocationsControllers');
 Route::resource('manufactures', 'api\ManufacturesControllers');
 Route::resource('transfers', 'api\TransfersControllers');
 Route::get('transfers/{transfers}/history', 'api\TransfersControllers@history');
+Route::post('products/imports', 'api\ProductsControllers@importData');
 Route::resource('products', 'api\ProductsControllers');

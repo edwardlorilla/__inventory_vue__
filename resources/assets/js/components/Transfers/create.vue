@@ -1,6 +1,7 @@
 <template>
     <div class="container-fluid">
-        <div class="row">
+        <loader v-if="loading"></loader>
+        <div v-else class="row">
             <div :class="{'col-md-8 col-md-offset-2' : !showAddSerial, 'col-lg-12': showAddSerial}">
                 <div class="panel panel-default">
                     <div class="panel-heading"></div>
@@ -19,7 +20,7 @@
                                     <input name="_token" type="hidden" :value="laravelToken"/>
                                     <div class="row">
                                         <div class="table-responsive">
-                                            <table class="table table-bordered ">
+                                            <table v-if="!loading" class="table table-bordered ">
 
                                                 <thead>
                                                 <th>Serial</th>
@@ -51,7 +52,6 @@
                                                                    name="serial[]"
                                                                    type="text"
                                                                    v-model="addTd.createSerial"
-                                                                    @change = 'getQuantity(addTd.product, index)'
                                                                    />
                                                             <span class="input-group-btn">
 
@@ -128,140 +128,140 @@
                                                                type="number"
                                                                required>
                                                     </td>
-                                                    <td v-if="showAddSerial">
-                                                        <div v-if="addTd.showModel" >
-                                                            <add
-                                                                @close = "addTd.showModel = false"
-                                                                urlName="../api/brands"
-                                                                @fetch="fetchModel"
-                                                            >
-                                                            </add>
+                                                        <td v-if="showAddSerial">
+                                                            <div v-if="addTd.showModel" >
+                                                                <add
+                                                                    @close = "addTd.showModel = false"
+                                                                    urlName="../api/brands"
+                                                                    @fetch="fetchModel"
+                                                                >
+                                                                </add>
 
-                                                        </div>
-                                                        <div v-else class="input-group input-group-sm p">
+                                                            </div>
+                                                            <div v-else class="input-group input-group-sm p">
 
-                                                            <!--<select class="form-control input-sm"
-                                                                    v-model="addTd.model">
-                                                                <option v-for="option in brands" v-bind:value="option.id">
-                                                                    {{ option.name }}
-                                                                </option>
-                                                            </select>-->
-                                                            <span class="input-group-btn">
-                                                                <button class="btn btn-sm btn-primary"
-                                                                        @click.prevent="addTd.showModel =! addTd.showModel">
+                                                                <!--<select class="form-control input-sm"
+                                                                        v-model="addTd.model">
+                                                                    <option v-for="option in brands" v-bind:value="option.id">
+                                                                        {{ option.name }}
+                                                                    </option>
+                                                                </select>-->
+                                                                <span class="input-group-btn">
+                                                                    <button class="btn btn-sm btn-primary"
+                                                                            @click.prevent="addTd.showModel =! addTd.showModel">
+                                                                            <i class="glyphicon glyphicon-plus"></i>
+                                                                    </button>
+                                                                </span>
+                                                                <select2  :options="brands"
+                                                                          urlName="../api/brands"
+                                                                          name="model[]"
+                                                                          v-model.number="addTd.model"
+                                                                          required
+                                                                >
+                                                                    <option disabled value="0">Select one</option>
+                                                                </select2>
+                                                            </div>
+                                                        </td>
+                                                        <td v-if="showAddSerial">
+                                                            <div v-if="addTd.showCategory">
+                                                                <add
+                                                                        @close = "addTd.showCategory = false"
+                                                                        urlName="../api/categories"
+                                                                        @fetch="fetchCategory"
+                                                                >
+                                                                </add>
+                                                            </div>
+                                                            <div v-else class="input-group input-group-sm">
+
+                                                                <!--<select class="form-control"
+                                                                        v-model="addTd.category">
+                                                                    <option v-for="option in categories"
+                                                                            v-bind:value="option.id">
+                                                                        {{ option.name }}
+                                                                    </option>
+                                                                </select>-->
+                                                                <span class="input-group-btn">
+                                                                    <button class="btn btn-sm btn-primary"
+                                                                            @click.prevent="addTd.showCategory =! addTd.showCategory">
                                                                         <i class="glyphicon glyphicon-plus"></i>
-                                                                </button>
-                                                            </span>
-                                                            <select2  :options="brands"
-                                                                      urlName="../api/brands"
-                                                                      name="model[]"
-                                                                      v-model.number="addTd.model"
-                                                                      required
-                                                            >
-                                                                <option disabled value="0">Select one</option>
-                                                            </select2>
-                                                        </div>
-                                                    </td>
-                                                    <td v-if="showAddSerial">
-                                                        <div v-if="addTd.showCategory">
-                                                            <add
-                                                                    @close = "addTd.showCategory = false"
-                                                                    urlName="../api/categories"
-                                                                    @fetch="fetchCategory"
-                                                            >
-                                                            </add>
-                                                        </div>
-                                                        <div v-else class="input-group input-group-sm">
+                                                                    </button>
+                                                                </span>
+                                                                <select2 :options="categories"
+                                                                         name="category[]"
+                                                                         v-model.number="addTd.category"
+                                                                         urlName="../api/categories"
+                                                                         required
+                                                                >
+                                                                    <option disabled value="0">Select one</option>
+                                                                </select2>
+                                                            </div>
+                                                        </td>
+                                                        <td v-if="showAddSerial">
+                                                            <div v-if=addTd.showDescription>
+                                                                <add
+                                                                        @close = "addTd.showDescription = false"
+                                                                        urlName="../api/descriptions"
+                                                                        @fetch="fetchDescriptions"
+                                                                >
+                                                                </add>
+                                                            </div>
+                                                            <div v-else class="input-group input-group-sm">
 
-                                                            <!--<select class="form-control"
-                                                                    v-model="addTd.category">
-                                                                <option v-for="option in categories"
-                                                                        v-bind:value="option.id">
-                                                                    {{ option.name }}
-                                                                </option>
-                                                            </select>-->
-                                                            <span class="input-group-btn">
-                                                                <button class="btn btn-sm btn-primary"
-                                                                        @click.prevent="addTd.showCategory =! addTd.showCategory">
-                                                                    <i class="glyphicon glyphicon-plus"></i>
-                                                                </button>
-                                                            </span>
-                                                            <select2 :options="categories"
-                                                                     name="category[]"
-                                                                     v-model.number="addTd.category"
-                                                                     urlName="../api/categories"
-                                                                     required
-                                                            >
-                                                                <option disabled value="0">Select one</option>
-                                                            </select2>
-                                                        </div>
-                                                    </td>
-                                                    <td v-if="showAddSerial">
-                                                        <div v-if=addTd.showDescription>
-                                                            <add
-                                                                    @close = "addTd.showDescription = false"
-                                                                    urlName="../api/descriptions"
-                                                                    @fetch="fetchDescriptions"
-                                                            >
-                                                            </add>
-                                                        </div>
-                                                        <div v-else class="input-group input-group-sm">
+                                                                <!--<select class="form-control"
+                                                                        v-model="addTd.description">
+                                                                    <option v-for="option in descriptions"
+                                                                            v-bind:value="option.id">
+                                                                        {{ option.name }}
+                                                                    </option>
+                                                                </select>-->
+                                                                <span class="input-group-btn">
+                                                                    <button class="btn btn-sm btn-primary"
+                                                                            @click.prevent="addTd.showDescription =! addTd.showDescription">
+                                                                        <i class="glyphicon glyphicon-plus"></i>
+                                                                    </button>
+                                                                </span>
+                                                                <select2 :options="descriptions"
+                                                                         name="description[]"
+                                                                         urlName="../api/descriptions"
+                                                                         v-model.number="addTd.description"
+                                                                >
+                                                                    <option disabled value="0">Select one</option>
+                                                                </select2>
+                                                            </div>
 
-                                                            <!--<select class="form-control"
-                                                                    v-model="addTd.description">
-                                                                <option v-for="option in descriptions"
-                                                                        v-bind:value="option.id">
-                                                                    {{ option.name }}
-                                                                </option>
-                                                            </select>-->
-                                                            <span class="input-group-btn">
-                                                                <button class="btn btn-sm btn-primary"
-                                                                        @click.prevent="addTd.showDescription =! addTd.showDescription">
-                                                                    <i class="glyphicon glyphicon-plus"></i>
-                                                                </button>
-                                                            </span>
-                                                            <select2 :options="descriptions"
-                                                                     name="description[]"
-                                                                     urlName="../api/descriptions"
-                                                                     v-model.number="addTd.description"
-                                                            >
-                                                                <option disabled value="0">Select one</option>
-                                                            </select2>
-                                                        </div>
+                                                        </td>
+                                                        <td v-if="showAddSerial">
+                                                            <div v-if="addTd.showManufacture">
+                                                                <add
+                                                                        @close = "addTd.showManufacture = false"
+                                                                        urlName="../api/manufactures"
+                                                                        @fetch="fetchManufacture"
+                                                                >
+                                                                </add>
+                                                            </div>
+                                                            <div v-else class="input-group input-group-sm">
 
-                                                    </td>
-                                                    <td v-if="showAddSerial">
-                                                        <div v-if="addTd.showManufacture">
-                                                            <add
-                                                                    @close = "addTd.showManufacture = false"
-                                                                    urlName="../api/manufactures"
-                                                                    @fetch="fetchManufacture"
-                                                            >
-                                                            </add>
-                                                        </div>
-                                                        <div v-else class="input-group input-group-sm">
-
-                                                            <!--<select class="form-control"
-                                                                    v-model="addTd.manufacture">
-                                                                <option v-for="option in manufactures"
-                                                                        v-bind:value="option.id">
-                                                                    {{ option.name }}
-                                                                </option>
-                                                            </select>-->
-                                                            <span class="input-group-btn">
-                                                                <button class="btn btn-sm btn-primary"
-                                                                        @click.prevent="addTd.showManufacture =! addTd.showManufacture">
-                                                                    <i class="glyphicon glyphicon-plus"></i>
-                                                                </button>
-                                                            </span>
-                                                            <select2 :options="manufactures" name="manufactures[]"
-                                                                     urlName="../api/manufactures"
-                                                                     required
-                                                                     v-model.number="addTd.manufacture">
-                                                                <option disabled value="0">Select one</option>
-                                                            </select2>
-                                                        </div>
-                                                    </td>
+                                                                <!--<select class="form-control"
+                                                                        v-model="addTd.manufacture">
+                                                                    <option v-for="option in manufactures"
+                                                                            v-bind:value="option.id">
+                                                                        {{ option.name }}
+                                                                    </option>
+                                                                </select>-->
+                                                                <span class="input-group-btn">
+                                                                    <button class="btn btn-sm btn-primary"
+                                                                            @click.prevent="addTd.showManufacture =! addTd.showManufacture">
+                                                                        <i class="glyphicon glyphicon-plus"></i>
+                                                                    </button>
+                                                                </span>
+                                                                <select2 :options="manufactures" name="manufactures[]"
+                                                                         urlName="../api/manufactures"
+                                                                         required
+                                                                         v-model.number="addTd.manufacture">
+                                                                    <option disabled value="0">Select one</option>
+                                                                </select2>
+                                                            </div>
+                                                        </td>
                                                     <td>
                                                         <select2 :options="locations" name="location[]"
                                                                  required
@@ -278,6 +278,7 @@
                                                 </tr>
                                                 </tbody>
                                             </table>
+                                            <p v-else>Sorry, no items found.</p>
                                             <button class="btn btn-primary pull-right" :disabled = "disableAddSerial" @click="addSerial">Add Serial
                                             </button>
                                         </div>
@@ -294,12 +295,16 @@
 </template>
 
 <script>
+    import Loader from './../Loader/Loader.vue';
     import Select2 from './Select2.vue';
     import Add from './Add.vue';
+    import NotyAlert from './../Noty/notyAlert';
     export default {
 
         data() {
             return{
+                titleHead: 'Create CFAT',
+                loading:false,
                 laravelToken: window.Laravel.csrfToken,
                 addRows: [],
                 brands:[],
@@ -314,12 +319,8 @@
             }
         },
         mounted() {
-            this.fetchProducts();
-            this.fetchModel();
-            this.fetchCategory();
-            this.fetchDescriptions();
-            this.fetchManufacture();
-            this.fetchLocation();
+            document.title = this.titleHead
+            this.fetchAll();
         },
         computed:{
             addTd(){
@@ -394,71 +395,62 @@
                 var intersect = _.intersection(product, vm.selected)
                 this.selected = intersect
             },
-            fetchModel: function () {
+            fetchAll(){
                 var that = this;
-                 $.get("../api/brands", function(data, status){
-                        that.brands =_.map(data.brands, function(data){
+                that.loading =  true;
+                axios.all([
+                    axios.get('../api/brands'),
+                    axios.get('../api/categories'),
+                    axios.get('../api/descriptions'),
+                    axios.get('../api/manufactures'),
+                    axios.get('../api/locations'),
+                    axios.get('../api/products')
+                  ])
+                  .then(axios.spread(function (dataBrands,dataCategories,dataDescription,dataManufactures,dataLocations, dataProducts ) {
+                    that.loading = false
+                    that.brands =_.map(dataBrands.data.brands, function(data){
                         var pick = _.pick(data, 'name', 'id');
                         var object = {id:pick.id, text:pick.name}
                         return object})
-                });
-                //axios.get('../api/brands').then(response => this.brands = _.map(response.data.brands, function(data){ return _.pick(data, 'name', 'id');}))
-            },
-            fetchCategory: function () {
-                var that = this;
-                 $.get("../api/categories", function(data, status){
-                        that.categories =_.map(data.categories, function(data){
+                    that.categories =_.map(dataCategories.data.categories, function(data){
                         var pick = _.pick(data, 'name', 'id');
                         var object = {id:pick.id, text:pick.name}
                         return object})
-                });
-               // axios.get('../api/categories').then(response => this.categories = _.map(response.data.categories, function(data){ return _.pick(data, 'name', 'id');}))
-            },
-            fetchProducts: function () {
-                var that = this;
-                 $.get("../api/products", function(data, status){
-                        that.products = _.map(data.products, function(data){
-                        var pick = _.pick(data, 'serial', 'id', 'quantity','status','manufacture.id','description.id','location.id','category.id','brand.id'  );
-                        var object = {id:pick.id, text:pick.serial,quantity:pick.quantity,status:pick.status,manufacture:pick.manufacture.id, description:pick.description.id, location:pick.location.id,category:pick.category.id,model:pick.brand.id}
-                        return object})
-                });
-                //axios.get('../api/products').then(response => this.products = response.data.products)
-            },
-            fetchDescriptions: function () {
-                var that = this;
-                 $.get("../api/descriptions", function(data, status){
-                        that.descriptions = _.map(data.descriptions, function(data){
+                    that.descriptions = _.map(dataDescription.data.descriptions, function(data){
                         var pick = _.pick(data, 'name', 'id');
                         var object = {id:pick.id, text:pick.name}
                         return object})
-                });
-               // axios.get('../api/descriptions').then(response => this.descriptions =  _.map(response.data.descriptions, function(data){ return _.pick(data, 'name', 'id');}))
-            },
-            fetchManufacture: function () {
-                var that = this;
-                 $.get("../api/manufactures", function(data, status){
-                        that.manufactures =_.map(data.manufactures, function(data){
+                    that.manufactures =  _.map(dataManufactures.data.manufactures, function(data){
                         var pick = _.pick(data, 'name', 'id');
                         var object = {id:pick.id, text:pick.name}
                         return object})
-                });
-             //   axios.get('../api/manufactures').then(response => this.manufactures =  _.map(response.data.manufactures, function(data){ return _.pick(data, 'name', 'id');}));
-            },
-            fetchLocation: function () {
-                var that = this;
-                 $.get("../api/locations", function(data, status){
-                        that.locations =_.map(data.locations, function(data){
+                    that.locations =_.map(dataLocations.data.locations, function(data){
                         var pick = _.pick(data, 'name', 'id');
                         var object = {id:pick.id, text:pick.name}
                         return object})
-                });
-                //axios.get('../api/locations').then(response => this.locations =  _.map(response.data.locations, function(data){ return _.pick(data, 'name', 'id');}));
-            }
+                    that.products = _.map(dataProducts.data.products, function(data){
+                        var pick = _.pick(data, 'serial', 'id', 'quantity','status','manufacture.id','description.id','location.id','category.id','brand.id', 'assetSerial'  );
+                        var object = {
+                            id:pick.id,
+                            text:pick.serial,
+                            quantity:pick.quantity,
+                            status:pick.status,
+                            manufacture:pick.manufacture.id,
+                            description:pick.description.id,
+                            location:pick.location.id,
+                            category:pick.category.id,
+                            model:pick.brand.id,
+                            assetSerial:pick.assetSerial}
+                        return object})
+
+                  }));
+            },
 
         },
         components:{
             'select2': Select2,
-            'add':Add
+            'add':Add,
+            'loader':Loader
         },
     }
 

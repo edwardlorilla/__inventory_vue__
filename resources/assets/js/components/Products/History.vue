@@ -16,12 +16,13 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr v-for="data in dataFetch">
+                            <tr v-if="dataFetch"  v-for="data in dataFetch">
                                 <td>{{data.status}}</td>
                                 <td>{{data.currentLocation}}</td>
                                 <td>{{data.lastLocation}}</td>
                                 <td>{{data.updateDate}}</td>
                             </tr>
+                            <tr v-else>NO CONTENT</tr>
                             </tbody>
                         </table>
 

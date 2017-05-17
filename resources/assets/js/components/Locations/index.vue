@@ -14,6 +14,7 @@
         </div>
         <div v-if="brands">
             <demo-grid
+                    titleHead="Locations"
                 :data="brands"
                 :columns="brandsColumns"
                 :filter-key="searchQuery">
