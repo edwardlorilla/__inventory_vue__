@@ -17,11 +17,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::resource('brands', 'api\BrandControllers');
+Route::get('brands/{brands}/history', 'api\BrandControllers@history');
+
 Route::resource('categories', 'api\CategoriesControllers');
 Route::resource('descriptions', 'api\DescriptionsControllers');
 Route::resource('locations', 'api\LocationsControllers');
 Route::resource('manufactures', 'api\ManufacturesControllers');
 Route::resource('transfers', 'api\TransfersControllers');
+Route::resource('statuses', 'api\StatusesController');
+Route::resource('actions', 'api\ActionsController');
 Route::get('transfers/{transfers}/history', 'api\TransfersControllers@history');
+Route::get('transfers/getSerial/{serial}', 'api\TransfersControllers@getSerial');
 Route::post('products/imports', 'api\ProductsControllers@importData');
 Route::resource('products', 'api\ProductsControllers');

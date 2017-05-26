@@ -14,9 +14,9 @@ class ManufacturesControllers extends Controller
      */
     public function index()
     {
-        $brands = \App\Manufacture::orderBy('created_at','desc')->get();
+        $brands = \App\Manufacture::with('products')->orderBy('created_at','desc')->get();
         return response()->json([
-            'manufactures' => $brands
+            'data' => $brands
             ]);
     }
 
@@ -65,6 +65,7 @@ class ManufacturesControllers extends Controller
      */
     public function edit($id)
     {
+
         $data = \App\Manufacture::where('id' , $id)->first();
         return response()->json([
             'data' => $data
@@ -98,6 +99,7 @@ class ManufacturesControllers extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = \App\Manufacture::where('id', $id)->first();
+        $data->delete();
     }
 }

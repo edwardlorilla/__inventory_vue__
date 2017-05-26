@@ -9,6 +9,7 @@
                         <create-data
                                 :urlString="urlData"
                                 :textLabel="textData"
+                                :nameData="nameData"
                         >
 
                         </create-data>
@@ -25,7 +26,10 @@
         data(){
             return{
                 textData: 'Descriptions',
-                urlData: '../api/descriptions'
+                urlData: '../api/descriptions',
+                nameData: {
+                    name: ''
+                }
             }
         },
         components:{

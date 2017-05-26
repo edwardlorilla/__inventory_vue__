@@ -33,7 +33,7 @@ const editDescriptions = resolve => require(['./components/Descriptions/edit.vue
 
 const Locations = resolve => require(['./components/Locations/index.vue'], resolve);
 const createLocations = resolve => require(['./components/Locations/create.vue'], resolve);
-const editLocations = resolve => require(['./components/Locations/create.vue'], resolve);
+const editLocations = resolve => require(['./components/Locations/edit.vue'], resolve);
 
 const Manufactures = resolve => require(['./components/Manufactures/index.vue'], resolve);
 const createManufactures = resolve => require(['./components/Manufactures/create.vue'], resolve);
@@ -57,7 +57,7 @@ export default [
 
     },{
         path: '*',
-        component: Error404,
+        component: Transfers,
         name: '404',
 
     },{

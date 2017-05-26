@@ -47,12 +47,16 @@
                                                 <tr v-for="(addTd, index) in addRows">
                                                     <td :class="{'has-error' : addTd.hasError}">
                                                         <div v-if="showAddSerial" class="input-group input-group-sm">
-                                                            <input class="form-control input-sm"
+                                                           <input
+                                                                   id="inputSerial"
+                                                                   class="form-control input-sm"
                                                                    required
                                                                    name="serial[]"
                                                                    type="text"
                                                                    v-model="addTd.createSerial"
-                                                                   />
+                                                                   list="serial"
+                                                                   @change="inputSerial(index)"
+                                                           />
                                                             <span class="input-group-btn">
 
                                                                 <button class="btn btn-sm btn-danger"
@@ -68,7 +72,7 @@
                                                                     <i class="glyphicon glyphicon-plus"></i>
                                                                     </button>
                                                                 </span>
-                                                            <select2 :options="products"
+                                                            <select2 :options="productFetch"
                                                                      name="serial[]"
                                                                      required
                                                                      v-model.number="addTd.product"
@@ -90,7 +94,7 @@
                                                                   class="help-block">Duplicated Entry</span>
                                                     </td>
                                                     <td>
-                                                        <select class="form-control input-sm"
+                                                        <!--<select class="form-control input-sm"
                                                                 v-model="addTd.status"
                                                                 required
                                                                 name="action[]"
@@ -101,10 +105,18 @@
                                                             <option value="0">
                                                                 Defective
                                                             </option>
-                                                        </select>
+                                                        </select>-->
+                                                        <select2  :options="statusesFetch"
+                                                                  urlName="../api/statuses"
+                                                                  name="action[]"
+                                                                  v-model.number="addTd.status"
+                                                                  required
+                                                        >
+                                                            <option disabled value="0">Select one</option>
+                                                        </select2>
                                                     </td>
                                                     <td>
-                                                        <select class="form-control input-sm"
+                                                        <!--<select class="form-control input-sm"
                                                                 v-model="addTd.action"
                                                                 required
                                                                 name="status[]"
@@ -119,7 +131,15 @@
                                                                 REPLACED
                                                             </option>
 
-                                                        </select>
+                                                        </select>-->
+                                                        <select2  :options="actionsFetch"
+                                                                  urlName="../api/actions"
+                                                                  name="status[]"
+                                                                  v-model.number="addTd.action"
+                                                                  required
+                                                        >
+                                                            <option disabled value="0">Select one</option>
+                                                        </select2>
                                                     </td>
                                                     <td>
                                                         <input name="quantity[]" class="form-control input-sm" min='1'
@@ -129,30 +149,8 @@
                                                                required>
                                                     </td>
                                                         <td v-if="showAddSerial">
-                                                            <div v-if="addTd.showModel" >
-                                                                <add
-                                                                    @close = "addTd.showModel = false"
-                                                                    urlName="../api/brands"
-                                                                    @fetch="fetchModel"
-                                                                >
-                                                                </add>
-
-                                                            </div>
-                                                            <div v-else class="input-group input-group-sm p">
-
-                                                                <!--<select class="form-control input-sm"
-                                                                        v-model="addTd.model">
-                                                                    <option v-for="option in brands" v-bind:value="option.id">
-                                                                        {{ option.name }}
-                                                                    </option>
-                                                                </select>-->
-                                                                <span class="input-group-btn">
-                                                                    <button class="btn btn-sm btn-primary"
-                                                                            @click.prevent="addTd.showModel =! addTd.showModel">
-                                                                            <i class="glyphicon glyphicon-plus"></i>
-                                                                    </button>
-                                                                </span>
-                                                                <select2  :options="brands"
+                                                            <div>
+                                                                <select2  :options="brandsFetch"
                                                                           urlName="../api/brands"
                                                                           name="model[]"
                                                                           v-model.number="addTd.model"
@@ -163,30 +161,8 @@
                                                             </div>
                                                         </td>
                                                         <td v-if="showAddSerial">
-                                                            <div v-if="addTd.showCategory">
-                                                                <add
-                                                                        @close = "addTd.showCategory = false"
-                                                                        urlName="../api/categories"
-                                                                        @fetch="fetchCategory"
-                                                                >
-                                                                </add>
-                                                            </div>
-                                                            <div v-else class="input-group input-group-sm">
-
-                                                                <!--<select class="form-control"
-                                                                        v-model="addTd.category">
-                                                                    <option v-for="option in categories"
-                                                                            v-bind:value="option.id">
-                                                                        {{ option.name }}
-                                                                    </option>
-                                                                </select>-->
-                                                                <span class="input-group-btn">
-                                                                    <button class="btn btn-sm btn-primary"
-                                                                            @click.prevent="addTd.showCategory =! addTd.showCategory">
-                                                                        <i class="glyphicon glyphicon-plus"></i>
-                                                                    </button>
-                                                                </span>
-                                                                <select2 :options="categories"
+                                                            <div>
+                                                                <select2 :options="categoriesFetch"
                                                                          name="category[]"
                                                                          v-model.number="addTd.category"
                                                                          urlName="../api/categories"
@@ -197,30 +173,8 @@
                                                             </div>
                                                         </td>
                                                         <td v-if="showAddSerial">
-                                                            <div v-if=addTd.showDescription>
-                                                                <add
-                                                                        @close = "addTd.showDescription = false"
-                                                                        urlName="../api/descriptions"
-                                                                        @fetch="fetchDescriptions"
-                                                                >
-                                                                </add>
-                                                            </div>
-                                                            <div v-else class="input-group input-group-sm">
-
-                                                                <!--<select class="form-control"
-                                                                        v-model="addTd.description">
-                                                                    <option v-for="option in descriptions"
-                                                                            v-bind:value="option.id">
-                                                                        {{ option.name }}
-                                                                    </option>
-                                                                </select>-->
-                                                                <span class="input-group-btn">
-                                                                    <button class="btn btn-sm btn-primary"
-                                                                            @click.prevent="addTd.showDescription =! addTd.showDescription">
-                                                                        <i class="glyphicon glyphicon-plus"></i>
-                                                                    </button>
-                                                                </span>
-                                                                <select2 :options="descriptions"
+                                                            <div>
+                                                                <select2 :options="descriptionsFetch"
                                                                          name="description[]"
                                                                          urlName="../api/descriptions"
                                                                          v-model.number="addTd.description"
@@ -231,15 +185,15 @@
 
                                                         </td>
                                                         <td v-if="showAddSerial">
-                                                            <div v-if="addTd.showManufacture">
+                                                            <!--<div v-if="addTd.showManufacture">
                                                                 <add
                                                                         @close = "addTd.showManufacture = false"
                                                                         urlName="../api/manufactures"
                                                                         @fetch="fetchManufacture"
                                                                 >
                                                                 </add>
-                                                            </div>
-                                                            <div v-else class="input-group input-group-sm">
+                                                            </div>-->
+                                                            <div>
 
                                                                 <!--<select class="form-control"
                                                                         v-model="addTd.manufacture">
@@ -248,13 +202,13 @@
                                                                         {{ option.name }}
                                                                     </option>
                                                                 </select>-->
-                                                                <span class="input-group-btn">
+                                                                <!--<span class="input-group-btn">
                                                                     <button class="btn btn-sm btn-primary"
                                                                             @click.prevent="addTd.showManufacture =! addTd.showManufacture">
                                                                         <i class="glyphicon glyphicon-plus"></i>
                                                                     </button>
-                                                                </span>
-                                                                <select2 :options="manufactures" name="manufactures[]"
+                                                                </span>-->
+                                                                <select2 :options="manufacturesFetch" name="manufactures[]"
                                                                          urlName="../api/manufactures"
                                                                          required
                                                                          v-model.number="addTd.manufacture">
@@ -263,7 +217,7 @@
                                                             </div>
                                                         </td>
                                                     <td>
-                                                        <select2 :options="locations" name="location[]"
+                                                        <select2 :options="locationsFetch" name="location[]"
                                                                  required
                                                                  v-model="addTd.location">
                                                             <option disabled value="0">Select one</option>
@@ -290,7 +244,7 @@
                 </div>
             </div>
         </div>
-
+        <data-list idList ="serial" :lists="productFetch"></data-list>
     </div>
 </template>
 
@@ -299,7 +253,26 @@
     import Select2 from './Select2.vue';
     import Add from './Add.vue';
     import NotyAlert from './../Noty/notyAlert';
+    import DataList  from './DataList.vue';
+
+    import brandState from './../Filtering/brandStates.js';
+    import categoryState from './../Filtering/categoryStates.js';
+    import statusState from './../Filtering/statusStates.js';
+    import actionState from './../Filtering/actionStates.js';
+    import descriptionState from './../Filtering/descriptionStates.js';
+    import ManufacturesState from './../Filtering/ManufacturesStates.js';
+    import LocationState from './../Filtering/locationState.js';
+    import productState from './../Filtering/productStates.js';
+    import fetchAll from './../Filtering/fetchAll.js';
+
     export default {
+        name: 'createCFAT',
+        components:{
+            'select2': Select2,
+            'add':Add,
+            'loader':Loader,
+            'data-list' : DataList,
+        },
 
         data() {
             return{
@@ -307,12 +280,24 @@
                 loading:false,
                 laravelToken: window.Laravel.csrfToken,
                 addRows: [],
-                brands:[],
-                categories:[],
-                products:[],
-                descriptions:[],
-                manufactures:[],
-                locations:[],
+
+                brands:brandState.data,
+                categories:categoryState.data,
+                products:productState.data,
+                descriptions:descriptionState.data,
+                manufactures:ManufacturesState.data,
+                locations:LocationState.data,
+                statuses:statusState.data,
+                actions:actionState.data,
+
+                /*
+                    brands:[],
+                    categories:[],
+                    products:[],
+                    descriptions:[],
+                    manufactures:[],
+                    locations:[],
+                */
                 showAddSerial: false,
                 selected:[],
                 disabledButton: false
@@ -320,9 +305,75 @@
         },
         mounted() {
             document.title = this.titleHead
-            this.fetchAll();
+            //this.fetchAll();
         },
         computed:{
+            brandsFetch(){
+                var vm = this
+                return _.map(vm.brands.brands, function(data){
+                        var pick = _.pick(data, 'name', 'id');
+                        var object = {id:pick.id, text:pick.name}
+                        return object})
+            },
+            categoriesFetch(){
+                var vm = this
+                return _.map(vm.categories.categories, function(data){
+                        var pick = _.pick(data, 'name', 'id');
+                        var object = {id:pick.id, text:pick.name}
+                        return object})
+            },
+            descriptionsFetch(){
+                var vm = this
+                return _.map(vm.descriptions.descriptions, function(data){
+                        var pick = _.pick(data, 'name', 'id');
+                        var object = {id:pick.id, text:pick.name}
+                        return object})
+            },
+            locationsFetch(){
+                var vm = this
+                return _.map(vm.locations.locations, function(data){
+                        var pick = _.pick(data, 'name', 'id');
+                        var object = {id:pick.id, text:pick.name}
+                        return object})
+            },
+            manufacturesFetch(){
+                var vm = this
+                return _.map(vm.manufactures.brands, function(data){
+                        var pick = _.pick(data, 'name', 'id');
+                        var object = {id:pick.id, text:pick.name}
+                        return object})
+            },
+            statusesFetch(){
+                var vm = this
+                return _.map(vm.statuses.brands, function(data){
+                        var pick = _.pick(data, 'name', 'id');
+                        var object = {id:pick.id, text:pick.name}
+                        return object})
+            },
+            actionsFetch(){
+                var vm = this
+                return _.map(vm.actions.brands, function(data){
+                        var pick = _.pick(data, 'name', 'id');
+                        var object = {id:pick.id, text:pick.name}
+                        return object})
+            },
+            productFetch(){
+                var vm = this;
+                return _.map(vm.products.brands, function(data){
+                        var pick = _.pick(data, 'serial', 'id', 'quantity','status','manufacture','description','location','category','model', 'assetSerial'  );
+                        var object = {
+                            id:pick.id,
+                            text:pick.serial,
+                            quantity:pick.quantity,
+                            status:pick.status,
+                            manufacture:pick.manufacture,
+                            description:pick.description,
+                            location:pick.location,
+                            category:pick.category,
+                            model:pick.model,
+                            assetSerial:pick.assetSerial}
+                        return object})
+            },
             addTd(){
                 return {
                     enter : this.addRow,
@@ -335,10 +386,38 @@
             }
         },
         methods:{
+            inputSerial(index){
+                var vm = this;
+                var datalist_id = document.getElementById("serial")
+                var input_id = document.getElementById("inputSerial")
+                console.log(datalist_id.options)
+                for (var i=0;i<datalist_id.options.length;i++){
+                    if (datalist_id.options[i].value == input_id.value)
+                    {
+                        var value = datalist_id.options[i].value;
+                        var domain = document.domain
+                        axios.get('../../api/transfers/getSerial/' + value ).then(response => {
+                            vm.addRows[index].serial = response.data.data.serial,
+                            vm.addRows[index].quantity = 1,
+                            vm.addRows[index].status = response.data.data.status,
+                            vm.addRows[index].action = response.data.data.status == 0 ?  3 :  2,
+                            vm.addRows[index].model = response.data.data.brand_id,
+                            vm.addRows[index].category = response.data.data.category_id,
+                            vm.addRows[index].description=response.data.data.description_id,
+                            vm.addRows[index].manufacture=response.data.data.manufacture_id,
+                            vm.addRows[index].location=response.data.data.location_id,
+                            vm.addRows[index].maxQuantity=vm.addRows[index].quantity
+
+                        })
+                        break;
+                    }
+                }
+
+            },
             validateDuplicate(event, index){
             var vm = this
             var product = _.map(vm.addRows, 'product')
-            var pluckProduct = _.map(vm.products, 'id')
+            var pluckProduct = _.map(vm.products.brands, 'id')
             var intersect = _.intersection(product, vm.selected)
             this.selected = intersect
             if (_.includes(vm.selected, vm.addRows[index].product)) {
@@ -395,62 +474,8 @@
                 var intersect = _.intersection(product, vm.selected)
                 this.selected = intersect
             },
-            fetchAll(){
-                var that = this;
-                that.loading =  true;
-                axios.all([
-                    axios.get('../api/brands'),
-                    axios.get('../api/categories'),
-                    axios.get('../api/descriptions'),
-                    axios.get('../api/manufactures'),
-                    axios.get('../api/locations'),
-                    axios.get('../api/products')
-                  ])
-                  .then(axios.spread(function (dataBrands,dataCategories,dataDescription,dataManufactures,dataLocations, dataProducts ) {
-                    that.loading = false
-                    that.brands =_.map(dataBrands.data.brands, function(data){
-                        var pick = _.pick(data, 'name', 'id');
-                        var object = {id:pick.id, text:pick.name}
-                        return object})
-                    that.categories =_.map(dataCategories.data.categories, function(data){
-                        var pick = _.pick(data, 'name', 'id');
-                        var object = {id:pick.id, text:pick.name}
-                        return object})
-                    that.descriptions = _.map(dataDescription.data.descriptions, function(data){
-                        var pick = _.pick(data, 'name', 'id');
-                        var object = {id:pick.id, text:pick.name}
-                        return object})
-                    that.manufactures =  _.map(dataManufactures.data.manufactures, function(data){
-                        var pick = _.pick(data, 'name', 'id');
-                        var object = {id:pick.id, text:pick.name}
-                        return object})
-                    that.locations =_.map(dataLocations.data.locations, function(data){
-                        var pick = _.pick(data, 'name', 'id');
-                        var object = {id:pick.id, text:pick.name}
-                        return object})
-                    that.products = _.map(dataProducts.data.products, function(data){
-                        var pick = _.pick(data, 'serial', 'id', 'quantity','status','manufacture.id','description.id','location.id','category.id','brand.id', 'assetSerial'  );
-                        var object = {
-                            id:pick.id,
-                            text:pick.serial,
-                            quantity:pick.quantity,
-                            status:pick.status,
-                            manufacture:pick.manufacture.id,
-                            description:pick.description.id,
-                            location:pick.location.id,
-                            category:pick.category.id,
-                            model:pick.brand.id,
-                            assetSerial:pick.assetSerial}
-                        return object})
 
-                  }));
-            },
 
-        },
-        components:{
-            'select2': Select2,
-            'add':Add,
-            'loader':Loader
         },
     }
 

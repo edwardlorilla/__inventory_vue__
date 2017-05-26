@@ -7,11 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $fillable = [
-        'quantity', 'serial', 'manufacture_id', 'description_id', 'location_id', 'category_id', 'brand_id', 'status','assetSerial'
+        'quantity', 'serial', 'manufacture_id', 'description_id', 'location_id', 'category_id', 'brand_id', 'status_id','assetSerial'
     ];
     public function transfers()
     {
         return $this->hasMany(Tranfer::class);
+    }
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
     }
     public function brand()
     {

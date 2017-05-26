@@ -17,12 +17,16 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->integer('quantity');
             $table->string('serial')->nullable();
+            $table->integer('status_id')->nullable();
 
-            $table->boolean('status')->default(1);
-            $table->integer('brand_id')->nullable()->unsigned();
+            $table->integer('brand_id')->nullable()->unsigned()->default(1);
+
             $table->integer('manufacture_id')->nullable()->unsigned();
+
             $table->integer('category_id')->nullable()->unsigned();
+
             $table->integer('description_id')->nullable()->unsigned();
+
             $table->integer('location_id')->nullable()->unsigned();
             $table->timestamps();
         });

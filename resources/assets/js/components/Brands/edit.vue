@@ -26,6 +26,7 @@
             return{
                 textData: 'Model',
                 urlData: '../api/brands',
+
             }
         },
         components:{

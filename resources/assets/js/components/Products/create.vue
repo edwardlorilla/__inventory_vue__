@@ -1,7 +1,6 @@
 <template>
     <div class="container-fluid">
-        <loader v-if="loading"></loader>
-        <div v-else class="row">
+        <div  class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading"></div>
@@ -28,7 +27,8 @@
                                     <th>Location</th>
 
                                     <th style="text-align: center;">
-                                        <a v-hotkey="addTd" v-on:click="addRow" class="addRow">
+                                        <a v-hotkey="addTd" v-on:click="addRow" class="addRow"
+                                        >
                                             <i class="glyphicon glyphicon-plus"></i>
                                         </a>
                                         <vue-xlsx-table @on-select-file="handleSelectedFile"><i class="glyphicon glyphicon-open"></i></vue-xlsx-table>
@@ -58,16 +58,16 @@
                                         </td>
 
                                         <td>
-                                            <select class="form-control"
-                                                    v-model="addTd.status">
-                                                <option value="1">
-                                                    Working
-                                                </option>
-                                                <option value="0">
-                                                    Defective
-                                                </option>
-                                            </select>
-                                        </td>
+                                            <select2  :options="statusesFetch"
+                                                      urlName="../api/statuses"
+                                                      name="action[]"
+                                                      v-model.number="addTd.status"
+                                                      required
+                                            >
+                                                <option disabled value="0">Select one</option>
+                                            </select2>
+                                            </td>
+
                                         <td>
                                             <input  class="form-control input-sm" min='1'
 
@@ -101,7 +101,7 @@
                                                                         <i class="glyphicon glyphicon-plus"></i>
                                                                 </button>
                                                             </span>-->
-                                                <select2 :options="brands"
+                                                <select2 :options="brandsFetch"
                                                          urlName="../api/brands"
                                                          name="model[]"
                                                          v-model.number="addTd.model"
@@ -128,7 +128,7 @@
                                                                     <i class="glyphicon glyphicon-plus"></i>
                                                                 </button>
                                                             </span>-->
-                                                <select2 :options="categories"
+                                                <select2 :options="categoriesFetch"
                                                          name="category[]"
                                                          v-model.number="addTd.category"
                                                          urlName="../api/categories"
@@ -163,7 +163,7 @@
                                                                     <i class="glyphicon glyphicon-plus"></i>
                                                                 </button>
                                                             </span>-->
-                                                <select2 :options="descriptions"
+                                                <select2 :options="descriptionsFetch"
                                                          name="description[]"
                                                          urlName="../api/descriptions"
                                                          v-model.number="addTd.description"
@@ -198,7 +198,7 @@
                                                                     <i class="glyphicon glyphicon-plus"></i>
                                                                 </button>
                                                             </span>-->
-                                                <select2 :options="manufactures" name="manufactures[]"
+                                                <select2 :options="manufacturesFetch" name="manufactures[]"
                                                          urlName="../api/manufactures"
                                                          required
                                                          v-model.number="addTd.manufacture"
@@ -210,7 +210,7 @@
                                         </td>
                                         <td>
                                             <!--location-->
-                                            <select2 :options="locations" name="location[]"
+                                            <select2 :options="locationsFetch" name="location[]"
                                                      required
                                                      v-model="addTd.location">
                                                 <option disabled value="0">Select one</option>
@@ -242,6 +242,15 @@
     import Select2 from './../Transfers/Select2.vue';
     import Add from './../Transfers/Add.vue';
     import NotyAlert from './../Noty/notyAlert';
+
+    import brandState from './../Filtering/brandStates.js';
+    import categoryState from './../Filtering/categoryStates.js';
+    import descriptionState from './../Filtering/descriptionStates.js';
+    import ManufacturesState from './../Filtering/ManufacturesStates.js';
+    import LocationState from './../Filtering/locationState.js';
+    import productState from './../Filtering/productStates.js';
+    import statusState from './../Filtering/statusStates.js';
+    import fetchAll from './../Filtering/fetchAll.js';
     export default {
 
         components:{
@@ -253,12 +262,13 @@
             return{
                 loading : false,
                 addRows: [],
-                brands:[],
-                categories:[],
-                products:[],
-                descriptions:[],
-                manufactures:[],
-                locations:[],
+                brands:brandState.data,
+                categories:categoryState.data,
+                products:productState.data,
+                descriptions:descriptionState.data,
+                manufactures:ManufacturesState.data,
+                statuses:statusState.data,
+                locations:LocationState.data,
                 showAddSerial: false,
                 selected:[],
                 selectAsset: [],
@@ -266,10 +276,51 @@
             }
         },
         mounted() {
-            this.fetchAll();
+            //this.fetchAll();
         },
         computed:{
-
+            brandsFetch(){
+                var vm = this
+                return _.map(vm.brands.brands, function(data){
+                        var pick = _.pick(data, 'name', 'id');
+                        var object = {id:pick.id, text:pick.name}
+                        return object})
+            },
+            categoriesFetch(){
+                var vm = this
+                return _.map(vm.categories.categories, function(data){
+                        var pick = _.pick(data, 'name', 'id');
+                        var object = {id:pick.id, text:pick.name}
+                        return object})
+            },
+            statusesFetch(){
+                var vm = this
+                return _.map(vm.statuses.brands, function(data){
+                        var pick = _.pick(data, 'name', 'id');
+                        var object = {id:pick.id, text:pick.name}
+                        return object})
+            },
+            descriptionsFetch(){
+                var vm = this
+                return _.map(vm.descriptions.descriptions, function(data){
+                        var pick = _.pick(data, 'name', 'id');
+                        var object = {id:pick.id, text:pick.name}
+                        return object})
+            },
+            locationsFetch(){
+                var vm = this
+                return _.map(vm.locations.locations, function(data){
+                        var pick = _.pick(data, 'name', 'id');
+                        var object = {id:pick.id, text:pick.name}
+                        return object})
+            },
+            manufacturesFetch(){
+                var vm = this
+                return _.map(vm.manufactures.brands, function(data){
+                        var pick = _.pick(data, 'name', 'id');
+                        var object = {id:pick.id, text:pick.name}
+                        return object})
+            },
             addTd(){
                 return {
                     enter : this.addRow,
@@ -281,14 +332,26 @@
                 var vm = this
                 return _.isEmpty(vm.addRows)
             },
+            disableAddRow(){
+                var vm = this
+                return _.isEmpty(vm.locations.locations)
+            },
+
+
         },
         methods:{
             handleSelectedFile (convertedData) {
                 var vm = this
+                var pluckProduct = _.map(vm.products.brands, 'assetSerial')
                 axios.post('../api/products/imports', {products :convertedData.body}).then(response => {
                     vm.fetchAll()
                     _.forEach(response.data, function(value) {
-                      vm.addRows.push({
+                      /* if (_.includes(vm.selectAsset, value.assetSerial) || _.includes(pluckProduct, value.assetSerial)) {
+                        console.log('Duplicated Entry')
+                      }else{
+                      */
+                         vm.selectAsset.push(value.assetSerial)
+                        vm.addRows.push({
                             serial: value.serial,
                             quantity: value.quantity,
                             status:1,
@@ -297,8 +360,9 @@
                             description: value.description_id,
                             manufacture: value.manufacture_id,
                             location:1,
-                            assetSerial: value.assetSerial,
+                            assetSerial:  value.assetSerial,
                         })
+                      //}
                     });
                 }).
                 catch(function (error) {
@@ -307,22 +371,28 @@
             validateDuplicateAssetSerial(index){
                 var vm = this
                 var product = _.map(vm.addRows, 'assetSerial')
-                var pluckProduct = _.map(vm.products, 'assetSerial')
+                var pluckProduct = _.map(vm.products.brands, 'assetSerial')
                 var intersect = _.intersection(product, vm.selectAsset)
                 vm.selectAsset = intersect
-                if (_.includes(vm.selectAsset, vm.addRows[index].assetSerial)) {
+                this.addRows[index].hasAssetError = false
+                if (_.includes(vm.selectAsset, vm.addRows[index].assetSerial) || _.includes(pluckProduct, vm.addRows[index].assetSerial)) {
                     console.log('Duplicated Entry')
+                    this.selectAsset = intersect
+                    vm.selectAsset = _.compact(vm.selectAsset)
                     this.addRows[index].hasAssetError = true
-                }else{
+                }
+                else{
                     this.selectAsset = intersect
                     this.selectAsset.push(this.addRows[index].assetSerial)
+                    vm.selectAsset = _.compact(vm.selectAsset)
                     this.addRows[index].hasAssetError = false
                 }
+
             },
             validateDuplicate(index){
                 var vm = this
                 var product = _.map(vm.addRows, 'serial')
-                var pluckProduct = _.map(vm.products, 'text')
+                var pluckProduct = _.map(vm.products.brands, 'serial')
                 var intersect = _.intersection(product, vm.selected)
                 this.selected = intersect
 
@@ -330,8 +400,11 @@
                 //quantity Check
                 if(!_.isEmpty(vm.addRows[index].serial)){
                    vm.addRows[index].quantity = 1
+                   vm.selected = _.compact(vm.selected)
                    vm.addRows[index].disabledQuantity = true
-                }else{
+                }
+                else{
+                    vm.selected = _.compact(vm.selected)
                     vm.addRows[index].disabledQuantity = false
                 }
 
@@ -339,16 +412,20 @@
                 if (_.includes(vm.selected, vm.addRows[index].serial) || _.includes(pluckProduct, vm.addRows[index].serial)) {
                     console.log('Duplicated Entry')
                     vm.disabledButton = true
+                     vm.selected = _.compact(vm.selected)
                     this.addRows[index].hasError = true
                 }else{
                     this.selected = intersect
                     this.selected.push(this.addRows[index].serial)
+                     vm.selected = _.compact(vm.selected)
                     this.addRows[index].hasError = false
                     vm.disabledButton = false
                 }
             },
             deleteRow(){
                 this.addRows.pop()
+                this.selectAsset.pop()
+                this.selected.pop()
             },
             addSerial: function () {
                 var addRows = _.map(this.addRows, function(num){
@@ -357,7 +434,8 @@
                 })
                 axios.post('../api/products', {products :addRows}).then(response => {
                     this.$router.push({name:'products'})
-                    NotyAlert.notyAlert('success', 'Tech Item has deleted')
+
+                    NotyAlert.notyAlert('success', 'Tech Item has created')
                 }).
                 catch(function (error) {
                     NotyAlert.notyAlert('error', 'something went wrong');
@@ -403,56 +481,7 @@
                 var intersect = _.intersection(product, vm.selected)
                 this.selected = intersect
             },
-            fetchAll(){
-                var that = this;
-                that.loading =  true;
-                axios.all([
-                    axios.get('../api/brands'),
-                    axios.get('../api/categories'),
-                    axios.get('../api/descriptions'),
-                    axios.get('../api/manufactures'),
-                    axios.get('../api/locations'),
-                    axios.get('../api/products')
-                  ])
-                  .then(axios.spread(function (dataBrands,dataCategories,dataDescription,dataManufactures,dataLocations, dataProducts ) {
-                    that.loading = false
-                    that.brands =_.map(dataBrands.data.brands, function(data){
-                        var pick = _.pick(data, 'name', 'id');
-                        var object = {id:pick.id, text:pick.name}
-                        return object})
-                    that.categories =_.map(dataCategories.data.categories, function(data){
-                        var pick = _.pick(data, 'name', 'id');
-                        var object = {id:pick.id, text:pick.name}
-                        return object})
-                    that.descriptions = _.map(dataDescription.data.descriptions, function(data){
-                        var pick = _.pick(data, 'name', 'id');
-                        var object = {id:pick.id, text:pick.name}
-                        return object})
-                    that.manufactures =  _.map(dataManufactures.data.manufactures, function(data){
-                        var pick = _.pick(data, 'name', 'id');
-                        var object = {id:pick.id, text:pick.name}
-                        return object})
-                    that.locations =_.map(dataLocations.data.locations, function(data){
-                        var pick = _.pick(data, 'name', 'id');
-                        var object = {id:pick.id, text:pick.name}
-                        return object})
-                    that.products = _.map(dataProducts.data.products, function(data){
-                        var pick = _.pick(data, 'serial', 'id', 'quantity','status','manufacture.id','description.id','location.id','category.id','brand.id', 'assetSerial'  );
-                        var object = {
-                            id:pick.id,
-                            text:pick.serial,
-                            quantity:pick.quantity,
-                            status:pick.status,
-                            manufacture:pick.manufacture.id,
-                            description:pick.description.id,
-                            location:pick.location.id,
-                            category:pick.category.id,
-                            model:pick.brand.id,
-                            assetSerial:pick.assetSerial}
-                        return object})
 
-                  }));
-            }
         }
     }
 

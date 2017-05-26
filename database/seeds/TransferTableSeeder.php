@@ -17,19 +17,19 @@ class TransferTableSeeder extends Seeder
             [
                 'product_id' => rand(1, 5),
                 'location_id' => rand(1, 5),
-                'status' => rand(1, 3),
+                'action_id' => rand(1, 3),
             ], [
                 'product_id' => rand(1, 5),
                 'location_id' => rand(1, 5),
-                'status' => rand(1, 3),
+                'action_id' => rand(1, 3),
             ], [
                 'product_id' => rand(1, 5),
                 'location_id' => rand(1, 5),
-                'status' => rand(1, 3),
+                'action_id' => rand(1, 3),
             ], [
                 'product_id' => rand(1, 5),
                 'location_id' => rand(1, 5),
-                'status' => rand(1, 3),
+                'action_id' => rand(1, 3),
             ],
         ];
         DB::table('tranfers')->insert($tranfers);

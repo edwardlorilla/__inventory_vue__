@@ -22,6 +22,9 @@ class TransfersControllers extends Controller
             },
             'location' => function($query) {
                 $query->select(['id', 'lastLocation', 'name']);
+            },
+            'action' => function($query) {
+                $query->select(['id', 'name']);
             }
 
         ])->orderBy('created_at','desc')->get();
@@ -62,7 +65,7 @@ class TransfersControllers extends Controller
                         'location_id' => $request->location[$key],
                         'category_id' => $request->category[$key],
                         'brand_id' => $request->model[$key],
-                        'status' => $request->action[$key]
+                        'status_id' => $request->action[$key]
                     ]
                 )->id;
             }
@@ -88,7 +91,7 @@ class TransfersControllers extends Controller
             $location = \App\Location::where('id', $request->location[$key])->first();
             $location->select('lastLocation')->update(['lastLocation' => $lastK6]);
 
-            \App\Tranfer::create(['product_id' => $productid[$key], 'location_id' => $request->location[$key], 'status' => $request->status[$key]])->toArray();
+            \App\Tranfer::create(['product_id' => $productid[$key], 'location_id' => $request->location[$key], 'action_id' => $request->status[$key]])->toArray();
 
 
             $status = '';
@@ -141,7 +144,7 @@ class TransfersControllers extends Controller
 
 
         /*
-         * * I4 - BU Transferring From: PHAM14 to PHAM14
+             * * I4 - BU Transferring From: PHAM14 to PHAM14
          * * I6 - Operating Unit Transferring From: P91 TO P91
          * * K6 - From: GTI Front Storage to Fil2 4th Flr Wireline
          * */
@@ -230,9 +233,17 @@ class TransfersControllers extends Controller
     {
         //
     }
-
+    
     public function history($transfer)
     {
        return  \App\Tranfer::with('product', 'location')->where('product_id', $transfer)->orderBy('updated_at', 'desc')->get();
+    }
+
+    public function getSerial($serial)
+    {
+        $serial = \App\Product::where('serial',$serial )->first();
+        return response()->json([
+            'data' => $serial
+        ]);
     }
 }
