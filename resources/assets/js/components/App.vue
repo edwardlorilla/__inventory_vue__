@@ -1,6 +1,6 @@
 <template>
 
-    <div id="el">
+    <div  id="el">
 
         <nav class="navbar navbar-default navbar-static-top">
         <!--<nav class="navbar navbar-inverse navbar-static-top">-->
@@ -21,12 +21,10 @@
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse" >
                     <!-- Left Side Of Navbar -->
+
                     <ul v-hotkey="keymap" class="nav navbar-nav navbar-left">
-
-                            <router-link tag="li" :to="{ name: 'createTransfers' }"><a>Create CFAT</a></router-link>
-
-                            <router-link tag="li" :to="{ name: 'products' }"><a>Tech Items</a></router-link>
-
+                        <router-link tag="li" :to="{ name: 'createTransfers' }"><a>Create CFAT</a></router-link>
+                        <router-link tag="li" :to="{ name: 'products' }"><a>Tech Items</a></router-link>
                         <router-link tag="li" :to="{ name: 'descriptions' }" ><a>Descriptions</a></router-link>
                         <router-link tag="li" :to="{ name: 'brands' }" ><a>Models</a></router-link>
                         <router-link tag="li" :to="{ name: 'manufactures' }" ><a>Manufacures</a></router-link>
@@ -37,7 +35,7 @@
                 </div>
             </nav>
         <transition name="fade" mode="out-in" appear >
-            <router-view ></router-view>
+                <router-view ></router-view>
         </transition>
         <vue-particles
                 color="#8eb4cb"
@@ -45,7 +43,7 @@
         ></vue-particles>
         <div class="navbar navbar-default navbar-fixed-bottom">
             <div class="container">
-                <p class="navbar-text pull-left">Copyright © {{dataDate}}
+                <p class="navbar-text pull-left">Copyright &copy; {{dataDate}}
                     <router-link  :to="{ name: 'developer' }" >Mindanao Kokusai Daigaku</router-link>
                 </p>
 
@@ -76,6 +74,7 @@
 </style>
 
 <script>
+    import fetchAll from './Filtering/fetchAll.js';
     export default {
         data(){
             return{
@@ -83,6 +82,9 @@
             }
         },
         methods:{
+            fetchAll(){
+                fetchAll.fetchAll()
+            },
             createCfat(){
                  this.$router.push({ name: 'createTransfers' })
             },
@@ -105,6 +107,9 @@
                 this.$router.push({ name: 'categories' })
             },
         },
+        mounted(){
+            this.fetchAll()
+        },
         computed:{
             dataDate(){
                 var d = new Date();
@@ -113,13 +118,13 @@
             },
              keymap (){
                 return {
-                    'shift+1': this.createCfat,
-                    'shift+2': this.product,
-                    'shift+3': this.descriptions,
-                    'shift+4': this.brands,
-                    'shift+5': this.manufactures,
-                    'shift+6': this.locations,
-                    'shift+7': this.categories,
+                    'ctrl+shift+1': this.createCfat,
+                    'ctrl+shift+2': this.product,
+                    'ctrl+shift+3': this.descriptions,
+                    'ctrl+shift+4': this.brands,
+                    'ctrl+shift+5': this.manufactures,
+                    'ctrl+shift+6': this.locations,
+                    'ctrl+shift+7': this.categories,
                 }
             },
         },

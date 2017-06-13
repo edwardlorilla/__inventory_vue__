@@ -24,11 +24,13 @@ class ProductsControllers extends Controller
             $query->select(['id', 'name']);
         }, 'category' => function($query) {
             $query->select(['id', 'name']);
+        }, 'status' => function($query) {
+            $query->select(['id', 'name']);
         },  'brand' => function($query) {
             $query->select(['id', 'name']);
         }] )->orderBy('updated_at','desc')->get();
         return response()->json([
-            'products' => $brands
+            'data' => $brands
         ]);
     }
 
@@ -61,7 +63,7 @@ class ProductsControllers extends Controller
                    'location_id' => $request->input('products.'.$key.'.location'),
                    'category_id' => $request->input('products.'.$key.'.category'),
                    'brand_id' => $request->input('products.'.$key.'.model'),
-                   'status' => $request->input('products.'.$key.'.status'),
+                   'status_id' => $request->input('products.'.$key.'.status'),
                    'assetSerial' => $request->input('products.'.$key.'.assetSerial')
                ]
            );
@@ -143,6 +145,8 @@ class ProductsControllers extends Controller
             $query->select(['id', 'name']);
         },'description' => function($query) {
             $query->select(['id', 'name']);
+        },'status' => function($query) {
+            $query->select(['id', 'name']);
         }, 'category' => function($query) {
             $query->select(['id', 'name']);
         },  'brand' => function($query) {
@@ -172,7 +176,7 @@ class ProductsControllers extends Controller
                 'location_id' => $request->input('products.location'),
                 'category_id' => $request->input('products.category'),
                 'brand_id' => $request->input('products.model'),
-                'status' => $request->input('products.status'),
+                'status_id' => $request->input('products.status'),
                 'assetSerial' => $request->input('products.assetSerial')
             ]
         );

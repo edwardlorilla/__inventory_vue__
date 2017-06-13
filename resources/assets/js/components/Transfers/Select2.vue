@@ -50,15 +50,16 @@
 
                             var post = $.trim(e.params.data.text.replace(/ \(new\)$/, ''));
                             axios.post(vm.urlName, {name : post}).then(response => {
-                                 vm.$emit('modelId',response.data.data.id)
                                  $(this).find('[value="'+e.params.data.id+'"]').replaceWith('<option selected value="'+response.data.data.id+'">'+response.data.data.name+'</option>');
+                                 vm.$emit('modelId',response.data.data.id)
                             })
                         }
                     }
                 }else{
+
                     vm.$emit('selectValue',e.params.data.id )
                     vm.$emit('selectQuantityValue',e.params.data.quantity )
-                    vm.$emit('selectStatusValue',e.params.data.status )
+                    vm.$emit('selectStatusValue',e.params.data.status? e.params.data.status.id : 0 )
                     vm.$emit('selectManufactureValue',e.params.data.manufacture )
                     vm.$emit('selectDescriptionValue',e.params.data.description )
                     vm.$emit('selectLocationValue',e.params.data.location )

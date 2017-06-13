@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
 
-            <div  class="col-lg-12">
+            <div class="col-lg-12">
 
                 <router-link class="btn btn-primary" tag="button" :to="{ name: 'createProducts' }">Create Products
                 </router-link>
@@ -15,20 +15,21 @@
 
                 <demo-grid
                         titleHead="Products"
-                        :data="brands"
+                        :data="productsFetch"
                         :columns="brandsColumns"
                         :filter-key="searchQuery">
                 </demo-grid>
             </div>
 
-            </div>
         </div>
+    </div>
 </template>
 <style>
 
 </style>
 <script>
     import DemoGrid from './../Filtering/Filter.vue';
+    import DataReceive from './../Filtering/productStates.js';
     export default{
     components:{
         DemoGrid
@@ -37,7 +38,7 @@
     return{
             searchQuery: '',
             brandsColumns: ['id','updated', 'serial' , 'assetSerial','quantity','status','category','description','location','manufacture' ,'model'],
-            brands: [],
+            brands: DataReceive.data,
             limitLength: 5,
 
             loading: true,
@@ -50,38 +51,36 @@
         this.fetchBrands()
     },
     computed:{
-        productLimit() {
-            return  this.brands.slice(0, this.limitLength);
-        },
+        productsFetch(){
+                var vm = this
+                return _.map(vm.brands.brands, function(data){
+                            var pick = _.pick(data, 'id', 'quantity','serial','manufacture','description','location','category','model', 'status', 'updated','assetSerial');
+                            var objectProduct = {
+                            id:pick.id,
+                            quantity:pick.quantity ? pick.quantity :  '',
+                            serial: _.isEmpty(pick.serial) ? 'NOT SERIAL DEFINED' : pick.serial,
+                            assetSerial: _.isEmpty(pick.assetSerial) ? 'NOT DEFINED' : pick.assetSerial,
+                            manufacture:pick.manufacture ? pick.manufacture : 'NOT DEFINED',
+                            description:pick.description ? pick.description : 'NOT DEFINED',
+                            location:pick.location ? pick.location : 'NOT DEFINED',
+                            category:pick.category ? pick.category : 'NOT DEFINED',
+                            model:pick.model ?  pick.model : 'NOT DEFINED',
+                            status: pick.status ? pick.status : 'NOT DEFINED' ,
+                            updated:pick.updated ? pick.updated : 'NOT DEFINED'
+                        };
+                return objectProduct})
+        }
     },
 
     methods:{
         fetchBrands(){
             var that = this;
             that.loading = true
-
-             axios.get("../api/products").then(function(response){
-                that.brands = _.map(response.data.products, function(num){
-                var pick = _.pick(num, 'id', 'quantity','serial','manufacture','description','location','category','brand', 'status', 'updated_at','assetSerial');
-                var objectProduct = {
-                id:pick.id,
-                quantity:pick.quantity,
-                serial: _.isEmpty(pick.serial) ? 'NOT SERIAL DEFINED' : pick.serial,
-                assetSerial: _.isEmpty(pick.assetSerial) ? 'NOT DEFINED' : pick.assetSerial,
-                manufacture:pick.manufacture ? pick.manufacture.name : 'NOT DEFINED',
-                description:pick.description.name,
-                location:pick.location.name,
-                category:pick.category.name,
-                model:pick.brand.name,
-                status: pick.status === 1 ? 'WORKING' : 'DEFECTIVE',
-                updated:pick.updated_at};
-                return objectProduct})
-                that.loading = false
-             })
-
+            DataReceive.fetch('../api/products', that.loading)
         }
     }
 }
+
 
 
 

@@ -4,15 +4,15 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">Create {{textData}}</div>
-
                     <div class="panel-body">
                         <create-data
                                 :urlString="urlData"
                                 :textLabel="textData"
+                                :nameData="nameData"
                         >
-
                         </create-data>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -25,7 +25,10 @@
         data(){
             return{
                 textData: 'Model',
-                urlData: '../api/brands'
+                urlData: '../api/brands',
+                nameData: {
+                    name: ''
+                }
             }
         },
         components:{

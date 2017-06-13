@@ -1,11 +1,11 @@
 webpackJsonp([1],{
 
-/***/ 100:
+/***/ 113:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_select2__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_select2__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_select2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_select2__);
 //
 //
@@ -58,15 +58,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
                         var post = $.trim(e.params.data.text.replace(/ \(new\)$/, ''));
                         axios.post(vm.urlName, { name: post }).then(function (response) {
-                            vm.$emit('modelId', response.data.data.id);
                             $(_this).find('[value="' + e.params.data.id + '"]').replaceWith('<option selected value="' + response.data.data.id + '">' + response.data.data.name + '</option>');
+                            vm.$emit('modelId', response.data.data.id);
                         });
                     }
                 }
             } else {
+
                 vm.$emit('selectValue', e.params.data.id);
                 vm.$emit('selectQuantityValue', e.params.data.quantity);
-                vm.$emit('selectStatusValue', e.params.data.status);
+                vm.$emit('selectStatusValue', e.params.data.status ? e.params.data.status.id : 0);
                 vm.$emit('selectManufactureValue', e.params.data.manufacture);
                 vm.$emit('selectDescriptionValue', e.params.data.description);
                 vm.$emit('selectLocationValue', e.params.data.location);
@@ -97,7 +98,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 101:
+/***/ 114:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)();
@@ -105,7 +106,7 @@ exports.push([module.i, "\n#loader {\n  position: absolute;\n  left: 50%;\n  top
 
 /***/ }),
 
-/***/ 102:
+/***/ 115:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)();
@@ -113,7 +114,7 @@ exports.push([module.i, "/*!\n * Select2 Bootstrap Theme v0.1.0-beta.10 (https:/
 
 /***/ }),
 
-/***/ 103:
+/***/ 116:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)();
@@ -121,7 +122,7 @@ exports.push([module.i, "\n.select2-container{box-sizing:border-box;display:inli
 
 /***/ }),
 
-/***/ 104:
+/***/ 117:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var require;var require;/*!
@@ -134,7 +135,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 (function (factory) {
   if (true) {
     // AMD. Register as an anonymous module.
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(13)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(21)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -5856,18 +5857,18 @@ S2.define('jquery.select2',[
 
 /***/ }),
 
-/***/ 105:
+/***/ 118:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(109)
+__webpack_require__(122)
 
 var Component = __webpack_require__(3)(
   /* script */
   null,
   /* template */
-  __webpack_require__(107),
+  __webpack_require__(120),
   /* scopeId */
   null,
   /* cssModules */
@@ -5895,19 +5896,19 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 106:
+/***/ 119:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(111)
-__webpack_require__(110)
+__webpack_require__(124)
+__webpack_require__(123)
 
 var Component = __webpack_require__(3)(
   /* script */
-  __webpack_require__(100),
+  __webpack_require__(113),
   /* template */
-  __webpack_require__(108),
+  __webpack_require__(121),
   /* scopeId */
   null,
   /* cssModules */
@@ -5935,7 +5936,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 107:
+/***/ 120:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -5955,7 +5956,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 108:
+/***/ 121:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -5976,13 +5977,13 @@ if (false) {
 
 /***/ }),
 
-/***/ 109:
+/***/ 122:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(101);
+var content = __webpack_require__(114);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -6003,13 +6004,13 @@ if(false) {
 
 /***/ }),
 
-/***/ 110:
+/***/ 123:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(102);
+var content = __webpack_require__(115);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -6030,13 +6031,13 @@ if(false) {
 
 /***/ }),
 
-/***/ 111:
+/***/ 124:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(103);
+var content = __webpack_require__(116);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -6057,7 +6058,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 112:
+/***/ 125:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6128,7 +6129,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 113:
+/***/ 126:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)();
@@ -6136,18 +6137,18 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 114:
+/***/ 127:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(116)
+__webpack_require__(129)
 
 var Component = __webpack_require__(3)(
   /* script */
-  __webpack_require__(112),
+  __webpack_require__(125),
   /* template */
-  __webpack_require__(115),
+  __webpack_require__(128),
   /* scopeId */
   null,
   /* cssModules */
@@ -6175,7 +6176,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 115:
+/***/ 128:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -6253,13 +6254,13 @@ if (false) {
 
 /***/ }),
 
-/***/ 116:
+/***/ 129:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(113);
+var content = __webpack_require__(126);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -6280,18 +6281,26 @@ if(false) {
 
 /***/ }),
 
-/***/ 133:
+/***/ 147:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Loader_Loader_vue__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Loader_Loader_vue__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Loader_Loader_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Loader_Loader_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Transfers_Select2_vue__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Transfers_Select2_vue__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Transfers_Select2_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Transfers_Select2_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Transfers_Add_vue__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Transfers_Add_vue__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Transfers_Add_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__Transfers_Add_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Noty_notyAlert__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Noty_notyAlert__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Filtering_brandStates_js__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Filtering_categoryStates_js__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Filtering_descriptionStates_js__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Filtering_ManufacturesStates_js__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Filtering_locationState_js__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__Filtering_productStates_js__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__Filtering_statusStates_js__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__Filtering_fetchAll_js__ = __webpack_require__(19);
 //
 //
 //
@@ -6531,6 +6540,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6547,12 +6565,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             loading: false,
             addRows: [],
-            brands: [],
-            categories: [],
-            products: [],
-            descriptions: [],
-            manufactures: [],
-            locations: [],
+            brands: __WEBPACK_IMPORTED_MODULE_4__Filtering_brandStates_js__["a" /* default */].data,
+            categories: __WEBPACK_IMPORTED_MODULE_5__Filtering_categoryStates_js__["a" /* default */].data,
+            products: __WEBPACK_IMPORTED_MODULE_9__Filtering_productStates_js__["a" /* default */].data,
+            descriptions: __WEBPACK_IMPORTED_MODULE_6__Filtering_descriptionStates_js__["a" /* default */].data,
+            manufactures: __WEBPACK_IMPORTED_MODULE_7__Filtering_ManufacturesStates_js__["a" /* default */].data,
+            statuses: __WEBPACK_IMPORTED_MODULE_10__Filtering_statusStates_js__["a" /* default */].data,
+            locations: __WEBPACK_IMPORTED_MODULE_8__Filtering_locationState_js__["a" /* default */].data,
             showAddSerial: false,
             selected: [],
             selectAsset: [],
@@ -6560,10 +6579,58 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
     mounted: function mounted() {
-        this.fetchAll();
+        //this.fetchAll();
     },
 
     computed: {
+        brandsFetch: function brandsFetch() {
+            var vm = this;
+            return _.map(vm.brands.brands, function (data) {
+                var pick = _.pick(data, 'name', 'id');
+                var object = { id: pick.id, text: pick.name };
+                return object;
+            });
+        },
+        categoriesFetch: function categoriesFetch() {
+            var vm = this;
+            return _.map(vm.categories.categories, function (data) {
+                var pick = _.pick(data, 'name', 'id');
+                var object = { id: pick.id, text: pick.name };
+                return object;
+            });
+        },
+        statusesFetch: function statusesFetch() {
+            var vm = this;
+            return _.map(vm.statuses.brands, function (data) {
+                var pick = _.pick(data, 'name', 'id');
+                var object = { id: pick.id, text: pick.name };
+                return object;
+            });
+        },
+        descriptionsFetch: function descriptionsFetch() {
+            var vm = this;
+            return _.map(vm.descriptions.descriptions, function (data) {
+                var pick = _.pick(data, 'name', 'id');
+                var object = { id: pick.id, text: pick.name };
+                return object;
+            });
+        },
+        locationsFetch: function locationsFetch() {
+            var vm = this;
+            return _.map(vm.locations.locations, function (data) {
+                var pick = _.pick(data, 'name', 'id');
+                var object = { id: pick.id, text: pick.name };
+                return object;
+            });
+        },
+        manufacturesFetch: function manufacturesFetch() {
+            var vm = this;
+            return _.map(vm.manufactures.brands, function (data) {
+                var pick = _.pick(data, 'name', 'id');
+                var object = { id: pick.id, text: pick.name };
+                return object;
+            });
+        },
         addTd: function addTd() {
             return {
                 enter: this.addRow,
@@ -6574,14 +6641,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         disableAddSerial: function disableAddSerial() {
             var vm = this;
             return _.isEmpty(vm.addRows);
+        },
+        disableAddRow: function disableAddRow() {
+            var vm = this;
+            return _.isEmpty(vm.locations.locations);
         }
     },
     methods: {
         handleSelectedFile: function handleSelectedFile(convertedData) {
             var vm = this;
+            var pluckProduct = _.map(vm.products.brands, 'assetSerial');
             axios.post('../api/products/imports', { products: convertedData.body }).then(function (response) {
                 vm.fetchAll();
                 _.forEach(response.data, function (value) {
+                    /* if (_.includes(vm.selectAsset, value.assetSerial) || _.includes(pluckProduct, value.assetSerial)) {
+                      console.log('Duplicated Entry')
+                    }else{
+                    */
+                    vm.selectAsset.push(value.assetSerial);
                     vm.addRows.push({
                         serial: value.serial,
                         quantity: value.quantity,
@@ -6593,36 +6670,43 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         location: 1,
                         assetSerial: value.assetSerial
                     });
+                    //}
                 });
             }).catch(function (error) {});
         },
         validateDuplicateAssetSerial: function validateDuplicateAssetSerial(index) {
             var vm = this;
             var product = _.map(vm.addRows, 'assetSerial');
-            var pluckProduct = _.map(vm.products, 'assetSerial');
+            var pluckProduct = _.map(vm.products.brands, 'assetSerial');
             var intersect = _.intersection(product, vm.selectAsset);
             vm.selectAsset = intersect;
-            if (_.includes(vm.selectAsset, vm.addRows[index].assetSerial)) {
+            this.addRows[index].hasAssetError = false;
+            if (_.includes(vm.selectAsset, vm.addRows[index].assetSerial) || _.includes(pluckProduct, vm.addRows[index].assetSerial)) {
                 console.log('Duplicated Entry');
+                this.selectAsset = intersect;
+                vm.selectAsset = _.compact(vm.selectAsset);
                 this.addRows[index].hasAssetError = true;
             } else {
                 this.selectAsset = intersect;
                 this.selectAsset.push(this.addRows[index].assetSerial);
+                vm.selectAsset = _.compact(vm.selectAsset);
                 this.addRows[index].hasAssetError = false;
             }
         },
         validateDuplicate: function validateDuplicate(index) {
             var vm = this;
             var product = _.map(vm.addRows, 'serial');
-            var pluckProduct = _.map(vm.products, 'text');
+            var pluckProduct = _.map(vm.products.brands, 'serial');
             var intersect = _.intersection(product, vm.selected);
             this.selected = intersect;
 
             //quantity Check
             if (!_.isEmpty(vm.addRows[index].serial)) {
                 vm.addRows[index].quantity = 1;
+                vm.selected = _.compact(vm.selected);
                 vm.addRows[index].disabledQuantity = true;
             } else {
+                vm.selected = _.compact(vm.selected);
                 vm.addRows[index].disabledQuantity = false;
             }
 
@@ -6630,16 +6714,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             if (_.includes(vm.selected, vm.addRows[index].serial) || _.includes(pluckProduct, vm.addRows[index].serial)) {
                 console.log('Duplicated Entry');
                 vm.disabledButton = true;
+                vm.selected = _.compact(vm.selected);
                 this.addRows[index].hasError = true;
             } else {
                 this.selected = intersect;
                 this.selected.push(this.addRows[index].serial);
+                vm.selected = _.compact(vm.selected);
                 this.addRows[index].hasError = false;
                 vm.disabledButton = false;
             }
         },
         deleteRow: function deleteRow() {
             this.addRows.pop();
+            this.selectAsset.pop();
+            this.selected.pop();
         },
 
         addSerial: function addSerial() {
@@ -6650,7 +6738,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
             axios.post('../api/products', { products: addRows }).then(function (response) {
                 _this.$router.push({ name: 'products' });
-                __WEBPACK_IMPORTED_MODULE_3__Noty_notyAlert__["a" /* default */].notyAlert('success', 'Tech Item has deleted');
+
+                __WEBPACK_IMPORTED_MODULE_3__Noty_notyAlert__["a" /* default */].notyAlert('success', 'Tech Item has created');
             }).catch(function (error) {
                 __WEBPACK_IMPORTED_MODULE_3__Noty_notyAlert__["a" /* default */].notyAlert('error', 'something went wrong');
             });
@@ -6694,60 +6783,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var product = _.map(vm.addRows, 'product');
             var intersect = _.intersection(product, vm.selected);
             this.selected = intersect;
-        },
-        fetchAll: function fetchAll() {
-            var that = this;
-            that.loading = true;
-            axios.all([axios.get('../api/brands'), axios.get('../api/categories'), axios.get('../api/descriptions'), axios.get('../api/manufactures'), axios.get('../api/locations'), axios.get('../api/products')]).then(axios.spread(function (dataBrands, dataCategories, dataDescription, dataManufactures, dataLocations, dataProducts) {
-                that.loading = false;
-                that.brands = _.map(dataBrands.data.brands, function (data) {
-                    var pick = _.pick(data, 'name', 'id');
-                    var object = { id: pick.id, text: pick.name };
-                    return object;
-                });
-                that.categories = _.map(dataCategories.data.categories, function (data) {
-                    var pick = _.pick(data, 'name', 'id');
-                    var object = { id: pick.id, text: pick.name };
-                    return object;
-                });
-                that.descriptions = _.map(dataDescription.data.descriptions, function (data) {
-                    var pick = _.pick(data, 'name', 'id');
-                    var object = { id: pick.id, text: pick.name };
-                    return object;
-                });
-                that.manufactures = _.map(dataManufactures.data.manufactures, function (data) {
-                    var pick = _.pick(data, 'name', 'id');
-                    var object = { id: pick.id, text: pick.name };
-                    return object;
-                });
-                that.locations = _.map(dataLocations.data.locations, function (data) {
-                    var pick = _.pick(data, 'name', 'id');
-                    var object = { id: pick.id, text: pick.name };
-                    return object;
-                });
-                that.products = _.map(dataProducts.data.products, function (data) {
-                    var pick = _.pick(data, 'serial', 'id', 'quantity', 'status', 'manufacture.id', 'description.id', 'location.id', 'category.id', 'brand.id', 'assetSerial');
-                    var object = {
-                        id: pick.id,
-                        text: pick.serial,
-                        quantity: pick.quantity,
-                        status: pick.status,
-                        manufacture: pick.manufacture.id,
-                        description: pick.description.id,
-                        location: pick.location.id,
-                        category: pick.category.id,
-                        model: pick.brand.id,
-                        assetSerial: pick.assetSerial };
-                    return object;
-                });
-            }));
         }
     }
 });
 
 /***/ }),
 
-/***/ 148:
+/***/ 164:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)();
@@ -6755,13 +6797,13 @@ exports.push([module.i, "\n.noty_layout_mixin, #noty_layout__top, #noty_layout__
 
 /***/ }),
 
-/***/ 167:
+/***/ 184:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "container-fluid"
-  }, [(_vm.loading) ? _c('loader') : _c('div', {
+  }, [_c('div', {
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col-lg-12"
@@ -6773,11 +6815,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "panel-body"
   }, [_c('section', {
     staticClass: "panel"
-  }, [_c('div', {
-    staticClass: "panel panel-footer"
-  }, [_c('header', {
-    staticClass: "panel panel-default"
-  }, [_c('h3', [_vm._v("Create Tech Item")])])]), _vm._v(" "), _c('div', {
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
     staticClass: "panel panel-footer table-responsive"
   }, [_c('table', {
     staticClass: "table table-bordered"
@@ -6871,34 +6909,26 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       class: {
         'hidden': !addTd.hasAssetError
       }
-    }, [_vm._v("Duplicated Asset Serial Entry")])]), _vm._v(" "), _c('td', [_c('select', {
-      directives: [{
-        name: "model",
-        rawName: "v-model",
+    }, [_vm._v("Duplicated Asset Serial Entry")])]), _vm._v(" "), _c('td', [_c('select2', {
+      attrs: {
+        "options": _vm.statusesFetch,
+        "urlName": "../api/statuses",
+        "name": "action[]",
+        "required": ""
+      },
+      model: {
         value: (addTd.status),
+        callback: function($$v) {
+          addTd.status = _vm._n($$v)
+        },
         expression: "addTd.status"
-      }],
-      staticClass: "form-control",
-      on: {
-        "change": function($event) {
-          var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
-            return o.selected
-          }).map(function(o) {
-            var val = "_value" in o ? o._value : o.value;
-            return val
-          });
-          addTd.status = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
-        }
       }
     }, [_c('option', {
       attrs: {
-        "value": "1"
-      }
-    }, [_vm._v("\n                                                Working\n                                            ")]), _vm._v(" "), _c('option', {
-      attrs: {
+        "disabled": "",
         "value": "0"
       }
-    }, [_vm._v("\n                                                Defective\n                                            ")])])]), _vm._v(" "), _c('td', [_c('input', {
+    }, [_vm._v("Select one")])])], 1), _vm._v(" "), _c('td', [_c('input', {
       directives: [{
         name: "model",
         rawName: "v-model.number",
@@ -6930,7 +6960,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     })]), _vm._v(" "), _c('td', [_c('div', [_c('select2', {
       attrs: {
-        "options": _vm.brands,
+        "options": _vm.brandsFetch,
         "urlName": "../api/brands",
         "name": "model[]",
         "required": ""
@@ -6954,7 +6984,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_vm._v("Select one")])])], 1)]), _vm._v(" "), _c('td', [_c('div', [_c('select2', {
       attrs: {
-        "options": _vm.categories,
+        "options": _vm.categoriesFetch,
         "name": "category[]",
         "urlName": "../api/categories",
         "required": ""
@@ -6978,7 +7008,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_vm._v("Select one")])])], 1)]), _vm._v(" "), _c('td', [_c('div', [_c('select2', {
       attrs: {
-        "options": _vm.descriptions,
+        "options": _vm.descriptionsFetch,
         "name": "description[]",
         "urlName": "../api/descriptions"
       },
@@ -7001,7 +7031,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_vm._v("Select one")])])], 1)]), _vm._v(" "), _c('td', [_c('div', [_c('select2', {
       attrs: {
-        "options": _vm.manufactures,
+        "options": _vm.manufacturesFetch,
         "name": "manufactures[]",
         "urlName": "../api/manufactures",
         "required": ""
@@ -7025,7 +7055,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_vm._v("Select one")])])], 1)]), _vm._v(" "), _c('td', [_c('select2', {
       attrs: {
-        "options": _vm.locations,
+        "options": _vm.locationsFetch,
         "name": "location[]",
         "required": ""
       },
@@ -7060,8 +7090,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.addSerial
     }
-  }, [_vm._v("Add Serial\n                            ")])])])])])])])], 1)
-},staticRenderFns: []}
+  }, [_vm._v("Add Serial\n                            ")])])])])])])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "panel panel-footer"
+  }, [_c('header', {
+    staticClass: "panel panel-default"
+  }, [_c('h3', [_vm._v("Create Tech Item")])])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -7072,13 +7108,13 @@ if (false) {
 
 /***/ }),
 
-/***/ 187:
+/***/ 206:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(148);
+var content = __webpack_require__(164);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -7099,18 +7135,18 @@ if(false) {
 
 /***/ }),
 
-/***/ 79:
+/***/ 89:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(187)
+__webpack_require__(206)
 
 var Component = __webpack_require__(3)(
   /* script */
-  __webpack_require__(133),
+  __webpack_require__(147),
   /* template */
-  __webpack_require__(167),
+  __webpack_require__(184),
   /* scopeId */
   null,
   /* cssModules */
@@ -7138,11 +7174,11 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 85:
+/***/ 95:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_noty__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_noty__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_noty___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_noty__);
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -7205,7 +7241,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 86:
+/***/ 96:
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {

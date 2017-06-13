@@ -16,7 +16,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -26,7 +26,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -37,7 +37,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -47,7 +47,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -57,7 +57,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -67,7 +67,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -77,7 +77,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -87,7 +87,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -97,7 +97,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -107,7 +107,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -117,7 +117,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -127,7 +127,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -137,7 +137,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -147,7 +147,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -157,7 +157,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -167,7 +167,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -177,7 +177,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -187,7 +187,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -197,7 +197,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -207,7 +207,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -217,7 +217,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -227,7 +227,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -237,7 +237,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -247,7 +247,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -257,7 +257,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -267,7 +267,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -277,7 +277,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -287,7 +287,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -297,7 +297,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -307,7 +307,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -317,7 +317,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -327,7 +327,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -337,7 +337,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -347,7 +347,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -357,7 +357,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -367,7 +367,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -377,7 +377,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -387,7 +387,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -397,7 +397,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -407,7 +407,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -417,7 +417,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -427,7 +427,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -437,7 +437,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -447,7 +447,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -457,7 +457,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -467,7 +467,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -477,7 +477,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -487,7 +487,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -497,7 +497,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -507,7 +507,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -517,7 +517,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -527,7 +527,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -537,7 +537,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -547,7 +547,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -557,7 +557,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -567,7 +567,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -577,7 +577,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -587,7 +587,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -597,7 +597,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -607,7 +607,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -617,7 +617,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -627,7 +627,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -637,7 +637,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -647,7 +647,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -657,7 +657,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -667,7 +667,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -677,7 +677,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -687,7 +687,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -697,7 +697,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -707,7 +707,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -717,7 +717,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -727,7 +727,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -737,7 +737,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -747,7 +747,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -757,7 +757,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -767,7 +767,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -777,7 +777,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -787,7 +787,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -797,7 +797,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -807,7 +807,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -817,7 +817,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -827,7 +827,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -837,7 +837,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -847,7 +847,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -857,7 +857,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -867,7 +867,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -877,7 +877,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -887,7 +887,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -897,7 +897,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -907,7 +907,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -917,7 +917,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -927,7 +927,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -937,7 +937,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -947,7 +947,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -957,7 +957,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -967,7 +967,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -977,7 +977,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -987,7 +987,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -997,7 +997,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1007,7 +1007,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1017,7 +1017,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1027,7 +1027,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1037,7 +1037,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1047,7 +1047,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1057,7 +1057,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1067,7 +1067,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1077,7 +1077,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1087,7 +1087,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1097,7 +1097,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1107,7 +1107,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1117,7 +1117,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1127,7 +1127,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1137,7 +1137,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1147,7 +1147,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1158,7 +1158,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1168,7 +1168,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1178,7 +1178,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1188,7 +1188,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1198,7 +1198,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1208,7 +1208,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1218,7 +1218,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1228,7 +1228,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1238,7 +1238,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1248,7 +1248,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1258,7 +1258,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1268,7 +1268,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1278,7 +1278,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1288,7 +1288,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1298,7 +1298,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1308,7 +1308,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1318,7 +1318,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1328,7 +1328,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1338,7 +1338,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1348,7 +1348,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1358,7 +1358,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1368,7 +1368,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1378,7 +1378,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1388,7 +1388,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1398,7 +1398,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1408,7 +1408,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1418,7 +1418,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1428,7 +1428,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1438,7 +1438,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1448,7 +1448,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1458,7 +1458,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1468,7 +1468,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1478,7 +1478,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1488,7 +1488,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1498,7 +1498,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1508,7 +1508,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1518,7 +1518,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1528,7 +1528,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1538,7 +1538,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1548,7 +1548,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1558,7 +1558,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1568,7 +1568,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1578,7 +1578,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1588,7 +1588,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1598,7 +1598,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1608,7 +1608,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1618,7 +1618,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1628,7 +1628,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1638,7 +1638,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1648,7 +1648,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1658,7 +1658,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1668,7 +1668,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1678,7 +1678,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1688,7 +1688,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1698,7 +1698,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1708,7 +1708,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1718,7 +1718,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1728,7 +1728,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1738,7 +1738,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1748,7 +1748,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1758,7 +1758,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1768,7 +1768,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1778,7 +1778,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1788,7 +1788,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1798,7 +1798,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1808,7 +1808,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1818,7 +1818,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1828,7 +1828,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1838,7 +1838,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1848,7 +1848,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1858,7 +1858,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1868,7 +1868,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1878,7 +1878,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1888,7 +1888,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1898,7 +1898,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1908,7 +1908,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1918,7 +1918,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1928,7 +1928,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1938,7 +1938,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1948,7 +1948,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1958,7 +1958,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1968,7 +1968,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1978,7 +1978,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1988,7 +1988,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -1998,7 +1998,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2008,7 +2008,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2018,7 +2018,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2028,7 +2028,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2038,7 +2038,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2048,7 +2048,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2058,7 +2058,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2068,7 +2068,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2078,7 +2078,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2088,7 +2088,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2098,7 +2098,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2108,7 +2108,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2118,7 +2118,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2128,7 +2128,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2138,7 +2138,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2148,7 +2148,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2158,7 +2158,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2168,7 +2168,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2178,7 +2178,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2188,7 +2188,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2198,7 +2198,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2208,7 +2208,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2218,7 +2218,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2228,7 +2228,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2238,7 +2238,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2248,7 +2248,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2258,7 +2258,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2268,7 +2268,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2279,7 +2279,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2289,7 +2289,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2299,7 +2299,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2309,7 +2309,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2319,7 +2319,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2329,7 +2329,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2339,7 +2339,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2349,7 +2349,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2359,7 +2359,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2369,7 +2369,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2379,7 +2379,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2389,7 +2389,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2399,7 +2399,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2409,7 +2409,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2419,7 +2419,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2429,7 +2429,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2439,7 +2439,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2449,7 +2449,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2459,7 +2459,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2469,7 +2469,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2479,7 +2479,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2489,7 +2489,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2499,7 +2499,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2509,7 +2509,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2519,7 +2519,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2529,7 +2529,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2539,7 +2539,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2549,7 +2549,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2559,7 +2559,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2569,7 +2569,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2579,7 +2579,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2589,7 +2589,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2599,7 +2599,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2609,7 +2609,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2619,7 +2619,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2629,7 +2629,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2639,7 +2639,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2649,7 +2649,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2659,7 +2659,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2669,7 +2669,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2679,7 +2679,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2689,7 +2689,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2699,7 +2699,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2709,7 +2709,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2719,7 +2719,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2729,7 +2729,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2739,7 +2739,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2749,7 +2749,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2759,7 +2759,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2769,7 +2769,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2779,7 +2779,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2789,7 +2789,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2799,7 +2799,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2809,7 +2809,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2819,7 +2819,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2829,7 +2829,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2839,7 +2839,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2849,7 +2849,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2859,7 +2859,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2869,7 +2869,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2879,7 +2879,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2889,7 +2889,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2899,7 +2899,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2909,7 +2909,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2919,7 +2919,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2929,7 +2929,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2939,7 +2939,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2949,7 +2949,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2959,7 +2959,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2969,7 +2969,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2979,7 +2979,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2989,7 +2989,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -2999,7 +2999,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3009,7 +3009,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3019,7 +3019,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3029,7 +3029,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3039,7 +3039,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3049,7 +3049,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3059,7 +3059,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3069,7 +3069,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3079,7 +3079,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3089,7 +3089,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3099,7 +3099,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3109,7 +3109,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3119,7 +3119,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3129,7 +3129,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3139,7 +3139,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3149,7 +3149,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3159,7 +3159,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3169,7 +3169,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3179,7 +3179,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3189,7 +3189,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3199,7 +3199,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3209,7 +3209,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3219,7 +3219,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3229,7 +3229,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3239,7 +3239,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3249,7 +3249,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3259,7 +3259,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3269,7 +3269,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3279,7 +3279,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3289,7 +3289,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3299,7 +3299,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3309,7 +3309,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3319,7 +3319,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3329,7 +3329,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3339,7 +3339,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3349,7 +3349,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3359,7 +3359,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3369,7 +3369,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3379,7 +3379,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3389,7 +3389,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3400,7 +3400,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3410,7 +3410,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3420,7 +3420,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3430,7 +3430,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3440,7 +3440,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3450,7 +3450,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3460,7 +3460,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3470,7 +3470,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3480,7 +3480,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3490,7 +3490,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3500,7 +3500,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3510,7 +3510,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3520,7 +3520,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3530,7 +3530,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3540,7 +3540,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3550,7 +3550,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3560,7 +3560,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3570,7 +3570,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3580,7 +3580,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3590,7 +3590,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3600,7 +3600,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3610,7 +3610,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3620,7 +3620,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3630,7 +3630,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3640,7 +3640,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3650,7 +3650,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3660,7 +3660,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3670,7 +3670,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3680,7 +3680,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3690,7 +3690,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3700,7 +3700,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3710,7 +3710,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3720,7 +3720,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3730,7 +3730,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3740,7 +3740,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3750,7 +3750,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3760,7 +3760,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3770,7 +3770,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3780,7 +3780,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3790,7 +3790,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3800,7 +3800,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3810,7 +3810,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3820,7 +3820,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3830,7 +3830,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3840,7 +3840,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3850,7 +3850,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3860,7 +3860,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3870,7 +3870,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3880,7 +3880,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3890,7 +3890,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3900,7 +3900,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3910,7 +3910,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3920,7 +3920,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3930,7 +3930,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3940,7 +3940,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3950,7 +3950,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3960,7 +3960,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3970,7 +3970,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3980,7 +3980,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -3990,7 +3990,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4000,7 +4000,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4010,7 +4010,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4020,7 +4020,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4030,7 +4030,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4040,7 +4040,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4050,7 +4050,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4060,7 +4060,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4070,7 +4070,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4080,7 +4080,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4090,7 +4090,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4100,7 +4100,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4110,7 +4110,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4120,7 +4120,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4130,7 +4130,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4140,7 +4140,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4150,7 +4150,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4160,7 +4160,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4170,7 +4170,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4180,7 +4180,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4190,7 +4190,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4200,7 +4200,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4210,7 +4210,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4220,7 +4220,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4230,7 +4230,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4240,7 +4240,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4250,7 +4250,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4260,7 +4260,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4270,7 +4270,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4280,7 +4280,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4290,7 +4290,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4300,7 +4300,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4310,7 +4310,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4320,7 +4320,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4330,7 +4330,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4340,7 +4340,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4350,7 +4350,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4360,7 +4360,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4370,7 +4370,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4380,7 +4380,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4390,7 +4390,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4400,7 +4400,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4410,7 +4410,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4420,7 +4420,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4430,7 +4430,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4440,7 +4440,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4450,7 +4450,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4460,7 +4460,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4470,7 +4470,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4480,7 +4480,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4490,7 +4490,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4500,7 +4500,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4510,7 +4510,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4521,7 +4521,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4531,7 +4531,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4541,7 +4541,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4551,7 +4551,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4561,7 +4561,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4571,7 +4571,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4581,7 +4581,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4591,7 +4591,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4601,7 +4601,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4611,7 +4611,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4621,7 +4621,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4631,7 +4631,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4641,7 +4641,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4651,7 +4651,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4661,7 +4661,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4671,7 +4671,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4681,7 +4681,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4691,7 +4691,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4701,7 +4701,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4711,7 +4711,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4721,7 +4721,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4731,7 +4731,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4741,7 +4741,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4751,7 +4751,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4761,7 +4761,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4771,7 +4771,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4781,7 +4781,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4791,7 +4791,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4801,7 +4801,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4811,7 +4811,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4821,7 +4821,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4831,7 +4831,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4841,7 +4841,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4851,7 +4851,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4861,7 +4861,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4871,7 +4871,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4881,7 +4881,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4891,7 +4891,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4901,7 +4901,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4911,7 +4911,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4921,7 +4921,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4931,7 +4931,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4941,7 +4941,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4951,7 +4951,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4961,7 +4961,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4971,7 +4971,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4981,7 +4981,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -4991,7 +4991,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5001,7 +5001,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5011,7 +5011,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5021,7 +5021,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5031,7 +5031,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5041,7 +5041,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5051,7 +5051,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5061,7 +5061,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5071,7 +5071,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5081,7 +5081,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5091,7 +5091,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5101,7 +5101,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5111,7 +5111,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5121,7 +5121,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5131,7 +5131,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5141,7 +5141,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5151,7 +5151,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5161,7 +5161,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5171,7 +5171,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5181,7 +5181,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5191,7 +5191,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5201,7 +5201,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5211,7 +5211,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5221,7 +5221,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5231,7 +5231,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5241,7 +5241,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5251,7 +5251,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5261,7 +5261,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5271,7 +5271,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5281,7 +5281,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5291,7 +5291,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5301,7 +5301,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5311,7 +5311,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5321,7 +5321,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5331,7 +5331,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5341,7 +5341,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5351,7 +5351,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5361,7 +5361,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5371,7 +5371,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5381,7 +5381,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5391,7 +5391,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5401,7 +5401,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5411,7 +5411,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5421,7 +5421,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5431,7 +5431,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5441,7 +5441,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5451,7 +5451,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5461,7 +5461,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5471,7 +5471,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5481,7 +5481,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5491,7 +5491,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5501,7 +5501,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5511,7 +5511,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5521,7 +5521,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5531,7 +5531,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5541,7 +5541,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5551,7 +5551,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5561,7 +5561,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5571,7 +5571,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5581,7 +5581,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5591,7 +5591,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5601,7 +5601,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5611,7 +5611,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5621,7 +5621,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5631,7 +5631,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5642,7 +5642,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5652,7 +5652,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5662,7 +5662,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5672,7 +5672,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5682,7 +5682,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5692,7 +5692,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5702,7 +5702,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5712,7 +5712,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5722,7 +5722,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5732,7 +5732,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5742,7 +5742,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5752,7 +5752,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5762,7 +5762,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5772,7 +5772,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5782,7 +5782,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5792,7 +5792,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5802,7 +5802,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5812,7 +5812,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5822,7 +5822,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5832,7 +5832,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5842,7 +5842,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5852,7 +5852,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5862,7 +5862,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5872,7 +5872,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5882,7 +5882,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5892,7 +5892,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5902,7 +5902,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5912,7 +5912,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5922,7 +5922,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5932,7 +5932,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5942,7 +5942,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5952,7 +5952,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5962,7 +5962,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5972,7 +5972,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5982,7 +5982,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -5992,7 +5992,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6002,7 +6002,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6012,7 +6012,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6022,7 +6022,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6032,7 +6032,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6042,7 +6042,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6052,7 +6052,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6062,7 +6062,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6072,7 +6072,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6082,7 +6082,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6092,7 +6092,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6102,7 +6102,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6112,7 +6112,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6122,7 +6122,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6132,7 +6132,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6142,7 +6142,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6152,7 +6152,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6162,7 +6162,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6172,7 +6172,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6182,7 +6182,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6192,7 +6192,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6202,7 +6202,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6212,7 +6212,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6222,7 +6222,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6232,7 +6232,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6242,7 +6242,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6252,7 +6252,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6262,7 +6262,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6272,7 +6272,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6282,7 +6282,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6292,7 +6292,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6302,7 +6302,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6312,7 +6312,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6322,7 +6322,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6332,7 +6332,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6342,7 +6342,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6352,7 +6352,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6362,7 +6362,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6372,7 +6372,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6382,7 +6382,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6392,7 +6392,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6402,7 +6402,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6412,7 +6412,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6422,7 +6422,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6432,7 +6432,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6442,7 +6442,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6452,7 +6452,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6462,7 +6462,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6472,7 +6472,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6482,7 +6482,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6492,7 +6492,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6502,7 +6502,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6512,7 +6512,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6522,7 +6522,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6532,7 +6532,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6542,7 +6542,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6552,7 +6552,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6562,7 +6562,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6572,7 +6572,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6582,7 +6582,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6592,7 +6592,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6602,7 +6602,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6612,7 +6612,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6622,7 +6622,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6632,7 +6632,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6642,7 +6642,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6652,7 +6652,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6662,7 +6662,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6672,7 +6672,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6682,7 +6682,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),
@@ -6692,7 +6692,7 @@ class ProductTableSeeder extends Seeder
             [
                 'serial' => rand(1000, 2000),
                 'quantity' => rand(1, 10),
-                'status' => rand(0, 1),
+                'status_id' => rand(2, 1),
                 'brand_id' => rand(1, 3),
                 'location_id' => rand(1, 3),
                 'manufacture_id' => rand(1, 3),

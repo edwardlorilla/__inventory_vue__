@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\api;
 
+use App\Brand;
 use App\Http\Controllers\Controller;
+use Illuminate\Auth\Access\Response;
 use Illuminate\Http\Request;
 
 class BrandControllers extends Controller
@@ -16,7 +18,7 @@ class BrandControllers extends Controller
     {
         $brands = \App\Brand::with('products')->orderBy('updated_at','desc')->get();
         return response()->json([
-            'brands' => $brands
+            'data' => $brands
             ]);
     }
 
@@ -98,6 +100,12 @@ class BrandControllers extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = \App\Brand::where('id', $id)->first();
+        $data->delete();
+    }
+
+    public function history(Request $brands)
+    {
+        return \App\Product::with('brand')->where('brand_id', $brands)->orderBy('updated_at', 'desc')->get();
     }
 }

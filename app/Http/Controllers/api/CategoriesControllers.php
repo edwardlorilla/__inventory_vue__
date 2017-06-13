@@ -14,10 +14,10 @@ class CategoriesControllers extends Controller
      */
     public function index()
     {
-        $brands = \App\Category::orderBy('created_at','desc')->get();
+        $brands = \App\Category::with('products')->orderBy('created_at','desc')->get();
         return response()->json([
-            'categories' => $brands
-            ]);
+            'data' => $brands
+        ]);
     }
 
     /**
@@ -98,6 +98,7 @@ class CategoriesControllers extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = \App\Category::where('id', $id)->first();
+        $data->delete();
     }
 }

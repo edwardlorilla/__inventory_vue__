@@ -20,7 +20,7 @@ class CreateTranfersTable extends Migration
             $table->foreign('product_id')
                 ->references('id')->on('products')
                 ->onDelete('cascade');
-            $table->integer('status');
+            $table->integer('action_id');
             $table->timestamps();
         });
     }

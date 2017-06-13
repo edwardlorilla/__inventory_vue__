@@ -14,9 +14,9 @@ class LocationsControllers extends Controller
      */
     public function index()
     {
-        $brands = \App\Location::orderBy('created_at','desc')->get();
+        $brands = \App\Location::with('products')->orderBy('created_at','desc')->get();
         return response()->json([
-            'locations' => $brands
+            'data' => $brands
             ]);
     }
 
@@ -38,7 +38,20 @@ class LocationsControllers extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required|string',
+            'BU' => 'required',
+            'OU' => 'required',
 
+        ]);
+        $name = $request->input('name');
+        $BU = $request->input('BU');
+        $OU = $request->input('OU');
+
+        $brands = \App\Location::create(['name' => $name,  'BU' => $BU, 'OU' => $OU]);
+        return response()->json([
+            'data' => $brands,  'message' => 'brands ' .$name . 'has been created'
+        ]);
     }
 
     /**
@@ -60,7 +73,10 @@ class LocationsControllers extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = \App\Location::where('id' , $id)->first();
+        return response()->json([
+            'data' => $data
+        ]);
     }
 
     /**
@@ -83,6 +99,7 @@ class LocationsControllers extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = \App\Location::where('id', $id)->first();
+        $data->delete();
     }
 }

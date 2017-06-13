@@ -36,7 +36,7 @@
     data(){
     return{
             searchQuery: '',
-            brandsColumns: ['updated', 'serial', 'to', 'from'],
+            brandsColumns: ['updated', 'serial', 'to', 'from', 'status'],
             brands: [],
 
             loading: true,
@@ -56,12 +56,13 @@
 
              axios.get("../api/transfers").then(function(response){
                 that.brands = _.map(response.data.data, function(num){
-                var pick = _.pick(num, 'product.serial','location','updated_at');
+                var pick = _.pick(num, 'product.serial','location','updated_at', 'action.name');
                 var objectData = {
                     updated:pick.updated_at,
                     serial: _.isEmpty(pick.product) ? 'NOT SERIAL DEFINED' : pick.product.serial,
-                    to:pick.location.name,
-                    from:pick.location.lastLocation,
+                    to:pick.location.lastLocation,
+                    from:pick.location.name,
+                    status: pick.action.name
                 };
                 return objectData})
                 that.loading = false

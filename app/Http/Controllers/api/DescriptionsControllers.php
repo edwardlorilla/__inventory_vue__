@@ -14,9 +14,9 @@ class DescriptionsControllers extends Controller
      */
     public function index()
     {
-        $brands = \App\Description::orderBy('created_at','desc')->get();
+        $brands = \App\Description::with('products')->orderBy('created_at','desc')->get();
         return response()->json([
-            'descriptions' => $brands
+            'data' => $brands
             ]);
     }
 
@@ -98,6 +98,7 @@ class DescriptionsControllers extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = \App\Description::where('id', $id)->first();
+        $data->delete();
     }
 }

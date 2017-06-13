@@ -25,7 +25,7 @@
         data(){
             return{
                 textData: 'Descriptions',
-                urlData: '../api/descriptions',
+                urlData: '../api/descriptions'
             }
         },
         components:{

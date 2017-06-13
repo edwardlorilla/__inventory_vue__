@@ -8,14 +8,7 @@
                 <table  class="table table-striped table-bordered">
                     <thead>
                     <tr>
-                        <th v-for="key in columns"
-                            @click="sortBy(key)"
-                            v-show="key === 'id' ? false : true"
-                            :class="{ active: sortKey == key }">
-                            {{ key | capitalize }}
-                            <span class="glyphicon" :class="sortOrders[key] > 0 ? 'glyphicon-sort-by-attributes' : 'glyphicon-sort-by-attributes-alt'">
-                                    </span>
-                        </th>
+                        <th v-for="key in columns"  @click="sortBy(key)" v-show="key === 'id' ? false : true" :class="{ active: sortKey == key }">{{ key | capitalize }}<span class="glyphicon" :class="sortOrders[key] > 0 ? 'glyphicon-sort-by-attributes' : 'glyphicon-sort-by-attributes-alt'"></span></th>
                     </tr>
                     </thead>
                     <thead>
@@ -24,7 +17,7 @@
                             v-show="key === 'id' ? false : true"
                         >
 
-                            <input class="input form-control" v-model="searchOrder[key]" :placeholder="key"/>
+                            <input  class="input form-control" v-model="searchOrder[key]" :placeholder="key"/>
                         </th>
                     </tr>
                     </thead>
@@ -48,12 +41,12 @@
                                 :key="index"
                                 :data-index="index"
                             >
-                                <span v-if="entry[key] === entry['serial']"><router-link :to="'/products/' + entry['id'] + '/edit'" >{{entry[key]}}</router-link></span>
-                                <span v-else-if="entry[key] === entry['name'] && titleHead === 'Manufactures'"><router-link :to="'/manufactures/' + entry['id'] + '/edit'" >{{entry[key]}}</router-link></span>
-                                <span v-else-if="entry[key] === entry['name'] && titleHead === 'Locations'"><router-link :to="'/locations/' + entry['id'] + '/edit'" >{{entry[key]}}</router-link></span>
-                                <span v-else-if="entry[key] === entry['name'] && titleHead === 'Descriptions'"><router-link :to="'/descriptions/' + entry['id'] + '/edit'" >{{entry[key]}}</router-link></span>
-                                <span v-else-if="entry[key] === entry['name'] && titleHead === 'Categories'"><router-link :to="'/categories/' + entry['id'] + '/edit'" >{{entry[key]}}</router-link></span>
-                                <span v-else-if="entry[key] === entry['name'] && titleHead === 'Models'"><router-link :to="'/brands/' + entry['id'] + '/edit'" >{{entry[key]}}</router-link></span>
+                                <span v-if="entry[key] === entry['serial'] && titleHead === 'Products'"><router-link :to="'/techitem/' + entry['id'] + '/edit'" >{{entry[key]}}</router-link></span>
+                                <span v-else-if="entry[key] === entry['name'] && titleHead === 'Manufactures'"><a @click="editEntry({id:entry['id']})">{{entry[key]}}</a></span>
+                                <span v-else-if="entry[key] === entry['name'] && titleHead === 'Locations'"><a @click="editEntry({id:entry['id'],name:entry['name'],BU:entry['BU'],OU:entry['OU']})">{{entry[key]}}</a></span>
+                                <span v-else-if="entry[key] === entry['name'] && titleHead === 'Descriptions'"><a @click="editEntry({id:entry['id'],name:entry['name']})">{{entry[key]}}</a></span>
+                                <span v-else-if="entry[key] === entry['name'] && titleHead === 'Categories'"><a @click="editEntry({id:entry['id']})">{{entry[key]}}</a></span>
+                                <span v-else-if="entry[key] === entry['name'] && titleHead === 'Models'"><a @click="editEntry({id:entry['id']})">{{entry[key]}}</a></span>
                                 <span v-else>{{entry[key]}}</span>
                             </td>
 
@@ -64,7 +57,7 @@
                 <nav aria-label="Page navigation">
                     <ul class="pagination">
                         <li>
-                            <a aria-label="Previous">
+                            <a @click="setPage(currentPage-1)" aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>
                             </a>
                         </li>
@@ -78,7 +71,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" aria-label="Next">
+                            <a @click="setPage(currentPage+1)" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
                             </a>
                         </li>
@@ -144,7 +137,7 @@
                         data = data.filter(function (row) {
                         return Object.keys(row).some(function (key) {
                             var filter;
-                            if(_.size(searchKey) == 1){
+                            if(_.size(searchKey) == 2 || _.size(searchKey) == 1){
                                 filter = (String(row[key]).toLowerCase().indexOf(filterKey)) ||
                                 (String(row['name']).toLowerCase().indexOf(searchKey['name'].toLowerCase()));
                             }else if( _.size(searchKey) == 2 || _.size(searchKey) == 3){
@@ -152,12 +145,13 @@
                                 (String(row['id']).toLowerCase().indexOf(searchKey['id'].toLowerCase())) ||
                                 (String(row['name']).toLowerCase().indexOf(searchKey['name'].toLowerCase())) ||
                                 (String(row['productCount']).toLowerCase().indexOf(searchKey['productCount'].toLowerCase()));
-                            }else if( _.size(searchKey) == 4 ){
+                            }else if( _.size(searchKey) == 5 ){
                                 filter = (String(row[key]).toLowerCase().indexOf(filterKey)) ||
                                 (String(row['updated']).toLowerCase().indexOf(searchKey['updated'].toLowerCase())) ||
                                 (String(row['serial']).toLowerCase().indexOf(searchKey['serial'].toLowerCase()))||
                                 (String(row['to']).toLowerCase().indexOf(searchKey['to'].toLowerCase()))||
-                                (String(row['from']).toLowerCase().indexOf(searchKey['from'].toLowerCase()));
+                                (String(row['from']).toLowerCase().indexOf(searchKey['from'].toLowerCase())) ||
+                                (String(row['status']).toLowerCase().indexOf(searchKey['status'].toLowerCase()));
                             }
                             else if (_.size(searchKey) >= 10){
                             filter =(String(row[key]).toLowerCase().indexOf(filterKey)) ||
@@ -197,12 +191,18 @@
         }
         },
         methods: {
+            editEntry:function(index){
+            var vm = this;
+                vm.$emit('editData', index)
+            },
             sortBy: function (key) {
                 this.sortKey = key
                 this.sortOrders[key] = this.sortOrders[key] * -1
             },
             setPage: function(pageNumber) {
-                this.currentPage = pageNumber
+				if (pageNumber >= 0 && pageNumber < this.totalPages) {
+				  this.currentPage = pageNumber;   
+				} 
             },
             beforeEnter: function (el) {
               el.style.opacity = 0

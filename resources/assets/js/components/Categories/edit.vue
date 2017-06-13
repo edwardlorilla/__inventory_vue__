@@ -21,6 +21,7 @@
 <script>
     import NotyAlert from './../Noty/notyAlert';
     import editData from './../Filtering/Edit.vue';
+    import categoryState from './../Filtering/Edit.vue';
     export default {
         data(){
             return{
@@ -32,8 +33,13 @@
             'edit-data':editData
         },
         mounted() {
-
+            var vm = this
             document.title = 'Edit ' + this.textData
         },
+        methods:{
+            fetchData(dataId){
+                categoryState.fetchObject('../../api/categories/' + dataId + '/edit')
+            }
+        }
     }
 </script>

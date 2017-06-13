@@ -8,6 +8,7 @@
     <meta name="_token" content="{{ csrf_token() }}"/>
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+
     <title>Inventory</title>
 </head>
 <body>
