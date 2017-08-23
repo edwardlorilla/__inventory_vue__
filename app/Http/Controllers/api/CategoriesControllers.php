@@ -14,7 +14,7 @@ class CategoriesControllers extends Controller
      */
     public function index()
     {
-        $brands = \App\Category::with('products')->orderBy('created_at','desc')->get();
+        $brands = \App\Category::with(['products', 'photo' => function($query){ $query->select(['id', 'name']);}])->orderBy('created_at','desc')->get();
         return response()->json([
             'data' => $brands
         ]);
@@ -38,9 +38,11 @@ class CategoriesControllers extends Controller
      */
     public function store(Request $request)
     {
-        $name = $request->input('name');//
-
-        $brands = \App\Category::create([ 'name' => $name]);
+        $name = $request->name;
+        if ($request->image){
+            $photo = $this->getPhoto($request);
+        }
+        $brands = \App\Category::create([ 'name' => $name, 'photo_id' => $request->image ?  $photo->id : null ]);
         return response()->json([
             'data' => $brands,  'message' => 'brands ' .$name . 'has been created'
         ]);
@@ -80,13 +82,15 @@ class CategoriesControllers extends Controller
      */
     public function update(Request $request, $id)
     {
+        $photo = $this->getPhoto($request);
         \App\Category::where('id', $id)->update(
             [
-                'name' => $request->input('name')
+                'name' => $request->input('name'),
+                'photo_id' => $photo->id
             ]
         );
         return response()->json([
-            'message' => 'Tech Item ' . $request->input('name') . ' has updated'
+            'message' => 'Tech Item ' . $request->input('name') . ' has updated', 'getImageName' =>$photo->name
         ]);
     }
 
@@ -100,5 +104,28 @@ class CategoriesControllers extends Controller
     {
         $data = \App\Category::where('id', $id)->first();
         $data->delete();
+    }
+
+    /**
+     * @param Request $request
+     * @return \App\Photo
+     */
+    public function getPhoto(Request $request)
+    {
+        $photo = new \App\Photo();
+        if ($file = $request->image) {
+            list($type, $imageData) = explode(';', $request->image);
+            list(, $extension) = explode('/', $type);
+            list(, $imageData) = explode(',', $imageData);
+            $fileName = uniqid() . '.' . $extension;
+            $source = fopen($request->image, 'r');
+            $destination = fopen('images/' . $fileName, 'w');
+            stream_copy_to_stream($source, $destination);
+            fclose($source);
+            fclose($destination);
+            $photo = \App\Photo::create(['name' => $fileName]);
+            return $photo;
+        }
+        return $photo;
     }
 }

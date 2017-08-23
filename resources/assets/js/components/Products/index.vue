@@ -63,7 +63,7 @@
                             manufacture:pick.manufacture ? pick.manufacture : 'NOT DEFINED',
                             description:pick.description ? pick.description : 'NOT DEFINED',
                             location:pick.location ? pick.location : 'NOT DEFINED',
-                            category:pick.category ? pick.category : 'NOT DEFINED',
+                            category:pick.category ? pick.category.name : 'NOT DEFINED',
                             model:pick.model ?  pick.model : 'NOT DEFINED',
                             status: pick.status ? pick.status : 'NOT DEFINED' ,
                             updated:pick.updated ? pick.updated : 'NOT DEFINED'

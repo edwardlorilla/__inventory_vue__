@@ -1,5 +1,5 @@
 <template>
-    <select class="input-sm" :name="name">
+    <select required class="input-sm" :name="name">
         <slot></slot>
     </select>
 </template>
@@ -8,7 +8,7 @@
 <script>
     import Select2 from 'select2';
     export default{
-    props: ['options', 'value', 'name', 'urlName'],
+    props: ['options', 'value', 'name', 'urlName', 'nameData'],
     data(){
         return{
             msg:''
@@ -51,13 +51,15 @@
                             var post = $.trim(e.params.data.text.replace(/ \(new\)$/, ''));
                             axios.post(vm.urlName, {name : post}).then(response => {
                                  $(this).find('[value="'+e.params.data.id+'"]').replaceWith('<option selected value="'+response.data.data.id+'">'+response.data.data.name+'</option>');
-                                 vm.$emit('modelId',response.data.data.id)
+                                vm.$emit('modelId',response.data.data)
                             })
                         }
                     }
                 }else{
 
                     vm.$emit('selectValue',e.params.data.id )
+
+                    vm.$emit('selectData', e.params.data.type)
                     vm.$emit('selectQuantityValue',e.params.data.quantity )
                     vm.$emit('selectStatusValue',e.params.data.status? e.params.data.status.id : 0 )
                     vm.$emit('selectManufactureValue',e.params.data.manufacture )

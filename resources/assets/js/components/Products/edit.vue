@@ -3,32 +3,63 @@
         <!--<loader v-if="loading"></loader>-->
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">{{dataFetch.dataFetch.serial}}</div>
+
+
+                        <div class="panel-body">
+                            <img :src="dataFetch.dataFetch.photo">
+                        </div>
+                        <div class="list-group">
+                            <button @click="layout = 'upload'" type="button" class="list-group-item"
+                                    :class="{'active' : layout == 'upload' }">{{dataFetch.dataFetch.serial}} Images
+                            </button>
+                            <button @click="layout = 'edit'" type="button" class="list-group-item"
+                                    :class="{'active' : layout == 'edit' }">{{dataFetch.dataFetch.serial}} Edit
+                            </button>
+                            <button @click="layout = 'transaction'" type="button" class="list-group-item"
+                                    :class="{'active' : layout == 'transaction' }">{{dataFetch.dataFetch.serial}} Edit
+                            </button>
+                        </div>
+						<div class="panel-footer">
+						<div class="input-group">
+						  <span class="input-group-btn">
+							<button @click="checkIn()" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-upload" ></span> Check in</button>
+						  </span>
+						  <input type="number" v-model.number="postCheck.checkInQuantity" class="form-control" placeholder="Increment Quantity">
+						</div><!-- /input-group -->
+					</div>
+                    </div>
+					
+					
+                </div>
+                <div class="col-md-8">
 
                     <div class="panel panel-default">
                         <div class="panel-heading">Edit {{dataFetch.dataFetch.serial}}</div>
 
 
-                        <div  class="panel-body" >
-                                <input name="_token" type="hidden" :value="laravelToken"/>
+                        <div v-if="layout == 'edit'" class="panel-body">
+                            <input name="_token" type="hidden" :value="laravelToken"/>
                             <div class="form-group">
-                                <input v-model="checkedType"
+                                <input v-model="dataFetch.dataFetch.type"
                                        type="checkbox"
                                 >
-                                <label>Type: {{checkedType ? 'Non-Consumable' : 'Consumable' }}  </label>
+                                <label>Type: {{dataFetch.dataFetch.type ? 'Non-Consumable' : 'Consumable' }} </label>
                             </div>
                             <div class="form-group"
                                  :class="{'has-error' : validateDuplicate } "
                             >
 
-                                <label>{{checkedType ? 'Serial' : 'Name'}}</label>
+                                <label>{{dataFetch.dataFetch.type ? 'Serial' : 'Name'}}</label>
                                 <input type="text"
                                        class="form-control"
                                        v-model="dataFetch.dataFetch.serial"
                                        placeholder="Serial"
-                                       @keydown.enter.prevent = 'postData'
+                                       @keydown.enter.prevent='postData'
                                 >
-                                <span  :class="{'hidden' : !(validateDuplicate)}"
+                                <span :class="{'hidden' : !(validateDuplicate)}"
                                       class="help-block">Duplicated Serial Entry</span>
                             </div>
                             <div class="form-group"
@@ -39,16 +70,16 @@
                                        class="form-control"
                                        v-model="dataFetch.dataFetch.assetSerial"
                                        placeholder="Asset Serial"
-                                       @keydown.enter.prevent = 'postData'
+                                       @keydown.enter.prevent='postData'
                                 >
-                                <span  :class="{'hidden' : !(validateDuplicateAssetSerial)}"
-                                       class="help-block">Duplicated Asset Serial Entry</span>
+                                <span :class="{'hidden' : !(validateDuplicateAssetSerial)}"
+                                      class="help-block">Duplicated Asset Serial Entry</span>
                             </div>
                             <div class="form-group">
                                 <label>Quantity</label>
-                                <input v-model.number="checkedType ? (validateSerialQuantity ? dataFetch.dataFetch.quantity = 1 : dataFetch.dataFetch.quantity) :  dataFetch.dataFetch.quantity"
+                                <input v-model.number="dataFetch.dataFetch.type ? (validateSerialQuantity ? dataFetch.dataFetch.quantity = 1 : dataFetch.dataFetch.quantity) :  dataFetch.dataFetch.quantity"
                                        min="1"
-                                       :disabled="checkedType ? (validateSerialQuantity ? dataFetch.dataFetch.quantity = 1 : dataFetch.dataFetch.quantity) :  false"
+                                       :disabled="dataFetch.dataFetch.type ? (validateSerialQuantity ? dataFetch.dataFetch.quantity = 1 : dataFetch.dataFetch.quantity) :  false"
                                        type="number"
                                        class="form-control"
                                 >
@@ -59,8 +90,8 @@
                                          :options="manufacturesFetch"
                                          required
                                          :urlName="arrayUrl.manufacture"
-                                         v-model="dataFetch.dataFetch.manufacture.id"
-                                         @modelId = "dataFetch.dataFetch.manufacture.id = $event"
+                                         v-model.number="dataFetch.dataFetch.manufacture.id"
+                                         @modelId="dataFetch.dataFetch.manufacture.id = $event.id"
                                 >
                                     <option disabled value="0">Select one</option>
                                 </select2>
@@ -70,8 +101,8 @@
                                 <select2 style="width: 100%;" :options="descriptionsFetch"
                                          required
                                          :urlName="arrayUrl.description"
-                                         v-model="dataFetch.dataFetch.description.id"
-                                         @modelId = "dataFetch.dataFetch.description.id = $event"
+                                         v-model.number="dataFetch.dataFetch.description.id"
+                                         @modelId="dataFetch.dataFetch.description.id = $event.id"
                                 >
                                     <option disabled value="0">Select one</option>
                                 </select2>
@@ -81,8 +112,8 @@
                                 <select2 style="width: 100%;" :options="locationsFetch"
                                          required
                                          :urlName="arrayUrl.location"
-                                         v-model="dataFetch.dataFetch.location.id"
-                                         @modelId = "dataFetch.dataFetch.id = $event"
+                                         v-model.number="dataFetch.dataFetch.location.id"
+
                                 >
                                     <option disabled value="0">Select one</option>
                                 </select2>
@@ -92,8 +123,9 @@
                                 <select2 style="width: 100%;" :options="categoriesFetch"
                                          required
                                          :urlName="arrayUrl.category"
-                                         v-model="dataFetch.dataFetch.category.id"
-                                         @modelId = "dataFetch.dataFetch.category.id = $event"
+                                         v-model.number="dataFetch.dataFetch.category.id"
+                                         @modelId="dataFetch.dataFetch.category.id = $event.id"
+                                         @input="objectReceive($event)"
                                 >
                                     <option disabled value="0">Select one</option>
                                 </select2>
@@ -103,8 +135,8 @@
                                 <select2 style="width: 100%;" :options="brandsFetch"
                                          required
                                          :urlName="arrayUrl.model"
-                                         v-model="dataFetch.dataFetch.model.id"
-                                         @modelId = "dataFetch.dataFetch.model.id = $event"
+                                         v-model.number="dataFetch.dataFetch.model.id"
+                                         @modelId="dataFetch.dataFetch.model.id = $event.id"
                                 >
                                     <option disabled value="0">Select one</option>
                                 </select2>
@@ -114,17 +146,53 @@
                                 <select2 style="width: 100%;" :options="statusesFetch"
                                          required
                                          :urlName="arrayUrl.status"
-                                         v-model="dataFetch.dataFetch.status.id"
-                                         @modelId = "dataFetch.dataFetch.status.id = $event"
+                                         v-model.number="dataFetch.dataFetch.status.id"
+                                         @modelId="dataFetch.dataFetch.status.id = $event.id; fetchNew($event, 'Status')"
+                                         
                                 >
                                     <option disabled value="0">Select one</option>
                                 </select2>
                             </div>
 
 
-
                         </div>
-                        <div  class="panel-footer"  >
+                        <div v-if="layout == 'upload'" class="panel-body">
+                            <uploader></uploader>
+                            <div class="row">
+                                <thumbnail
+                                        v-for="(item, key, index) in dataFetch.dataFetch.photos"
+                                        :key="item.id"
+                                        :item="item"
+                                >
+
+                                </thumbnail>
+                            </div>
+                        </div>
+                        <div v-if="layout == 'transaction'">
+                            <button @click="transactionState = 'all'" class="btn btn-primary">All</button>
+                            <button @click="transactionState = 'in'" class="btn btn-success">In</button>
+                            <button @click="transactionState = 'out'" class="btn btn-info">Out</button>
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Action</th>
+                                    <th>Quantity</th>
+                                    <th>Created at</th>
+                                    <th>Updated at</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                    <transaction v-for="transaction in transactionLists"
+                                                 :key="transaction.id"
+                                                 :transaction="transaction"
+                                    >
+
+                                    </transaction>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="panel-footer">
                             <span class="btn-group">
 
                                 <button
@@ -149,7 +217,7 @@
     import Select2 from './../Transfers/Select2.vue';
     import Loader from './../Loader/Loader.vue';
     import NotyAlert from './../Noty/notyAlert';
-
+    import Uploader from './../Uploader/Uploader.vue';
     import brandState from './../Filtering/brandStates.js';
     import categoryState from './../Filtering/categoryStates.js';
     import descriptionState from './../Filtering/descriptionStates.js';
@@ -159,15 +227,20 @@
     import statusState from './../Filtering/statusStates.js';
     import fetchAll from './../Filtering/fetchAll.js';
     import fetchData from './../Filtering/fetchData.js';
+    import Thumbnail from './../Image/Thumbnail.vue';
+    import Transaction from './../Transaction/Transaction.vue';
     export default{
         components:{
-            Select2, Loader
+            Select2, Loader, Uploader, Thumbnail, Transaction
         },
         data(){
             return{
                 loading: true,
                 dataFetch: fetchData.data,
                 hasError: false,
+				postCheck:{
+					checkInQuantity: 1
+				},
                 arrayUrl:{
                     manufacture:"../../api/manufactures",
                     description:"../../api/descriptions",
@@ -187,8 +260,11 @@
 
                 },
                 laravelToken: window.Laravel.csrfToken,
-                checkedType: true
-
+                layout:'edit',
+                transactionState: 'all',
+                newFetch:{
+                    
+                },
 
             }
         },
@@ -197,6 +273,18 @@
             vm.fetchAll(vm.$route.params.id)
         },
         computed:{
+            transactionLists(){
+                var vm = this
+                var filterTransaction
+                if(vm.transactionState == 'out' ) {
+                    filterTransaction = _.filter(vm.dataFetch.dataFetch.checkouts, function(o) { return o.in == null; })
+                }else if(vm.transactionState == 'in' ){
+                    filterTransaction = _.filter(vm.dataFetch.dataFetch.checkouts, function(o) { return o.out == null; })
+                }else if(vm.transactionState == 'all'){
+                    filterTransaction = vm.dataFetch.dataFetch.checkouts
+                }
+                return filterTransaction
+            },
             statusesFetch(){
                 var vm = this
                 return _.map(vm.arrayCollection.statuses.brands, function(data){
@@ -273,6 +361,21 @@
             }
         },
         methods:{
+		fetchNew(newData, type){
+            var vm = this;
+			var pickData = _.pick(newData, ['id', 'name'])
+		    if(type == "Status"){
+		        statusState.dataReceive(pickData.id, pickData.name)
+		    }
+		},
+        objectReceive(event){
+            var vm = this
+            var found = _.find(vm.arrayCollection.categories.categories, function(o){
+                return o.id == event
+            })
+
+            vm.dataFetch.dataFetch.photo = _.isEmpty(found) ? '/images/images.jpg' :found.photo.name
+        },
         deleteData(){
         var vm = this
             axios.delete('../../api/products/' + vm.$route.params.id).then(response => {
@@ -285,18 +388,22 @@
         },
         postData(){
             var vm = this;
-             var pick = _.pick(vm.dataFetch.dataFetch, 'serial', 'quantity','status.id','manufacture.id','description.id','location.id','category.id','model.id', 'assetSerial');
+             var pick = _.pick(vm.dataFetch.dataFetch, 'serial', 'type','quantity','status','manufacture','description','location','category','model', 'assetSerial', 'quantityClone');
              var object = {
                  serial:pick.serial,
+                 type:pick.type,
                  quantity:pick.quantity,
-                 status:pick.status.id,
-                 manufacture:pick.manufacture.id,
-                 description:pick.description.id,
-                 location:pick.location.id,
-                 category:pick.category.id,
-                 model:pick.model.id,
+                 status_id:pick.status.id,
+                 manufacture_id:pick.manufacture.id,
+                 description_id:pick.description.id,
+                 location_id:pick.location.id,
+                 category_id:pick.category.id,
+                 photo:pick.category,
+                 brand_id:pick.model.id,
+                 type:pick.type,
                  _token: vm.laravelToken,
-                 assetSerial:pick.assetSerial
+                 assetSerial:pick.assetSerial,
+                 quantityClone:pick.quantityClone
              };
             axios.patch('../../api/products/' + vm.$route.params.id, {products: object }).then(response => {
                  NotyAlert.notyAlert('success', response.data.data.message)
@@ -321,5 +428,7 @@
             },
         }
     }
+
+
 
 </script>

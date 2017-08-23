@@ -1387,17 +1387,19 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         categories: [],
         editData: {}
     },
-    dataReceive: function dataReceive(id, data) {
+    dataReceive: function dataReceive(recieveData) {
         var vm = this;
-        vm.data.categories.unshift({ id: id, name: data });
+        var rd = recieveData;
+        // it reieve the data that pass hrought the create component and make an object of everything that end-user enter if there is none the value the variable the temporarily null
+        vm.data.categories.unshift({ id: rd.id, name: rd.name, photo: _.isEmpty(rd.photo) ? { name: '/images/images.jpg' } : rd.photo });
     },
     fetch: function fetch(urlFetch) {
         var _this = this;
 
         axios.get(urlFetch).then(function (response) {
             return _this.data.categories = _.map(response.data.data, function (num) {
-                var pick = _.pick(num, 'id', 'name', 'products');
-                var object = { id: pick.id, name: pick.name, serials: _.map(pick.products, 'serial') };
+                var pick = _.pick(num, 'id', 'name', 'products', 'photo');
+                var object = { id: pick.id, name: pick.name, serials: _.map(pick.products, 'serial'), photo: _.isEmpty(pick.photo) ? { name: '/images/images.jpg' } : pick.photo };
                 return object;
             });
         });
@@ -1407,13 +1409,22 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         var found = _.findIndex(this.data.categories, data);
         vm.data.editData = vm.data.categories[found];
     },
-    dataEdit: function dataEdit() {
+    dataEdit: function dataEdit(getImage) {
         var vm = this;
         var DATA = vm.data.editData;
         var found = _.findIndex(this.data.categories, { id: DATA.id });
+        /**
+         * it override the existing data, and replaced the updated data
+         */
         this.data.categories[found].name = DATA.name;
+        if (this.data.categories[found].photo) {
+            this.data.categories[found].photo.name = getImage.getImageName;
+        }
     },
     deleteData: function deleteData(dataId) {
+        /*
+            it find the data using id of given id and once it found and check if the data is type of object then delete
+         */
         var found = _.find(this.data.categories, ['id', dataId]);
         if ((typeof found === 'undefined' ? 'undefined' : _typeof(found)) == 'object') {
             var index = _.indexOf(this.data.categories, found);
@@ -1533,23 +1544,25 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
  */
 /* harmony default export */ __webpack_exports__["a"] = ({
     data: {
-        brands: []
-
+        brands: [],
+        editProduct: {}
     },
     fetch: function fetch(urlFetch, loading) {
         var that = this;
         axios.get(urlFetch).then(function (response) {
             that.data.brands = _.map(response.data.data, function (num) {
-                var pick = _.pick(num, 'id', 'quantity', 'serial', 'manufacture', 'description', 'location', 'category', 'brand', 'status', 'updated_at', 'assetSerial');
+                var pick = _.pick(num, 'id', 'quantity', 'serial', 'type', 'manufacture', 'description', 'location', 'category', 'brand', 'status', 'updated_at', 'assetSerial');
                 var objectProduct = {
                     id: pick.id,
                     quantity: pick.quantity,
                     serial: pick.serial,
+                    type: pick.type,
                     assetSerial: pick.assetSerial,
                     manufacture: pick.manufacture ? pick.manufacture.name : '',
                     description: pick.description ? pick.description.name : '',
                     location: pick.location ? pick.location.name : '',
-                    category: pick.category ? pick.category.name : '',
+                    category: pick.category ? pick.category : ' ',
+                    photo: pick.category ? pick.category.photo ? pick.category.photo.name : '/images/images.jpg' : '/images/images.jpg',
                     model: pick.brand ? pick.brand.name : '',
                     status: pick.status ? pick.status.name : '',
                     updated: pick.updated_at };
@@ -13166,7 +13179,7 @@ import Products  from './components/Products/index.vue';
 import createProducts from './components/Products/create.vue';
 import createTransfers from './components/Transfers/create.vue';*/
 var Brands = function Brands(resolve) {
-    __webpack_require__.e/* require.ensure */(6).then((function () {
+    __webpack_require__.e/* require.ensure */(7).then((function () {
         resolve(__webpack_require__(23));
     }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
@@ -13179,7 +13192,7 @@ var editBrands = function editBrands(resolve) {
 };
 
 var Categories = function Categories(resolve) {
-    return __webpack_require__.e/* require */(5).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(76)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    return __webpack_require__.e/* require */(6).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(76)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 var createCategories = function createCategories(resolve) {
     return __webpack_require__.e/* require */(16).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(74)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
@@ -13189,7 +13202,7 @@ var editCategories = function editCategories(resolve) {
 };
 
 var Descriptions = function Descriptions(resolve) {
-    return __webpack_require__.e/* require */(4).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(80)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    return __webpack_require__.e/* require */(5).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(80)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 var createDescriptions = function createDescriptions(resolve) {
     return __webpack_require__.e/* require */(15).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(78)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
@@ -13199,7 +13212,7 @@ var editDescriptions = function editDescriptions(resolve) {
 };
 
 var Locations = function Locations(resolve) {
-    return __webpack_require__.e/* require */(3).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(84)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    return __webpack_require__.e/* require */(4).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(84)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 var createLocations = function createLocations(resolve) {
     return __webpack_require__.e/* require */(14).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(82)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
@@ -13209,7 +13222,7 @@ var editLocations = function editLocations(resolve) {
 };
 
 var Manufactures = function Manufactures(resolve) {
-    return __webpack_require__.e/* require */(2).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(87)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    return __webpack_require__.e/* require */(3).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(87)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 var createManufactures = function createManufactures(resolve) {
     return __webpack_require__.e/* require */(13).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(85)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
@@ -13222,7 +13235,7 @@ var Products = function Products(resolve) {
     return __webpack_require__.e/* require */(19).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(91)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 var ProductEdit = function ProductEdit(resolve) {
-    return __webpack_require__.e/* require */(7).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(90)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    return __webpack_require__.e/* require */(0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(90)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 var ProductShow = function ProductShow(resolve) {
     return __webpack_require__.e/* require */(20).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(92)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
@@ -13231,11 +13244,11 @@ var ProductHistory = function ProductHistory(resolve) {
     return __webpack_require__.e/* require */(21).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(88)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 var createProducts = function createProducts(resolve) {
-    return __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(89)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    return __webpack_require__.e/* require */(2).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(89)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 
 var createTransfers = function createTransfers(resolve) {
-    return __webpack_require__.e/* require */(0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(93)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    return __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(93)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 var Transfers = function Transfers(resolve) {
     return __webpack_require__.e/* require */(18).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(94)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
@@ -37563,7 +37576,7 @@ var Component = __webpack_require__(3)(
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\inventory_vue__\\node_modules\\vue-particles\\src\\vue-particles\\vue-particles.vue"
+Component.options.__file = "C:\\xampp\\htdocs\\inventory_vue__ - Copy\\node_modules\\vue-particles\\src\\vue-particles\\vue-particles.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] vue-particles.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -37574,9 +37587,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-9fc58a84", Component.options)
+    hotAPI.createRecord("data-v-d2baba20", Component.options)
   } else {
-    hotAPI.reload("data-v-9fc58a84", Component.options)
+    hotAPI.reload("data-v-d2baba20", Component.options)
   }
 })()}
 
@@ -37601,7 +37614,7 @@ var Component = __webpack_require__(3)(
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\inventory_vue__\\resources\\assets\\js\\components\\App.vue"
+Component.options.__file = "C:\\xampp\\htdocs\\inventory_vue__ - Copy\\resources\\assets\\js\\components\\App.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] App.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -37612,9 +37625,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-961f52f4", Component.options)
+    hotAPI.createRecord("data-v-7dc0b4b8", Component.options)
   } else {
-    hotAPI.reload("data-v-961f52f4", Component.options)
+    hotAPI.reload("data-v-7dc0b4b8", Component.options)
   }
 })()}
 
@@ -37751,7 +37764,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-961f52f4", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-7dc0b4b8", module.exports)
   }
 }
 
@@ -37785,7 +37798,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-9fc58a84", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-d2baba20", module.exports)
   }
 }
 
@@ -40289,13 +40302,13 @@ var content = __webpack_require__(50);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(12)("28dee9b6", content, false);
+var update = __webpack_require__(12)("7c0bbb3b", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-961f52f4\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./App.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-961f52f4\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./App.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-7dc0b4b8\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./App.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-7dc0b4b8\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./App.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });

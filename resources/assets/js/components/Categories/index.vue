@@ -5,16 +5,16 @@
                 :textLabel="textData"
                 :editData ="brands.editData"
                 @backList="layout = 'list'"
-                @return ="editPost()"
+                @return ="editPost($event)"
                 @goBack = "spliceData($event)"
         >
         </edit>
         <create v-if="layout == 'create'"
                 :urlString="urlData"
+                @backList="layout = 'list'"
                 :textData="textData"
                 :nameData="nameData"
-                @dataId = "nameData.id =$event"
-                @dataName = "dataReceive(nameData.id, $event)"
+                @object = "dataReceive($event)"
                 :dataArray="brands.categories"
 
         ></create>
@@ -75,7 +75,10 @@
             urlData: '../api/categories',
             nameData: {
                 id: null,
-                name: ''
+                name: '',
+                photo:{
+                    name:'/images/images.jpg'
+                }
             }
 
         }
@@ -89,9 +92,9 @@
                 DataReceive.deleteData(data)
                 vm.layout = 'list'
             },
-            dataReceive(id, data){
+            dataReceive(data){
                 var vm = this
-                DataReceive.dataReceive(id, data)
+                DataReceive.dataReceive(data)
                 vm.layout = 'list'
             },
             findIndex(data){
@@ -99,9 +102,9 @@
                 DataReceive.findIndex(data)
                 vm.layout = 'edit'
             },
-            editPost(){
+            editPost(getImage){
                 var vm = this;
-                DataReceive.dataEdit()
+                DataReceive.dataEdit(getImage)
                 vm.layout = 'list'
             },
             fetchbrands(){

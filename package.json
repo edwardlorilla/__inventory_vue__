@@ -28,6 +28,7 @@
     "vee-validate": "^2.0.0-rc.3",
     "vue-particles": "^1.0.5",
     "vue-router": "^2.5.2",
-    "vue-xlsx-table": "^1.2.7"
+    "vue-xlsx-table": "^1.2.7",
+    "vue2-dropzone": "^2.3.1"
   }
 }

@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\api;
-
 use App\Http\Controllers\Controller;
+use App\Product;
 use Illuminate\Http\Request;
+use Intervention\Image\ImageManager;
 
 class ProductsControllers extends Controller
 {
@@ -15,6 +16,7 @@ class ProductsControllers extends Controller
     public function index()
     {
         $brands = \App\Product::with([
+
         'location' => function($query) {
             $query->select(['id', 'name']);
         },
@@ -22,7 +24,7 @@ class ProductsControllers extends Controller
             $query->select(['id', 'name']);
         },'description' => function($query) {
             $query->select(['id', 'name']);
-        }, 'category' => function($query) {
+        }, 'category.photo' => function($query) {
             $query->select(['id', 'name']);
         }, 'status' => function($query) {
             $query->select(['id', 'name']);
@@ -57,6 +59,7 @@ class ProductsControllers extends Controller
                ['serial' => $request->input('products.'.$key.'.serial')],
                [
                    'serial' => $request->input('products.'.$key.'.serial'),
+                   'type' => $request->input('products.'.$key.'.type'),
                    'quantity' => $request->input('products.'.$key.'.quantity'),
                    'manufacture_id' => $request->input('products.'.$key.'.manufacture'),
                    'description_id' => $request->input('products.'.$key.'.description'),
@@ -139,7 +142,12 @@ class ProductsControllers extends Controller
      */
     public function edit($id)
     {
-        $data = \App\Product::with(['location' => function($query) {
+        $data = \App\Product::with([
+        'checkouts' => function($query) {
+            $query->orderBy('created_at', 'desc');
+        },
+        'photos',
+        'location' => function($query) {
             $query->select(['id', 'name']);
         },'manufacture' => function($query) {
             $query->select(['id', 'name']);
@@ -147,7 +155,7 @@ class ProductsControllers extends Controller
             $query->select(['id', 'name']);
         },'status' => function($query) {
             $query->select(['id', 'name']);
-        }, 'category' => function($query) {
+        }, 'category.photo' => function($query) {
             $query->select(['id', 'name']);
         },  'brand' => function($query) {
             $query->select(['id', 'name']);
@@ -164,27 +172,45 @@ class ProductsControllers extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, $id)
     {
+		/*//dd(count($request->input('products.*')) == 12);
+		//dd(count($request->input('products.*')));
+		//dd($request->input('products'));
+        //dd($request->input('products'));
+        //($collection->only(['serial', 'type', 'quantity','manufacture_id', 'description_id', 'location_id', 'category_id', 'brand_id', 'status_id', 'assetSerial']));
+        //dd($productArray->intersect([$only])->all());
 
-       \App\Product::where('id', $id)->update(
-            [
-                'serial' => $request->input('products.serial'),
-                'quantity' => $request->input('products.quantity'),
-                'manufacture_id' => $request->input('products.manufacture'),
-                'description_id' => $request->input('products.description'),
-                'location_id' => $request->input('products.location'),
-                'category_id' => $request->input('products.category'),
-                'brand_id' => $request->input('products.model'),
-                'status_id' => $request->input('products.status'),
-                'assetSerial' => $request->input('products.assetSerial')
-            ]
-        );
+        //$intersect = collect($onlys)->diffKeys($only)->all();
+        //dd( $intersect->all());
+        //dd(array_diff_assoc($only, $onlys));*/
+        $quantity = $request->input('products.quantity');
+        $quantityClone = $request->input('products.quantityClone');
+        $checkIn = new \App\Checkout();
+        $product = \App\Product::where('id', $id)->first();
+        if($quantity > $quantityClone){
+            $checkinData = $quantity-$quantityClone;
+            $saveData = $checkIn->create(['in' => $checkinData ]);
+            $product->checkouts()->save($saveData);
+        }else{
+            $checkinData = $quantityClone-$quantity;
+            $saveData = $checkIn->create(['out' => $checkinData ]);
+            $product->checkouts()->save($saveData);
+        }
+        $collection = collect($request->input('products'));
+        $collections = collect($product->toArray());
+        $only = $collection->only(['serial', 'type', 'quantity','manufacture_id', 'description_id', 'location_id', 'category_id', 'brand_id', 'status_id', 'assetSerial'])->all();
+        $onlys = $collections->only(['serial', 'type', 'quantity','manufacture_id', 'description_id', 'location_id', 'category_id', 'brand_id', 'status_id', 'assetSerial'])->all();
+            $update = array_diff_assoc($only, $onlys);
+            if(collect($update)->isNotEmpty()){
+                $product->update($update);
+            }
+
         return response()->json([
             'data' => ['message' => 'Tech Item ' . $request->input('products.serial') . ' has updated' ]
         ]);
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -196,6 +222,32 @@ class ProductsControllers extends Controller
         $product = \App\Product::where('id', $id)->first();
 
         $product->delete();
+
+    }
+
+    public function uploadImage(Request $request, $product)
+    {
+        $productId = $product;
+        $productData = \App\Product::where('id', $productId )->first();
+        $manager = new ImageManager();
+        if ($file = $request->file('file')){
+            $resize = $manager->make($file->getRealPath())->fit(100)->encode('jpg');
+            $hash = md5($resize->__toString());
+            $path = "images/{$hash}.jpg";
+            $resize->save(public_path($path));
+            $photo = \App\Photo::create(['name'=>"{$hash}.jpg"]);
+            $productData->photos()->save($photo);
+        }
+
+
+    }
+
+    public function checkin(Request $request, $id)
+    {
+//        $checkin = $request->q
+//uantity;
+//
+//        \App\Product::where('id', $id)->update(['quantity' =>$request->input('quantity')] );
 
     }
 }

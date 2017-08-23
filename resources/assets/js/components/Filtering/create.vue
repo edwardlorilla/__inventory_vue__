@@ -3,7 +3,9 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading ">Create {{textData}}</div>
+                    <div class="panel-heading "><a @click="backList">
+                        <i class="glyphicon glyphicon-menu-left"></i>
+                    </a>Create {{textData}}</div>
                     <div v-if="textData == 'Locations'" class="panel-body">
                         <div class="form-group" :class="{'has-error' : validateDuplicateName || errors.Name }">
                             <label>{{textData}} Name</label>
@@ -53,6 +55,33 @@
                         </div>
 
                     </div>
+                    <div v-else-if="textData == 'Categories'" class="panel-body">
+                        <div class="form-group" :class="{'has-error' : validateDuplicateName || errors.Name}">
+                            <label>{{textData}} Name</label>
+                            <input type="text"
+                                   class="form-control"
+                                   autofocus
+                                   v-model="nameData.name"
+                                   required
+                                   placeholder="Name"
+                                   @keydown.enter.prevent='postData'
+                            >
+                            <span :class="{'hidden' : !validateDuplicateName}"
+                                  class="help-block">Duplicated {{textData}} name Entry</span>
+                            <span :class="{'hidden' : !errors.Name}"
+                                  class="help-block">The {{textData}} Name field is required.</span>
+                        </div>
+                        <div class="form-group">
+                            <div v-if="!image">
+                                <label> Select an image</label>
+                            </div>
+                            <div v-else>
+                                <img :src="image"/>
+                                <button @click="removeImage">Remove image</button>
+                            </div>
+                            <input name="image" type="file" @change="onFileChange">
+                        </div>
+                    </div>
                     <div v-else class="panel-body">
                         <div class="form-group" :class="{'has-error' : validateDuplicateName || errors.Name}">
                             <label>{{textData}} Name</label>
@@ -91,10 +120,9 @@
         data(){
             return{
                 errors:{
-                    BU: false,
-                    OU: false,
                     Name: false
-                }
+                },
+                image:''
             }
         },
         mounted(){
@@ -112,36 +140,40 @@
             }
         },
         methods:{
+             backList(){
+                var vm = this
+                vm.$emit('backList', 'list')
+            },
+            onFileChange(e) {
+                var files = e.target.files || e.dataTransfer.files;
+                if (!files.length)
+                return;
+                this.createImage(files[0]);
+            },
+            createImage(file) {
+                var image = new Image();
+                var reader = new FileReader();
+                var vm = this;
+                reader.onload = (e) => {
+                vm.image = e.target.result;
+                };
+                    reader.readAsDataURL(file);
+            },
+            removeImage: function (e) {
+                this.image = '';
+            },
+
             postData(){
                 var vm = this
-                axios.post( vm.urlString , vm.nameData).then(response => {
+                axios.post( vm.urlString , vm.textData == 'Categories' ? {name: vm.nameData.name, image: vm.image} : vm.nameData).then(response => {
                     vm.$emit('dataId', response.data.data.id)
                     vm.$emit('dataName', response.data.data.name)
                     vm.$emit('object', response.data.data)
-
-                    if(vm.errors.BU == true){
-                        vm.errors.BU = false
-                    }if(vm.errors.OU == true){
-                        vm.errors.OU = false
-                    }if(vm.errors.Name == true){
-                        vm.errors.Name = false
-                    }
-
 
                      NotyAlert.notyAlert('success', response.data.message)
                 })
                 .catch(function (error) {
 
-                    console.log(error.response)
-                    if(error.response.data.BU[0]){
-                        vm.errors.BU = true
-                    }
-                    if(error.response.data.OU[0]){
-                        vm.errors.OU = true
-                    }
-                    if(error.response.data.name[0]){
-                        vm.errors.Name = true
-                    }
                     NotyAlert.notyAlert('error', 'something went wrong')
                 })
             }

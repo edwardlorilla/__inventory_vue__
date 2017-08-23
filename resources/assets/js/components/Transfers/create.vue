@@ -23,6 +23,7 @@
                                             <table v-if="!loading" class="table table-bordered ">
 
                                                 <thead>
+                                                <th v-if="showAddSerial">Type</th>
                                                 <th>Serial</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
@@ -45,6 +46,12 @@
                                                 <tbody>
 
                                                 <tr v-for="(addTd, index) in addRows">
+                                                    <td v-if="showAddSerial">
+                                                        <select class="form-control input-sm" v-model.number="addTd.type" name="type[]" >
+                                                            <option :value="1">Non-Consumable</option>
+                                                            <option :value="0">Consumable</option>
+                                                        </select>
+                                                    </td>
                                                     <td :class="{'has-error' : addTd.hasError}">
                                                         <div v-if="showAddSerial" class="input-group input-group-sm">
                                                            <input
@@ -78,7 +85,8 @@
                                                                      v-model.number="addTd.product"
 
                                                                      @selectValue = "validateDuplicate($event, index)"
-                                                                     @selectQuantityValue = "addTd.maxQuantity = $event"
+                                                                     @selectQuantityValue = "addTd.maxQuantity = $event; addTd.quantity =1 "
+                                                                     @selectData = "addTd.type = $event"
                                                                      @selectStatusValue = "addTd.status = $event; addTd.status == 0 ? addTd.action = 3 : addTd.action = 2"
                                                                      @selectManufactureValue ="addTd.manufacture = $event"
                                                                      @selectDescriptionValue = "addTd.description = $event"
@@ -94,18 +102,6 @@
                                                                   class="help-block">Duplicated Entry</span>
                                                     </td>
                                                     <td>
-                                                        <!--<select class="form-control input-sm"
-                                                                v-model="addTd.status"
-                                                                required
-                                                                name="action[]"
-                                                        >
-                                                            <option value="1">
-                                                                Working
-                                                            </option>
-                                                            <option value="0">
-                                                                Defective
-                                                            </option>
-                                                        </select>-->
                                                         <select2  :options="statusesFetch"
                                                                   urlName="../api/statuses"
                                                                   name="action[]"
@@ -116,22 +112,7 @@
                                                         </select2>
                                                     </td>
                                                     <td>
-                                                        <!--<select class="form-control input-sm"
-                                                                v-model="addTd.action"
-                                                                required
-                                                                name="status[]"
-                                                        >
-                                                            <option value="1">
-                                                                TRANSFER
-                                                            </option>
-                                                            <option value="2">
-                                                                DEPLOY
-                                                            </option>
-                                                            <option value="3">
-                                                                REPLACED
-                                                            </option>
 
-                                                        </select>-->
                                                         <select2  :options="actionsFetch"
                                                                   urlName="../api/actions"
                                                                   name="status[]"
@@ -141,10 +122,17 @@
                                                             <option disabled value="0">Select one</option>
                                                         </select2>
                                                     </td>
-                                                    <td>
+
+                                                    <td v-if="showAddSerial">
                                                         <input name="quantity[]" class="form-control input-sm" min='1'
-                                                               v-model.number="addTd.quantity ? 1 : addTd.quantity"
-                                                               :max="addTd.maxQuantity ? addTd.maxQuantity : addTd.maxQuantity == 0 ? 1 : 0  "
+                                                               v-model.number="addTd.quantity"
+                                                               type="number"
+                                                               required>
+                                                    </td>
+                                                    <td v-else>
+                                                        <input name="quantity[]" class="form-control input-sm" min='1'
+                                                               v-model.number="addTd.quantity"
+                                                               :max="addTd.maxQuantity"
                                                                type="number"
                                                                required>
                                                     </td>
@@ -185,29 +173,8 @@
 
                                                         </td>
                                                         <td v-if="showAddSerial">
-                                                            <!--<div v-if="addTd.showManufacture">
-                                                                <add
-                                                                        @close = "addTd.showManufacture = false"
-                                                                        urlName="../api/manufactures"
-                                                                        @fetch="fetchManufacture"
-                                                                >
-                                                                </add>
-                                                            </div>-->
                                                             <div>
 
-                                                                <!--<select class="form-control"
-                                                                        v-model="addTd.manufacture">
-                                                                    <option v-for="option in manufactures"
-                                                                            v-bind:value="option.id">
-                                                                        {{ option.name }}
-                                                                    </option>
-                                                                </select>-->
-                                                                <!--<span class="input-group-btn">
-                                                                    <button class="btn btn-sm btn-primary"
-                                                                            @click.prevent="addTd.showManufacture =! addTd.showManufacture">
-                                                                        <i class="glyphicon glyphicon-plus"></i>
-                                                                    </button>
-                                                                </span>-->
                                                                 <select2 :options="manufacturesFetch" name="manufactures[]"
                                                                          urlName="../api/manufactures"
                                                                          required
@@ -289,15 +256,6 @@
                 locations:LocationState.data,
                 statuses:statusState.data,
                 actions:actionState.data,
-
-                /*
-                    brands:[],
-                    categories:[],
-                    products:[],
-                    descriptions:[],
-                    manufactures:[],
-                    locations:[],
-                */
                 showAddSerial: false,
                 selected:[],
                 disabledButton: false
@@ -360,7 +318,7 @@
             productFetch(){
                 var vm = this;
                 return _.map(vm.products.brands, function(data){
-                        var pick = _.pick(data, 'serial', 'id', 'quantity','status','manufacture','description','location','category','model', 'assetSerial'  );
+                        var pick = _.pick(data, 'serial','type', 'id', 'quantity','status','manufacture','description','location','category','model', 'assetSerial'  );
                         var object = {
                             id:pick.id,
                             text:pick.serial,
@@ -371,6 +329,7 @@
                             location:pick.location,
                             category:pick.category,
                             model:pick.model,
+                            type:pick.type,
                             assetSerial:pick.assetSerial}
                         return object})
             },
@@ -399,6 +358,7 @@
                         axios.get('../../api/transfers/getSerial/' + value ).then(response => {
                             vm.addRows[index].serial = response.data.data.serial,
                             vm.addRows[index].quantity = 1,
+                            vm.addRows[index].type = response.data.data.type,
                             vm.addRows[index].status = response.data.data.status,
                             vm.addRows[index].action = response.data.data.status == 0 ?  3 :  2,
                             vm.addRows[index].model = response.data.data.brand_id,
@@ -406,7 +366,7 @@
                             vm.addRows[index].description=response.data.data.description_id,
                             vm.addRows[index].manufacture=response.data.data.manufacture_id,
                             vm.addRows[index].location=response.data.data.location_id,
-                            vm.addRows[index].maxQuantity=vm.addRows[index].quantity
+                            vm.addRows[index].maxQuantity=response.data.data.quantity
 
                         })
                         break;
@@ -442,7 +402,7 @@
                 this.addRows.push({
                     product:'',
                     serial: null,
-                    quantity: 1,
+                    quantity: null,
                     status:null,
                     action: null,
                     model:'',
@@ -450,7 +410,7 @@
                     description:null,
                     manufacture:null,
                     location:null,
-
+                    type: 1,
                     createModel: '',
                     createCategory: '',
                     createDescription: '',
@@ -464,7 +424,7 @@
                     showManufacture: false,
 
                     hasError: false,
-                    maxQuantity: 0,
+                    maxQuantity: 1,
                 });
             },
             removeTD(index){

@@ -29,4 +29,5 @@ Route::resource('actions', 'api\ActionsController');
 Route::get('transfers/{transfers}/history', 'api\TransfersControllers@history');
 Route::get('transfers/getSerial/{serial}', 'api\TransfersControllers@getSerial');
 Route::post('products/imports', 'api\ProductsControllers@importData');
+Route::post('products/uploader/{product}', 'api\ProductsControllers@uploadImage');
 Route::resource('products', 'api\ProductsControllers');

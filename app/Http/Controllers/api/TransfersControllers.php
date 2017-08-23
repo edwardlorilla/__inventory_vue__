@@ -53,12 +53,13 @@ class TransfersControllers extends Controller
     {
         $productid = [];
         $data = [];
-        if (count($request->all()) == 10) {
+        if (count($request->all()) == 11) {
             foreach ($request->serial as $key => $value) {
                 $productid[] = \App\Product::updateOrCreate(
                     ['serial' => $request->serial[$key]],
                     [
                         'serial' => $request->serial[$key],
+                        'type' => $request->type[$key],
                         'quantity' => $request->quantity[$key],
                         'manufacture_id' => $request->manufactures[$key],
                         'description_id' => $request->description[$key],
@@ -87,6 +88,7 @@ class TransfersControllers extends Controller
 
 
         foreach ($request->serial    as $key => $value) {
+            $checkOut = new \App\Checkout();
             $product = \App\Product::where('id', $productid[$key])->first();
             $location = \App\Location::where('id', $request->location[$key])->first();
             $location->select('lastLocation')->update(['lastLocation' => $lastK6]);
@@ -117,6 +119,9 @@ class TransfersControllers extends Controller
                 $quantity = 1;
             } else {
                 $quantity = $request->quantity[$key];
+                $checkOut = \App\Checkout::create(['out' => $quantity ]);
+                $product->checkouts()->save($checkOut);
+
             }
             $currentLocation = $request->location[$key] ? $request->location[$key] : '';
             $data[] = [

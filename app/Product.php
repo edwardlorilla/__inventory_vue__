@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $fillable = [
-        'quantity', 'serial', 'manufacture_id', 'description_id', 'location_id', 'category_id', 'brand_id', 'status_id','assetSerial'
+        'quantity', 'serial','type', 'manufacture_id', 'description_id', 'location_id', 'category_id', 'brand_id', 'status_id','assetSerial'
     ];
     public function transfers()
     {
@@ -17,6 +17,7 @@ class Product extends Model
     {
         return $this->belongsTo(Status::class);
     }
+
     public function brand()
     {
         return $this->belongsTo(Brand::class);
@@ -40,5 +41,11 @@ class Product extends Model
     public function location()
     {
         return $this->belongsTo(Location::class);
+    }
+    public function photos(){
+        return $this->belongsToMany(\App\Photo::class);
+    }
+    public function checkouts(){
+        return $this->belongsToMany(\App\CheckOut::class, 'checkout_product');
     }
 }
