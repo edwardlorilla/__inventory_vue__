@@ -48,6 +48,8 @@ class CategoriesControllers extends Controller
         ]);
     }
 
+
+
     /**
      * Display the specified resource.
      *
